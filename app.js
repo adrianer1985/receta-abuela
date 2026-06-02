@@ -4686,6 +4686,9 @@ function renderArticleDetail() {
 
   // Render similar recommended articles
   renderRecommendations(recipe);
+
+  // Setup comments system
+  setupComments(recipe.id);
 }
 
 // Render recommendations grid
@@ -4828,4 +4831,210 @@ function setupListeners() {
       renderGrid(recipes);
     });
   });
+}
+
+// Pre-populated default comments for premium experience
+const defaultComments = {
+  "estufa-velas": [
+    {
+      author: "María González",
+      date: "01/06/2026",
+      rating: 5,
+      text: "¡Funciona increíblemente bien! La puse en mi pequeño estudio y en un par de horas la temperatura subió casi 3 grados. El calor que irradia es muy agradable y no reseca nada.",
+      image: ""
+    },
+    {
+      author: "Carlos Ruiz",
+      date: "28/05/2026",
+      rating: 4,
+      text: "Una idea genial. Recomiendo usar varilla de buen grosor para que retenga más calor. Muy fácil de montar con las instrucciones paso a paso.",
+      image: ""
+    }
+  ],
+  "detergente-hiedra": [
+    {
+      author: "Laura Morales",
+      date: "30/05/2026",
+      rating: 5,
+      text: "He probado la receta este fin de semana y la ropa de deporte ha quedado impecable. El toque de lavanda le da una frescura genial y natural.",
+      image: ""
+    }
+  ],
+  "pasta-dientes": [
+    {
+      author: "Alberto Soler",
+      date: "02/06/2026",
+      rating: 5,
+      text: "Al principio la textura de arcilla es extraña si estás acostumbrado a las pastas comerciales espumosas, pero la sensación de limpieza después del cepillado es inigualable. Noto los dientes mucho menos sensibles.",
+      image: ""
+    }
+  ]
+};
+
+// Setup comments feature on article page
+function setupComments(articleId) {
+  const commentsList = document.getElementById("comments-list");
+  const commentForm = document.getElementById("comment-form");
+  if (!commentsList || !commentForm) return;
+
+  // Star rating logic
+  const stars = document.querySelectorAll("#star-rating .star");
+  const ratingInput = document.getElementById("comment-rating-value");
+  
+  stars.forEach(star => {
+    // Hover effect
+    star.addEventListener("mouseover", () => {
+      const val = parseInt(star.getAttribute("data-value"));
+      stars.forEach(s => {
+        if (parseInt(s.getAttribute("data-value")) <= val) {
+          s.classList.add("hover");
+        } else {
+          s.classList.remove("hover");
+        }
+      });
+    });
+    
+    star.addEventListener("mouseout", () => {
+      stars.forEach(s => s.classList.remove("hover"));
+    });
+    
+    // Click selection
+    star.addEventListener("click", () => {
+      const val = parseInt(star.getAttribute("data-value"));
+      ratingInput.value = val;
+      stars.forEach(s => {
+        if (parseInt(s.getAttribute("data-value")) <= val) {
+          s.classList.add("selected");
+        } else {
+          s.classList.remove("selected");
+        }
+      });
+    });
+  });
+
+  // Image upload logic (Base64 preview and removal)
+  const fileInput = document.getElementById("comment-image");
+  const previewContainer = document.getElementById("image-preview-container");
+  const previewImg = document.getElementById("image-preview");
+  const btnRemoveImg = document.getElementById("btn-remove-image");
+  let base64ImageStr = "";
+
+  fileInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 1.5 * 1024 * 1024) {
+        alert("La imagen es demasiado grande. Por favor, selecciona una foto de menos de 1.5MB.");
+        fileInput.value = "";
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        base64ImageStr = event.target.result;
+        previewImg.src = base64ImageStr;
+        previewContainer.style.display = "inline-block";
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  btnRemoveImg.addEventListener("click", () => {
+    fileInput.value = "";
+    base64ImageStr = "";
+    previewContainer.style.display = "none";
+    previewImg.src = "";
+  });
+
+  // Load and Render Comments function
+  function loadAndRender() {
+    let list = [];
+    const storageKey = `comments_${articleId}`;
+    const stored = localStorage.getItem(storageKey);
+    
+    if (stored) {
+      list = JSON.parse(stored);
+    } else {
+      // Use defaults if available
+      list = defaultComments[articleId] || [];
+      localStorage.setItem(storageKey, JSON.stringify(list));
+    }
+
+    commentsList.innerHTML = "";
+    
+    if (list.length === 0) {
+      commentsList.innerHTML = `
+        <div class="empty-state" style="padding: 1.5rem 0; text-align: center; color: var(--color-text-muted);">
+          <p>Aún no hay comentarios para esta receta. ¡Sé el primero en compartir tu experiencia!</p>
+        </div>
+      `;
+      return;
+    }
+
+    list.forEach(c => {
+      const card = document.createElement("div");
+      card.className = "comment-card";
+      
+      const starsHtml = "&#9733;".repeat(c.rating) + "&#9734;".repeat(5 - c.rating);
+      const avatarChar = c.author.charAt(0).toUpperCase();
+
+      card.innerHTML = `
+        <div class="comment-header">
+          <div class="comment-author-info">
+            <div class="comment-avatar">${avatarChar}</div>
+            <div>
+              <span class="comment-author-name">${c.author}</span>
+              <div class="comment-date">${c.date}</div>
+            </div>
+          </div>
+          <div class="comment-rating-display" aria-label="Valoración de ${c.rating} estrellas">${starsHtml}</div>
+        </div>
+        <p class="comment-text-content">${c.text}</p>
+        ${c.image ? `<img src="${c.image}" alt="Foto adjuntada por ${c.author}" class="comment-attached-image">` : ""}
+      `;
+      
+      commentsList.appendChild(card);
+    });
+  }
+
+  // Handle submit form
+  commentForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    const author = document.getElementById("comment-author").value.trim();
+    const text = document.getElementById("comment-text").value.trim();
+    const rating = parseInt(ratingInput.value) || 5;
+    
+    if (!author || !text) return;
+
+    const newComment = {
+      author: author,
+      date: new Date().toLocaleDateString("es-ES"),
+      rating: rating,
+      text: text,
+      image: base64ImageStr
+    };
+
+    const storageKey = `comments_${articleId}`;
+    const stored = localStorage.getItem(storageKey);
+    let list = stored ? JSON.parse(stored) : (defaultComments[articleId] || []);
+    
+    list.push(newComment);
+    localStorage.setItem(storageKey, JSON.stringify(list));
+
+    // Clear form inputs
+    commentForm.reset();
+    fileInput.value = "";
+    base64ImageStr = "";
+    previewContainer.style.display = "none";
+    previewImg.src = "";
+    
+    // Reset rating stars to 5 selected
+    ratingInput.value = 5;
+    stars.forEach(s => s.classList.add("selected"));
+
+    // Reload
+    loadAndRender();
+  });
+
+  // Initial load
+  loadAndRender();
 }

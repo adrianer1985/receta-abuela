@@ -3,7 +3,7 @@ const recipes = [
   {
     "id": "estufa-velas",
     "title": "Estufa de Macetas de Arcilla y Velas",
-    "category": "calefaccion",
+    "category": "tecnologia",
     "tag": "Calefacción",
     "image": "assets/images/estufa.png",
     "views": 618000,
@@ -81,12 +81,13 @@ const recipes = [
         "comercial": "Requiere red eléctrica o gas",
         "diferencia": "Sin cables"
       }
-    ]
+    ],
+    "subcategory": "calefaccion"
   },
   {
     "id": "detergente-hiedra",
     "title": "Detergente Líquido de Hiedra y Lavanda",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/detergente.png",
     "views": 600000,
@@ -157,12 +158,13 @@ const recipes = [
         "comercial": "20 lavados por litro",
         "diferencia": "Similar eficiencia"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "nevera-arcilla",
     "title": "Refrigerador de Arcilla sin Electricidad (Nevera Zeer)",
-    "category": "alimentos",
+    "category": "tecnologia",
     "tag": "Alimentos",
     "image": "assets/images/nevera.png",
     "views": 420000,
@@ -237,12 +239,13 @@ const recipes = [
         "comercial": "Gases HFC dañinos para la capa de ozono",
         "diferencia": "100% Ecológico"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "repelente-ajo",
     "title": "Repelente Orgánico de Ajo y Aceite de Nim",
-    "category": "alimentos",
+    "category": "hogar",
     "tag": "Alimentos",
     "image": "assets/images/repelente_ajo.png",
     "views": 330000,
@@ -316,12 +319,13 @@ const recipes = [
         "comercial": "Persistente en aguas subterráneas",
         "diferencia": "Protege el agua"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "filtro-agua",
     "title": "Filtro de Agua de Emergencia de Carbón y Arena",
-    "category": "agua",
+    "category": "tecnologia",
     "tag": "Agua",
     "image": "assets/images/filtro_agua.png",
     "views": 290000,
@@ -399,12 +403,13 @@ const recipes = [
         "comercial": "Retiene cloro y sedimentos",
         "diferencia": "Equivalente"
       }
-    ]
+    ],
+    "subcategory": "agua"
   },
   {
     "id": "deshidratador-solar",
     "title": "Deshidratador Solar de Alimentos de Madera",
-    "category": "alimentos",
+    "category": "tecnologia",
     "tag": "Alimentos",
     "image": "assets/images/deshidratador.png",
     "views": 250000,
@@ -482,12 +487,13 @@ const recipes = [
         "comercial": "Altas temperaturas (destruye vitaminas)",
         "diferencia": "Mayor calidad nutricional"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "pasta-dientes",
     "title": "Pasta de Dientes Remineralizante de Arcilla y Coco",
-    "category": "higiene",
+    "category": "cuerpo",
     "tag": "Higiene",
     "image": "assets/images/pasta_dientes.png",
     "views": 210000,
@@ -565,12 +571,13 @@ const recipes = [
         "comercial": "Tubo de plástico laminado no reciclable",
         "diferencia": "Residuo Cero"
       }
-    ]
+    ],
+    "subcategory": "higiene"
   },
   {
     "id": "jabon-ceniza",
     "title": "Jabón de Lixivia de Ceniza de Madera y Oliva",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/jabon_ceniza.png",
     "views": 180000,
@@ -644,13 +651,14 @@ const recipes = [
         "comercial": "Botellas plásticas monouso",
         "diferencia": "Sostenible"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "velas-aceite",
     "title": "Velones Ecológicos de Aceite de Cocina Usado",
-    "category": "calefaccion",
-    "tag": "Calefacción",
+    "category": "hogar",
+    "tag": "Limpieza",
     "image": "assets/images/velas_aceite.png",
     "views": 150000,
     "summary": "Aprende a reciclar el aceite usado de la cocina para elaborar velas aromáticas caseras de combustión limpia y larga duración utilizando cera de soja.",
@@ -727,12 +735,13 @@ const recipes = [
         "comercial": "Generación de envases y residuos industriales",
         "diferencia": "Ecológico absoluto"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "balsamo-calendula",
     "title": "Bálsamo Reparador de Caléndula y Aceite de Oliva",
-    "category": "remedios",
+    "category": "cuerpo",
     "tag": "Remedios",
     "image": "assets/images/balsamo.png",
     "views": 120000,
@@ -807,12 +816,13 @@ const recipes = [
         "comercial": "Envase plástico genérico",
         "diferencia": "Mejor conservación"
       }
-    ]
+    ],
+    "subcategory": "remedios"
   },
   {
     "id": "pomada-llanten",
     "title": "Pomada Cicatrizante y Desinfectante de Llantén",
-    "category": "remedios",
+    "category": "cuerpo",
     "tag": "Remedios",
     "image": "assets/images/pomada_llanten.png",
     "views": 110000,
@@ -886,12 +896,13 @@ const recipes = [
         "comercial": "Drenaje de químicos al agua",
         "diferencia": "Ecológico"
       }
-    ]
+    ],
+    "subcategory": "remedios"
   },
   {
     "id": "champu-solid",
     "title": "Champú Sólido de Ortiga y Romero",
-    "category": "higiene",
+    "category": "cuerpo",
     "tag": "Higiene",
     "image": "assets/images/champu.png",
     "views": 95000,
@@ -969,12 +980,13 @@ const recipes = [
         "comercial": "Alta (Transporte de agua y envase)",
         "diferencia": "Ecológico"
       }
-    ]
+    ],
+    "subcategory": "higiene"
   },
   {
     "id": "trampa-humedad",
     "title": "Deshumidificador Natural de Cloruro de Calcio",
-    "category": "calefaccion",
+    "category": "tecnologia",
     "tag": "Calefacción",
     "image": "assets/images/trampa_humedad.png",
     "views": 85000,
@@ -1048,12 +1060,13 @@ const recipes = [
         "comercial": "35 dB (Ventilador continuo)",
         "diferencia": "Protege el sueño"
       }
-    ]
+    ],
+    "subcategory": "calefaccion"
   },
   {
     "id": "limpiador-citricos",
     "title": "Limpiador Multiusos de Pieles de Cítricos y Vinagre",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/limpiador.png",
     "views": 75000,
@@ -1126,12 +1139,13 @@ const recipes = [
         "comercial": "Peligroso para fauna acuática",
         "diferencia": "Sin contaminantes"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "desodorante-coco",
     "title": "Desodorante Natural de Bicarbonato y Aceite de Coco",
-    "category": "higiene",
+    "category": "cuerpo",
     "tag": "Higiene",
     "image": "assets/images/pasta_dientes.png",
     "views": 380000,
@@ -1203,12 +1217,13 @@ const recipes = [
         "comercial": "Envase de plástico no reciclable",
         "diferencia": "Residuo Cero"
       }
-    ]
+    ],
+    "subcategory": "higiene"
   },
   {
     "id": "colutorio-clavo",
     "title": "Colutorio Antiséptico de Clavo y Canela",
-    "category": "higiene",
+    "category": "cuerpo",
     "tag": "Higiene",
     "image": "assets/images/detergente.png",
     "views": 310000,
@@ -1281,12 +1296,13 @@ const recipes = [
         "comercial": "Edulcorantes y colorantes de síntesis",
         "diferencia": "Natural"
       }
-    ]
+    ],
+    "subcategory": "higiene"
   },
   {
     "id": "jarabe-tomillo",
     "title": "Jarabe Natural de Tomillo y Miel para la Tos",
-    "category": "remedios",
+    "category": "cuerpo",
     "tag": "Remedios",
     "image": "assets/images/balsamo.png",
     "views": 270000,
@@ -1359,12 +1375,13 @@ const recipes = [
         "comercial": "Desechos químicos industriales",
         "diferencia": "Ecológico"
       }
-    ]
+    ],
+    "subcategory": "remedios"
   },
   {
     "id": "mascarilla-arcilla",
     "title": "Mascarilla Purificante de Arcilla Verde y Árbol de Té",
-    "category": "higiene",
+    "category": "cuerpo",
     "tag": "Higiene",
     "image": "assets/images/pasta_dientes.png",
     "views": 220000,
@@ -1437,12 +1454,13 @@ const recipes = [
         "comercial": "Inerte a base de siliconas",
         "diferencia": "Nutrición real"
       }
-    ]
+    ],
+    "subcategory": "higiene"
   },
   {
     "id": "aceite-hiperico",
     "title": "Aceite Macerado de Hipérico para Golpes y Quemaduras",
-    "category": "remedios",
+    "category": "cuerpo",
     "tag": "Remedios",
     "image": "assets/images/balsamo.png",
     "views": 195000,
@@ -1511,12 +1529,13 @@ const recipes = [
         "comercial": "Tubo de plástico monouso",
         "diferencia": "Residuo Cero"
       }
-    ]
+    ],
+    "subcategory": "remedios"
   },
   {
     "id": "crema-avena",
     "title": "Crema Hidratante de Avena y Aloe Vera",
-    "category": "higiene",
+    "category": "cuerpo",
     "tag": "Higiene",
     "image": "assets/images/balsamo.png",
     "views": 140000,
@@ -1593,12 +1612,13 @@ const recipes = [
         "comercial": "Aceite mineral de parafina y siliconas",
         "diferencia": "Nutrición lipídica"
       }
-    ]
+    ],
+    "subcategory": "higiene"
   },
   {
     "id": "tonico-quina",
     "title": "Tónico Capilar Anticaída de Romero y Quina",
-    "category": "remedios",
+    "category": "cuerpo",
     "tag": "Remedios",
     "image": "assets/images/champu.png",
     "views": 105000,
@@ -1671,12 +1691,13 @@ const recipes = [
         "comercial": "Frascos plásticos de un solo uso",
         "diferencia": "Ecológico"
       }
-    ]
+    ],
+    "subcategory": "remedios"
   },
   {
     "id": "balsamo-labial",
     "title": "Bálsamo Labial de Manteca de Cacao y Menta",
-    "category": "higiene",
+    "category": "cuerpo",
     "tag": "Higiene",
     "image": "assets/images/balsamo.png",
     "views": 88000,
@@ -1748,12 +1769,13 @@ const recipes = [
         "comercial": "Aplicadores plásticos monouso",
         "diferencia": "Residuo Cero"
       }
-    ]
+    ],
+    "subcategory": "higiene"
   },
   {
     "id": "infusion-valeriana",
     "title": "Infusión Relajante de Valeriana y Pasiflora",
-    "category": "remedios",
+    "category": "cuerpo",
     "tag": "Remedios",
     "image": "assets/images/velas_aceite.png",
     "views": 65000,
@@ -1821,12 +1843,13 @@ const recipes = [
         "comercial": "Blísters plásticos y cajas de cartón",
         "diferencia": "Cero Plásticos"
       }
-    ]
+    ],
+    "subcategory": "remedios"
   },
   {
     "id": "exfoliante-cafe",
     "title": "Exfoliante Corporal de Café y Aceite de Almendras",
-    "category": "higiene",
+    "category": "cuerpo",
     "tag": "Higiene",
     "image": "assets/images/pasta_dientes.png",
     "views": 45000,
@@ -1898,12 +1921,13 @@ const recipes = [
         "comercial": "Cafeína sintética sintética",
         "diferencia": "Reciclaje útil"
       }
-    ]
+    ],
+    "subcategory": "higiene"
   },
   {
     "id": "pomada-arnica",
     "title": "Pomada de Árnica para Dolores Musculares",
-    "category": "remedios",
+    "category": "cuerpo",
     "tag": "Remedios",
     "image": "assets/images/pomada_llanten.png",
     "views": 250000,
@@ -1971,12 +1995,13 @@ const recipes = [
         "comercial": "Tubo metálico-plástico no reciclable",
         "diferencia": "Residuo Cero"
       }
-    ]
+    ],
+    "subcategory": "remedios"
   },
   {
     "id": "lavavajillas-mostaza",
     "title": "Lavavajillas Líquido de Mostaza en Polvo y Vinagre",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/limpiador.png",
     "views": 580000,
@@ -2048,12 +2073,13 @@ const recipes = [
         "comercial": "Tóxico para organismos acuáticos",
         "diferencia": "Ecológico absoluto"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "suavizante-vinagre",
     "title": "Suavizante de Ropa de Vinagre y Bicarbonato",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/detergente.png",
     "views": 520000,
@@ -2121,12 +2147,13 @@ const recipes = [
         "comercial": "Acumula lodos grasos obstruyendo filtros",
         "diferencia": "Mantenimiento extra"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "insecticida-ortiga",
     "title": "Purín de Ortiga Fermentado (Insecticida y Abono)",
-    "category": "alimentos",
+    "category": "hogar",
     "tag": "Alimentos",
     "image": "assets/images/repelente_ajo.png",
     "views": 460000,
@@ -2191,12 +2218,13 @@ const recipes = [
         "comercial": "Abonos químicos nitrogenados artificiales",
         "diferencia": "Suelo más vivo"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "limpiacristales-romero",
     "title": "Limpiacristales Natural de Alcohol de Romero",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/limpiador.png",
     "views": 350000,
@@ -2268,12 +2296,13 @@ const recipes = [
         "comercial": "Envase de plástico monouso",
         "diferencia": "Sin plásticos"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "abono-platano",
     "title": "Abono Líquido de Piel de Plátano y Café",
-    "category": "alimentos",
+    "category": "hogar",
     "tag": "Alimentos",
     "image": "assets/images/detergente.png",
     "views": 300000,
@@ -2346,12 +2375,13 @@ const recipes = [
         "comercial": "Genera envases plásticos monouso",
         "diferencia": "Sostenible"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "pastillas-wc",
     "title": "Pastillas Efervescentes Desinfectantes para el WC",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/pasta_dientes.png",
     "views": 240000,
@@ -2420,12 +2450,13 @@ const recipes = [
         "comercial": "Altamente nocivo para fauna fluvial",
         "diferencia": "Protege el agua"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "fungicida-leche",
     "title": "Fungicida Orgánico de Leche y Bicarbonato",
-    "category": "alimentos",
+    "category": "hogar",
     "tag": "Alimentos",
     "image": "assets/images/repelente_ajo.png",
     "views": 175000,
@@ -2493,12 +2524,13 @@ const recipes = [
         "comercial": "Compuestos sintéticos organofosforados",
         "diferencia": "Ecológico"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "envolturas-cera",
     "title": "Envolturas Ecológicas de Cera de Abeja",
-    "category": "alimentos",
+    "category": "hogar",
     "tag": "Alimentos",
     "image": "assets/images/velas_aceite.png",
     "views": 135000,
@@ -2571,12 +2603,13 @@ const recipes = [
         "comercial": "Residuos plásticos persistentes",
         "diferencia": "Cero Residuos"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "limpiamaderas-limon",
     "title": "Limpiador de Madera de Aceite de Oliva y Limón",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/limpiador.png",
     "views": 90000,
@@ -2644,12 +2677,13 @@ const recipes = [
         "comercial": "Aerosoles de aluminio presurizados",
         "diferencia": "Sin residuos"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "trampa-avispas",
     "title": "Trampa de Vinagre y Azúcar para Avispas y Moscas",
-    "category": "alimentos",
+    "category": "hogar",
     "tag": "Alimentos",
     "image": "assets/images/trampa_humedad.png",
     "views": 70000,
@@ -2722,12 +2756,13 @@ const recipes = [
         "comercial": "Trampas plásticas monouso no reciclables",
         "diferencia": "Eco-reciclaje"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "ambientador-solido",
     "title": "Bloques Ambientadores de Bicarbonato y Aceites Esenciales",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/trampa_humedad.png",
     "views": 55000,
@@ -2795,12 +2830,13 @@ const recipes = [
         "comercial": "Envases plásticos de recambio",
         "diferencia": "Cero Plásticos"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "insecticida-jabon",
     "title": "Insecticida de Jabón Potásico Casero",
-    "category": "alimentos",
+    "category": "hogar",
     "tag": "Alimentos",
     "image": "assets/images/repelente_ajo.png",
     "views": 35000,
@@ -2868,12 +2904,13 @@ const recipes = [
         "comercial": "Persiste contaminando aguas subterráneas",
         "diferencia": "Nutre el suelo"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "friegasuelos-hierbas",
     "title": "Desinfectante de Suelos de Vinagre de Hierbas",
-    "category": "limpieza",
+    "category": "hogar",
     "tag": "Limpieza",
     "image": "assets/images/jabon_ceniza.png",
     "views": 15000,
@@ -2941,12 +2978,13 @@ const recipes = [
         "comercial": "Envase de plástico HDPE monouso",
         "diferencia": "Eco-reciclaje"
       }
-    ]
+    ],
+    "subcategory": "limpieza"
   },
   {
     "id": "horno-solar",
     "title": "Horno Solar Portátil de Caja de Cartón",
-    "category": "calefaccion",
+    "category": "tecnologia",
     "tag": "Calefacción",
     "image": "assets/images/deshidratador.png",
     "views": 550000,
@@ -3019,12 +3057,13 @@ const recipes = [
         "comercial": "Hornos metálicos industriales",
         "diferencia": "Biodegradable"
       }
-    ]
+    ],
+    "subcategory": "calefaccion"
   },
   {
     "id": "bomba-ariete",
     "title": "Bomba de Agua Manual de PVC (Bomba de Ariete)",
-    "category": "agua",
+    "category": "tecnologia",
     "tag": "Agua",
     "image": "assets/images/filtro_agua.png",
     "views": 490000,
@@ -3097,12 +3136,13 @@ const recipes = [
         "comercial": "Emisiones de CO2 y gases",
         "diferencia": "Eco-responsable"
       }
-    ]
+    ],
+    "subcategory": "agua"
   },
   {
     "id": "calentador-manguera",
     "title": "Calentador Solar de Agua con Manguera Negra",
-    "category": "calefaccion",
+    "category": "tecnologia",
     "tag": "Calefacción",
     "image": "assets/images/estufa.png",
     "views": 400000,
@@ -3167,12 +3207,13 @@ const recipes = [
         "comercial": "Genera CO2 en cada combustión",
         "diferencia": "100% Sostenible"
       }
-    ]
+    ],
+    "subcategory": "calefaccion"
   },
   {
     "id": "trampa-condensacion",
     "title": "Trampa de Condensación Solar para Agua de Riego",
-    "category": "alimentos",
+    "category": "tecnologia",
     "tag": "Alimentos",
     "image": "assets/images/trampa_humedad.png",
     "views": 340000,
@@ -3236,12 +3277,13 @@ const recipes = [
         "comercial": "Mangueras plásticas monouso",
         "diferencia": "Sostenible"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "huerto-vertical",
     "title": "Huerto Vertical con Botellas de Plástico",
-    "category": "alimentos",
+    "category": "tecnologia",
     "tag": "Alimentos",
     "image": "assets/images/nevera.png",
     "views": 280000,
@@ -3310,12 +3352,13 @@ const recipes = [
         "comercial": "Macetas de plástico virgen comercial",
         "diferencia": "Eco-reciclaje"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "biodigestor-casero",
     "title": "Generador de Gas Metano Casero (Biodigestor)",
-    "category": "alimentos",
+    "category": "tecnologia",
     "tag": "Alimentos",
     "image": "assets/images/nevera.png",
     "views": 230000,
@@ -3384,12 +3427,13 @@ const recipes = [
         "comercial": "Emisión neta de combustibles fósiles",
         "diferencia": "Neutralidad carbón"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "prensa-briquetas",
     "title": "Prensa de Papel para Briquetas de Combustible",
-    "category": "calefaccion",
+    "category": "tecnologia",
     "tag": "Calefacción",
     "image": "assets/images/deshidratador.png",
     "views": 185000,
@@ -3454,12 +3498,13 @@ const recipes = [
         "comercial": "Combustión rápida de madera blanda",
         "diferencia": "Larga duración"
       }
-    ]
+    ],
+    "subcategory": "calefaccion"
   },
   {
     "id": "filtro-biochar",
     "title": "Filtro de Biochar para Purificación de Suelos",
-    "category": "agua",
+    "category": "tecnologia",
     "tag": "Agua",
     "image": "assets/images/filtro_agua.png",
     "views": 160000,
@@ -3528,12 +3573,13 @@ const recipes = [
         "comercial": "Tierra inerte esterilizada comercial",
         "diferencia": "Tierra viva"
       }
-    ]
+    ],
+    "subcategory": "agua"
   },
   {
     "id": "lampara-alcohol",
     "title": "Lámpara de Emergencia de Alcohol y Cuerda",
-    "category": "calefaccion",
+    "category": "tecnologia",
     "tag": "Calefacción",
     "image": "assets/images/velas_aceite.png",
     "views": 125000,
@@ -3606,12 +3652,13 @@ const recipes = [
         "comercial": "Keroseno inflamable difícil de hallar",
         "diferencia": "Práctico"
       }
-    ]
+    ],
+    "subcategory": "calefaccion"
   },
   {
     "id": "estufa-rocket",
     "title": "Estufa de Emergencia 'Rocket' de Latas",
-    "category": "calefaccion",
+    "category": "tecnologia",
     "tag": "Calefacción",
     "image": "assets/images/estufa.png",
     "views": 98000,
@@ -3680,12 +3727,13 @@ const recipes = [
         "comercial": "Paredes metálicas expuestas calientes",
         "diferencia": "Seguro"
       }
-    ]
+    ],
+    "subcategory": "calefaccion"
   },
   {
     "id": "nevera-arena",
     "title": "Nevera de Arena Desértica sin Electricidad",
-    "category": "alimentos",
+    "category": "tecnologia",
     "tag": "Alimentos",
     "image": "assets/images/nevera.png",
     "views": 78000,
@@ -3750,12 +3798,13 @@ const recipes = [
         "comercial": "Plástico inyectado y espumas aislantes",
         "diferencia": "100% Ecológico"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   },
   {
     "id": "riego-solar",
     "title": "Sistema de Riego por Goteo Solar",
-    "category": "alimentos",
+    "category": "tecnologia",
     "tag": "Alimentos",
     "image": "assets/images/trampa_humedad.png",
     "views": 50000,
@@ -3818,12 +3867,14 @@ const recipes = [
         "comercial": "Agua con cloro que estresa raíces",
         "diferencia": "Salud vegetal"
       }
-    ]
+    ],
+    "subcategory": "alimentos"
   }
 ];
 
 // App State
 let activeCategory = "all";
+let activeSubcategory = "all";
 let activeSort = "default";
 let searchQuery = "";
 
@@ -3842,6 +3893,84 @@ function formatViews(views) {
   return views.toString();
 }
 
+// Subcategory definitions mapping
+const subcategoryDefinitions = {
+  all: [
+    { id: "all", label: "Todas las Subcategorías" },
+    { id: "agua", label: "Agua" },
+    { id: "calefaccion", label: "Calefacción" },
+    { id: "limpieza", label: "Limpieza" },
+    { id: "higiene", label: "Higiene" },
+    { id: "remedios", label: "Remedios" },
+    { id: "alimentos", label: "Alimentos" }
+  ],
+  hogar: [
+    { id: "all", label: "Todas" },
+    { id: "limpieza", label: "Limpieza" },
+    { id: "alimentos", label: "Alimentos" }
+  ],
+  cuerpo: [
+    { id: "all", label: "Todas" },
+    { id: "higiene", label: "Higiene" },
+    { id: "remedios", label: "Remedios" }
+  ],
+  tecnologia: [
+    { id: "all", label: "Todas" },
+    { id: "agua", label: "Agua" },
+    { id: "calefaccion", label: "Calefacción" },
+    { id: "alimentos", label: "Alimentos" }
+  ]
+};
+
+// Update URL search parameters based on state
+function updateURLParams() {
+  try {
+    const url = new URL(window.location);
+    if (activeCategory === "all") {
+      url.searchParams.delete("cat");
+    } else {
+      url.searchParams.set("cat", activeCategory);
+    }
+    
+    if (activeSubcategory === "all") {
+      url.searchParams.delete("subcat");
+    } else {
+      url.searchParams.set("subcat", activeSubcategory);
+    }
+    
+    window.history.pushState(null, "", url.pathname + url.search);
+  } catch (e) {
+    console.warn("Could not update URL parameters:", e);
+  }
+}
+
+// Render subcategory chips
+function renderSubcategories() {
+  const subFilters = document.getElementById("subcategory-filters");
+  if (!subFilters) return;
+
+  const chips = subcategoryDefinitions[activeCategory] || subcategoryDefinitions.all;
+  
+  subFilters.innerHTML = "";
+  chips.forEach(chip => {
+    const btn = document.createElement("button");
+    btn.className = `btn-subchip ${activeSubcategory === chip.id ? "active" : ""}`;
+    btn.setAttribute("data-sub", chip.id);
+    btn.textContent = chip.label;
+    
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".btn-subchip").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      
+      activeSubcategory = chip.id;
+      updateURLParams();
+      renderGrid(recipes);
+    });
+    
+    subFilters.appendChild(btn);
+  });
+}
+
 // Init App
 document.addEventListener("DOMContentLoaded", () => {
   const recipesGrid = document.getElementById("recipes-grid");
@@ -3853,14 +3982,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const cat = params.get("cat");
     if (cat) {
       activeCategory = cat;
-      // Set active link in nav
       const navLinks = document.querySelectorAll(".nav-links a");
       navLinks.forEach(l => l.classList.remove("active"));
       const activeLink = document.getElementById(`nav-${cat}`);
       if (activeLink) activeLink.classList.add("active");
     }
+    
+    const subcat = params.get("subcat");
+    if (subcat) {
+      activeSubcategory = subcat;
+    }
 
     renderGrid(recipes);
+    renderSubcategories();
     setupListeners();
   } else if (articleDetailContainer) {
     renderArticleDetail();
@@ -3874,13 +4008,14 @@ function renderGrid(recipesData) {
   
   recipesGrid.innerHTML = "";
   
-  // Apply search & category filters
+  // Apply search & category & subcategory filters
   let filteredRecipes = recipesData.filter(recipe => {
     const matchesCategory = activeCategory === "all" || recipe.category === activeCategory;
+    const matchesSubcategory = activeSubcategory === "all" || recipe.subcategory === activeSubcategory;
     const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           recipe.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           recipe.intro.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesSubcategory && matchesSearch;
   });
 
   // Apply sorting
@@ -4202,8 +4337,13 @@ function renderRecommendations(currentRecipe) {
   // Filter out current recipe
   let candidates = recipes.filter(r => r.id !== currentRecipe.id);
 
-  // Sort candidates: prioritize same category, then by views descending
+  // Sort candidates: prioritize same subcategory, then same category, then by views descending
   candidates.sort((a, b) => {
+    const aSameSub = a.subcategory === currentRecipe.subcategory ? 1 : 0;
+    const bSameSub = b.subcategory === currentRecipe.subcategory ? 1 : 0;
+    if (aSameSub !== bSameSub) {
+      return bSameSub - aSameSub; // prioritize same subcategory
+    }
     const aSameCat = a.category === currentRecipe.category ? 1 : 0;
     const bSameCat = b.category === currentRecipe.category ? 1 : 0;
     if (aSameCat !== bSameCat) {
@@ -4322,6 +4462,10 @@ function setupListeners() {
         activeCategory = id.replace("nav-", "");
       }
       
+      // Reset subcategory selection on main category click
+      activeSubcategory = "all";
+      updateURLParams();
+      renderSubcategories();
       renderGrid(recipes);
     });
   });

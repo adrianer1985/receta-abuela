@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargando guía... | Receta de Abuela</title>
+  <meta name="description" content="Descubre recetas ancestrales y ecológicas para el cuidado personal y del hogar. La sabiduría del bienestar en formato moderno, sostenible y económico.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background decorative glows -->
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-wrapper">
+        <img src="assets/logo.png" alt="Logotipo Receta de Abuela" id="logo-img" class="site-logo">
+        <div class="logo-text">
+          <a href="index.html" class="logo-link">
+            <span class="site-title">Receta de Abuela</span>
+            <span class="site-slogan">La sabiduría del bienestar</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Nav Menu -->
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Todas las Recetas</a></li>
+          <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Article Detail Content -->
+  <main class="article-detail-section">
+    <div class="back-nav-container">
+      <a href="index.html" class="back-link">
+        <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Volver a la galería
+      </a>
+    </div>
+
+    <!-- Dynamic container loaded by app.js -->
+    <div id="article-detail-container" class="dialog-content-wrapper static-page-detail">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Cargando sabiduría ancestral...</p>
+      </div>
+    </div>
+
+    <!-- Recommendations section -->
+    <section class="recommendations-section">
+      <h3 class="recommendations-title">Artículos Recomendados</h3>
+      <div id="recommended-grid" class="recipes-grid" aria-label="Artículos recomendados">
+        <!-- Cards dynamically populated by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <p class="footer-text">&copy; 2026 Receta de Abuela. Todos los derechos reservados.</p>
+      <p class="footer-meta">Diseño Premium, Sostenible y Moderno para un estilo de vida consciente.</p>
+    </div>
+  </footer>
+
+  <!-- JS Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

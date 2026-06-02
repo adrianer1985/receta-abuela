@@ -217,7 +217,7 @@ const recipes = [
       { name: "Tarro pequeño de vidrio con tapa", price: "0.05 €" }
     ],
     steps: [
-      "Mezcla la arcilla blanca (caolín) y el bicarbonato de sodio en un bol de vidrio, cerámica o madera. Evita utensilios metálicos para no alterar las propiedades iónicas de la arcilla.",
+      "Mezcla la arcilla blanca (caolín) and el bicarbonato de sodio en un bol de vidrio, cerámica o madera. Evita utensilios metálicos para no alterar las propiedades iónicas de la arcilla.",
       "Si el aceite de coco está en estado sólido, disuélvelo al baño María a fuego muy suave hasta que quede líquido.",
       "Vierte el aceite de coco tibio sobre la mezcla de polvos secos de forma gradual.",
       "Remueve con paciencia utilizando una espátula de madera o silicona hasta lograr una consistencia pastosa cremosa.",
@@ -246,7 +246,7 @@ const recipes = [
     image: "assets/images/balsamo.png",
     views: 120000,
     summary: "Ungüento balsámico tradicional formulado para aliviar quemaduras leves, irritaciones de la piel y sequedad extrema mediante flores de caléndula maceradas en aceite de oliva y cera de abejas.",
-    intro: "El oleato de caléndula posee propiedades calmantes, cicatrizantes and antiinflamatorias gracias a sus flavonoides y triterpenos. Combinado con el aceite de oliva virgen extra y la cera pura de abejas, este bálsamo forma una barrera protectora transpirable sobre la piel que acelera la regeneración celular y nutre en profundidad, sin aditivos de origen mineral ni petrolatos.",
+    intro: "El oleato de caléndula posee propiedades calmantes, cicatrizantes y antiinflamatorias gracias a sus flavonoides y triterpenos. Combinado con el aceite de oliva virgen extra y la cera pura de abejas, este bálsamo forma una barrera protectora transpirable sobre la piel que acelera la regeneración celular y nutre en profundidad, sin aditivos de origen mineral ni petrolatos.",
     healthBenefit: "Aporta nutrientes lipídicos y vitaminas esenciales directamente a las células cutáneas mediante aceites vegetales puros, en lugar de recubrir la piel con aceites minerales derivados del petróleo (como la vaselina o parafina líquida). Los derivados de hidrocarburos crean una película impermeable plástica que obstruye los poros e impide que la piel elimine toxinas de manera natural.",
     time: "35 minutos (Maceración previa de 40 días)",
     rawDuration: "Flores secas: 2 años",
@@ -388,13 +388,9 @@ let activeSort = "default";
 let searchQuery = "";
 
 // DOM Elements
-const recipesGrid = document.getElementById("recipes-grid");
 const searchInput = document.getElementById("search-input");
 const filterButtons = document.querySelectorAll(".btn-filter");
 const navLinks = document.querySelectorAll(".nav-links a");
-const recipeModal = document.getElementById("recipe-modal");
-const modalDynamicBody = document.getElementById("modal-dynamic-body");
-const modalCloseBtn = document.getElementById("modal-close-btn");
 
 // Helper to format views
 function formatViews(views) {
@@ -408,12 +404,22 @@ function formatViews(views) {
 
 // Init App
 document.addEventListener("DOMContentLoaded", () => {
-  renderGrid(recipes);
-  setupListeners();
+  const recipesGrid = document.getElementById("recipes-grid");
+  const articleDetailContainer = document.getElementById("article-detail-container");
+
+  if (recipesGrid) {
+    renderGrid(recipes);
+    setupListeners();
+  } else if (articleDetailContainer) {
+    renderArticleDetail();
+  }
 });
 
-// Render cards grid
+// Render cards grid on index.html
 function renderGrid(recipesData) {
+  const recipesGrid = document.getElementById("recipes-grid");
+  if (!recipesGrid) return;
+  
   recipesGrid.innerHTML = "";
   
   // Apply search & category filters
@@ -466,6 +472,25 @@ function renderGrid(recipesData) {
           </svg>
           ${formatViews(recipe.views)}
         </span>
+        
+        <!-- Hover Preview Panel -->
+        <div class="card-hover-preview">
+          <span class="hover-preview-title">Beneficio Corporal</span>
+          <p class="hover-preview-text">${recipe.healthBenefit.split('.')[0] + '.'}</p>
+          <span class="hover-preview-title">Ingredientes Clave</span>
+          <ul class="hover-ingredients-list">
+            ${recipe.shoppingList.slice(0, 3).map(item => `
+              <li class="hover-ingredient-item">
+                <span class="hover-ingredient-bullet">✦</span>
+                <span>${item.name.split(' (')[0]}</span>
+              </li>
+            `).join("")}
+          </ul>
+          <span class="hover-cta-text">
+            Guía completa
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </span>
+        </div>
       </div>
       <div class="card-content">
         <h3 class="card-title">${recipe.title}</h3>
@@ -490,23 +515,62 @@ function renderGrid(recipesData) {
       </div>
     `;
     
-    // Add open modal trigger
-    card.addEventListener("click", () => openRecipeModal(recipe));
+    // Add click event to open in a new tab
+    card.addEventListener("click", () => {
+      window.open(`articulo.html?id=${recipe.id}`, '_blank');
+    });
     recipesGrid.appendChild(card);
   });
 }
 
-// Open modal and populate its content
-function openRecipeModal(recipe) {
-  // Populate dynamically
-  modalDynamicBody.innerHTML = `
+// Render dynamic article page layout on articulo.html
+function renderArticleDetail() {
+  const container = document.getElementById("article-detail-container");
+  if (!container) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const articleId = params.get("id");
+  const recipe = recipes.find(r => r.id === articleId);
+
+  if (!recipe) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <h3>Artículo no encontrado</h3>
+        <p>Lo sentimos, el artículo o la receta que estás buscando no existe o ha sido trasladada.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="index.html" class="btn-primary-action">Volver al inicio</a>
+        </div>
+      </div>
+    `;
+    document.title = "Artículo no encontrado | Receta de Abuela";
+    return;
+  }
+
+  // Update Page Title
+  document.title = `${recipe.title} | Receta de Abuela`;
+
+  // Render detail template
+  container.innerHTML = `
     <!-- Top banner image -->
-    <img src="${recipe.image}" alt="${recipe.title}" class="modal-hero-img">
+    <div style="position: relative; width: 100%;">
+      <img src="${recipe.image}" alt="${recipe.title}" class="modal-hero-img" style="border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;">
+      <span class="card-views-badge" style="top: 1.5rem; right: 1.5rem;">
+        <svg class="card-views-icon" viewBox="0 0 24 24">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        ${formatViews(recipe.views)} visualizaciones
+      </span>
+    </div>
     
     <!-- Header title and summary -->
     <div class="modal-header-info">
       <span class="modal-category">${recipe.tag}</span>
-      <h2 class="modal-title">${recipe.title}</h2>
+      <h1 class="modal-title" style="margin-top: 0.2rem; font-size: 2.2rem;">${recipe.title}</h1>
       <p class="modal-intro">${recipe.intro}</p>
     </div>
     
@@ -672,38 +736,107 @@ function openRecipeModal(recipe) {
       </section>
     </div>
   `;
-  
-  // Show dialog
-  recipeModal.showModal();
-  document.body.style.overflow = "hidden"; // Prevent background scroll
+
+  // Render similar recommended articles
+  renderRecommendations(recipe);
 }
 
-// Close Modal
-function closeRecipeModal() {
-  recipeModal.close();
-  document.body.style.overflow = ""; // Restore background scroll
+// Render recommendations grid
+function renderRecommendations(currentRecipe) {
+  const recommendedGrid = document.getElementById("recommended-grid");
+  if (!recommendedGrid) return;
+
+  // Filter out current recipe
+  let candidates = recipes.filter(r => r.id !== currentRecipe.id);
+
+  // Sort candidates: prioritize same category, then by views descending
+  candidates.sort((a, b) => {
+    const aSameCat = a.category === currentRecipe.category ? 1 : 0;
+    const bSameCat = b.category === currentRecipe.category ? 1 : 0;
+    if (aSameCat !== bSameCat) {
+      return bSameCat - aSameCat; // prioritize same category
+    }
+    return b.views - a.views; // fallback to views descending
+  });
+
+  // Select top 3
+  const recommendations = candidates.slice(0, 3);
+
+  // Render them in the grid
+  recommendedGrid.innerHTML = "";
+  recommendations.forEach(recipe => {
+    const card = document.createElement("article");
+    card.className = "recipe-card";
+    card.setAttribute("aria-label", `Receta: ${recipe.title}`);
+    card.innerHTML = `
+      <div class="card-img-wrapper">
+        <img src="${recipe.image}" alt="${recipe.title}" class="card-img" loading="lazy">
+        <span class="card-tag">${recipe.tag}</span>
+        <span class="card-views-badge">
+          <svg class="card-views-icon" viewBox="0 0 24 24">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+          </svg>
+          ${formatViews(recipe.views)}
+        </span>
+        
+        <!-- Hover Preview Panel -->
+        <div class="card-hover-preview">
+          <span class="hover-preview-title">Beneficio Corporal</span>
+          <p class="hover-preview-text">${recipe.healthBenefit.split('.')[0] + '.'}</p>
+          <span class="hover-preview-title">Ingredientes Clave</span>
+          <ul class="hover-ingredients-list">
+            ${recipe.shoppingList.slice(0, 3).map(item => `
+              <li class="hover-ingredient-item">
+                <span class="hover-ingredient-bullet">✦</span>
+                <span>${item.name.split(' (')[0]}</span>
+              </li>
+            `).join("")}
+          </ul>
+          <span class="hover-cta-text">
+            Guía completa
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </span>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">${recipe.title}</h3>
+        <p class="card-summary">${recipe.summary}</p>
+        <div class="card-metrics">
+          <div class="metric-bar-group">
+            <span class="metric-label"><span class="metric-dot eco"></span>Ahorro</span>
+            <div class="metric-track"><div class="metric-fill eco" style="width: ${recipe.metrics.economy}%"></div></div>
+            <span class="metric-val">${recipe.metrics.economy}%</span>
+          </div>
+          <div class="metric-bar-group">
+            <span class="metric-label"><span class="metric-dot health"></span>Salud</span>
+            <div class="metric-track"><div class="metric-fill health" style="width: ${recipe.metrics.health}%"></div></div>
+            <span class="metric-val">${recipe.metrics.health}%</span>
+          </div>
+          <div class="metric-bar-group">
+            <span class="metric-label"><span class="metric-dot ecosys"></span>Ecosistema</span>
+            <div class="metric-track"><div class="metric-fill ecosys" style="width: ${recipe.metrics.ecosystem}%"></div></div>
+            <span class="metric-val">${recipe.metrics.ecosystem}%</span>
+          </div>
+        </div>
+      </div>
+    `;
+
+    card.addEventListener("click", () => {
+      window.open(`articulo.html?id=${recipe.id}`, '_blank');
+    });
+    recommendedGrid.appendChild(card);
+  });
 }
 
 // Setup Event Listeners
 function setupListeners() {
-  // Close buttons
-  modalCloseBtn.addEventListener("click", closeRecipeModal);
-  
-  // Close modal when clicking outside (on backdrop)
-  recipeModal.addEventListener("click", (e) => {
-    const rect = recipeModal.getBoundingClientRect();
-    const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
-                        rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
-    if (!isInDialog) {
-      closeRecipeModal();
-    }
-  });
-
   // Search input change event
-  searchInput.addEventListener("input", (e) => {
-    searchQuery = e.target.value;
-    renderGrid(recipes);
-  });
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      renderGrid(recipes);
+    });
+  }
 
   // Sorting filter buttons
   filterButtons.forEach(btn => {
@@ -718,11 +851,13 @@ function setupListeners() {
   // Navigation tab filter links
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
+      const id = link.getAttribute("id");
+      if (id === "nav-about") return; // Let it navigate naturally to quienes-somos.html
+
       e.preventDefault();
       navLinks.forEach(l => l.classList.remove("active"));
       link.classList.add("active");
       
-      const id = link.getAttribute("id");
       if (id === "nav-all") {
         activeCategory = "all";
       } else if (id === "nav-hogar") {

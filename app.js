@@ -4358,6 +4358,21 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (articleDetailContainer) {
     renderArticleDetail();
   }
+
+  // Newsletter Form handler
+  const newsletterForm = document.getElementById("newsletter-form");
+  const newsletterSuccess = document.getElementById("newsletter-success");
+  if (newsletterForm && newsletterSuccess) {
+    newsletterForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("newsletter-email").value.trim();
+      if (email) {
+        localStorage.setItem("newsletter_subscribed", email);
+        newsletterForm.style.display = "none";
+        newsletterSuccess.style.display = "block";
+      }
+    });
+  }
 });
 
 // Render cards grid on index.html
@@ -4464,7 +4479,7 @@ function renderGrid(recipesData) {
     
     // Add click event to open in a new tab
     card.addEventListener("click", () => {
-      window.open(`articulo.html?id=${recipe.id}`, '_blank');
+      window.open(`${recipe.id}.html`, '_blank');
     });
     recipesGrid.appendChild(card);
   });
@@ -4476,7 +4491,7 @@ function renderArticleDetail() {
   if (!container) return;
 
   const params = new URLSearchParams(window.location.search);
-  const articleId = params.get("id");
+  const articleId = window.currentRecipeId || params.get("id");
   const recipe = recipes.find(r => r.id === articleId);
 
   if (!recipe) {
@@ -4501,8 +4516,9 @@ function renderArticleDetail() {
   // Update Page Title
   document.title = `${recipe.title} | Receta de Abuela`;
 
-  // Render detail template
-  container.innerHTML = `
+  // Render detail template if not pre-rendered (hydration fallback)
+  if (container.querySelector(".loading-state")) {
+    container.innerHTML = `
     <!-- Top banner image -->
     <div style="position: relative; width: 100%;">
       <img src="${recipe.image}" alt="${recipe.title}" class="modal-hero-img" style="border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;">
@@ -4519,6 +4535,22 @@ function renderArticleDetail() {
       <span class="modal-category">${recipe.tag}</span>
       <h1 class="modal-title" style="margin-top: 0.2rem; font-size: 2.2rem;">${recipe.title}</h1>
       <p class="modal-intro">${recipe.intro}</p>
+      
+      <!-- Share Buttons -->
+      <div class="share-container">
+        <span class="share-label">Compartir:</span>
+        <div class="share-buttons">
+          <a href="#" class="btn-share wa" id="share-wa" aria-label="Compartir en WhatsApp">
+            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.787-1.451L0 24zm6.59-4.846c1.657.982 3.111 1.485 4.905 1.486 5.479 0 9.936-4.448 9.938-9.917.001-2.651-1.02-5.14-2.875-7.001C16.8 1.862 14.305 1.83 12.01 1.83c-5.485 0-9.94 4.45-9.943 9.919-.001 1.945.514 3.447 1.516 4.975l-.974 3.551 3.65-.957l.398.228z"/></svg>
+          </a>
+          <a href="#" class="btn-share pin" id="share-pin" aria-label="Compartir en Pinterest">
+            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.4 7.63 11.16-.1-.95-.2-2.4.04-3.4l1.43-6.07s-.37-.73-.37-1.8c0-1.7 1-2.97 2.2-2.97 1.05 0 1.56.8 1.56 1.74 0 1.06-.67 2.63-1.02 4.1-.3 1.25.62 2.28 1.85 2.28 2.22 0 3.93-2.34 3.93-5.7 0-3-2.13-5.1-5.23-5.1-3.56 0-5.66 2.67-5.66 5.43 0 1.08.42 2.24.94 2.87.1.13.12.24.08.38l-.35 1.44c-.06.24-.2.32-.45.2-1.63-.76-2.65-3.14-2.65-5.05 0-4.1 3-7.87 8.6-7.87 4.5 0 8 3.2 8 7.5 0 4.48-2.82 8.1-6.75 8.1-1.32 0-2.56-.68-2.98-1.5l-.8 3.12c-.3 1.12-1 2.53-1.5 3.32C9.88 23.83 10.93 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>
+          </a>
+          <a href="#" class="btn-share fb" id="share-fb" aria-label="Compartir en Facebook">
+            <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
     
     <!-- Health Highlight -->
@@ -4683,12 +4715,16 @@ function renderArticleDetail() {
       </section>
     </div>
   `;
+  }
 
   // Render similar recommended articles
   renderRecommendations(recipe);
 
   // Setup comments system
   setupComments(recipe.id);
+
+  // Setup sharing buttons
+  setupShareButtons(recipe.title);
 }
 
 // Render recommendations grid
@@ -4778,7 +4814,7 @@ function renderRecommendations(currentRecipe) {
     `;
 
     card.addEventListener("click", () => {
-      window.open(`articulo.html?id=${recipe.id}`, '_blank');
+      window.open(`${recipe.id}.html`, '_blank');
     });
     recommendedGrid.appendChild(card);
   });
@@ -5037,4 +5073,29 @@ function setupComments(articleId) {
 
   // Initial load
   loadAndRender();
+}
+
+// Setup social media sharing links
+function setupShareButtons(recipeTitle) {
+  const shareWa = document.getElementById("share-wa");
+  const sharePin = document.getElementById("share-pin");
+  const shareFb = document.getElementById("share-fb");
+  
+  if (!shareWa && !sharePin && !shareFb) return;
+  
+  const currentUrl = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent(`Mira esta receta tradicional de abuela: ${recipeTitle}`);
+  
+  if (shareWa) {
+    shareWa.href = `https://api.whatsapp.com/send?text=${text}%20${currentUrl}`;
+    shareWa.target = "_blank";
+  }
+  if (sharePin) {
+    sharePin.href = `https://pinterest.com/pin/create/button/?url=${currentUrl}&description=${text}`;
+    sharePin.target = "_blank";
+  }
+  if (shareFb) {
+    shareFb.href = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+    shareFb.target = "_blank";
+  }
 }

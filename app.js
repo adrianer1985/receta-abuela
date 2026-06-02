@@ -3869,6 +3869,365 @@ const recipes = [
       }
     ],
     "subcategory": "alimentos"
+  },
+  {
+    "id": "unguento-cera-oliva",
+    "title": "Ungüento Reparador de Cera de Abejas y Aceite de Oliva",
+    "category": "cuerpo",
+    "subcategory": "remedios",
+    "tag": "Remedios",
+    "image": "assets/images/balsamo.png",
+    "views": 340000,
+    "summary": "Formulación lipídica básica para regenerar zonas de sequedad extrema y grietas utilizando únicamente cera de opérculo fundida y aceite de oliva virgen extra.",
+    "intro": "Este ungüento tradicional es una de las pomadas protectoras más antiguas y efectivas que existen. La combinación de cera de abejas y aceite de oliva virgen extra crea una barrera natural oclusiva que sella la humedad cutánea, estimulando la regeneración celular en codos, talones y manos agrietadas sin recurrir a parafinas artificiales.",
+    "healthBenefit": "Aísla la epidermis de la pérdida de humedad sin obstruir los poros, evitando las parafinas y aceites minerales derivados del petróleo presentes en vaselinas comerciales. Esto previene irritaciones crónicas y permite que la piel respire mientras absorbe los antioxidantes del aceite de oliva virgen extra.",
+    "time": "20 minutos",
+    "rawDuration": "Ingredientes estables: 12 meses",
+    "finalDuration": "Ungüento terminado: 12 meses",
+    "cost": "0.90 €",
+    "metrics": {
+      "economy": 85,
+      "health": 90,
+      "ecosystem": 95
+    },
+    "shoppingList": [
+      {
+        "name": "Cera de abejas virgen de opérculo",
+        "price": "1.20 € (50g)"
+      },
+      {
+        "name": "Aceite de oliva virgen extra",
+        "price": "1.50 € (200ml)"
+      },
+      {
+        "name": "Tarro de vidrio esterilizado de boca ancha",
+        "price": "0.00 € (reciclado)"
+      }
+    ],
+    "steps": [
+      "Pesa 50g de cera de abejas virgen de opérculo y colócala en un recipiente resistente al calor.",
+      "Añade 200ml de aceite de oliva virgen extra al recipiente junto con la cera.",
+      "Lleva el recipiente a baño María a fuego lento, removiendo constantemente con una cuchara de madera o espátula limpia hasta que la cera se derrita por completo y se mezcle homogéneamente con el aceite.",
+      "Retira del fuego justo al fundirse para evitar sobrecalentar el aceite de oliva.",
+      "Vierte la mezcla líquida aún caliente en el tarro de vidrio esterilizado con cuidado.",
+      "Deja enfriar a temperatura ambiente sin tapar el tarro hasta que solidifique por completo (adquirirá un color amarillo pálido y textura cremosa).",
+      "Una vez frío, tapa firmemente y conserva en un lugar fresco y oscuro."
+    ],
+    "altUses": [
+      "Bálsamo protector y suavizante para almohadillas de mascotas.",
+      "Cera protectora natural para nutrir y abrillantar pequeños utensilios o acabados de madera.",
+      "Bálsamo labial de emergencia para condiciones de frío extremo."
+    ],
+    "extraInfo": "La cera de abejas contiene ésteres grasos, ácidos libres y compuestos de cadena larga que le confieren propiedades emolientes y formadoras de película. Al mezclarse con el aceite de oliva, rico en ácido oleico y vitamina E, se genera una emulsión anhidra (sin agua) que no requiere de ningún tipo de conservantes artificiales.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste unitario (250g)",
+        "casero": "2.70 €",
+        "comercial": "12.00 € (Vaselina farmacia)",
+        "diferencia": "Ahorro del 77.5%"
+      },
+      {
+        "concepto": "Ingredientes sintéticos",
+        "casero": "0% (100% natural y biodegradable)",
+        "comercial": "100% Parafina / Petrolatum",
+        "diferencia": "Libre de toxinas"
+      },
+      {
+        "concepto": "Capacidad nutritiva",
+        "casero": "Alta (ácidos grasos y vitamina E)",
+        "comercial": "Nula (bloqueo meramente físico)",
+        "diferencia": "Nutre la piel"
+      }
+    ]
+  },
+  {
+    "id": "quitamanchas-percarbonato",
+    "title": "Quitamanchas Sólido de Oxígeno Activo (Percarbonato)",
+    "category": "hogar",
+    "subcategory": "limpieza",
+    "tag": "Limpieza",
+    "image": "assets/images/detergente.png",
+    "views": 410000,
+    "summary": "Blanqueador y desinfectante textil en polvo que se activa con agua caliente, liberando oxígeno y carbonato de sodio para eliminar manchas orgánicas persistentes.",
+    "intro": "El percarbonato de sodio es el blanqueador ecológico por excelencia. Al disolverse en agua caliente (a partir de 40°C), se descompone en carbonato de sodio (un desengrasante y suavizador de agua) y peróxido de hidrógeno (oxígeno activo), el cual penetra en las fibras rompiendo los enlaces de las manchas de café, vino, fruta o sudor de forma completamente biodegradable.",
+    "healthBenefit": "Elimina la necesidad de utilizar lejía (hipoclorito de sodio), evitando la inhalación de gases tóxicos y la irritación severa de las vías respiratorias y mucosas oculares durante el lavado, protegiendo así a personas con sensibilidad química múltiple o asma.",
+    "time": "10 minutos",
+    "rawDuration": "Percarbonato en polvo seco: 24 meses",
+    "finalDuration": "Mezcla en polvo seco: 24 meses",
+    "cost": "1.80 €",
+    "metrics": {
+      "economy": 90,
+      "health": 95,
+      "ecosystem": 95
+    },
+    "shoppingList": [
+      {
+        "name": "Percarbonato de sodio puro en polvo",
+        "price": "1.50 € (500g)"
+      },
+      {
+        "name": "Jabón neutro artesanal rallado fino",
+        "price": "0.30 € (100g)"
+      },
+      {
+        "name": "Recipiente hermético para almacenamiento",
+        "price": "0.00 € (reciclado)"
+      }
+    ],
+    "steps": [
+      "Asegúrate de que tanto el recipiente como los utensilios estén completamente secos, ya que la humedad activa el percarbonato de inmediato.",
+      "Ralla finamente 100g de jabón neutro artesanal (puede ser jabón de castilla o coco).",
+      "En el recipiente de almacenamiento, mezcla homogeneamente los 500g de percarbonato de sodio puro con el jabón rallado.",
+      "Tapa herméticamente y agita bien para unificar la mezcla.",
+      "Para uso directo en manchas: haz una pasta con una cucharada del polvo y un poco de agua caliente (40-60°C), aplícala sobre la mancha y deja actuar 15 minutos antes de lavar.",
+      "Para lavadora: añade 2 cucharadas de la mezcla directamente en el tambor de la lavadora junto a la ropa y lava a un ciclo de temperatura de al menos 40°C para activar el oxígeno activo."
+    ],
+    "altUses": [
+      "Limpiador y desodorizante para tazas de inodoro o tuberías obstruidas agregando agua hirviendo.",
+      "Blanqueador de juntas de azulejos aplicando la pasta tibia con un cepillo de dientes usado.",
+      "Limpiador de tablas de cortar de madera eliminando olores persistentes."
+    ],
+    "extraInfo": "Químicamente, el percarbonato de sodio (2Na2CO3·3H2O2) es un aducto de carbonato de sodio y peróxido de hidrógeno. Su ventaja ecológica sobre el cloro es que sus únicos subproductos de descomposición son el oxígeno, el agua y el carbonato de sodio neutro, sin generar organoclorados bioacumulativos.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por lavado",
+        "casero": "0.09 € (2 cucharadas)",
+        "comercial": "0.35 € (Quitamanchas comercial oxigenado)",
+        "diferencia": "Ahorro del 74%"
+      },
+      {
+        "concepto": "Subproductos tóxicos",
+        "casero": "Ninguno (Agua, Oxígeno y Soda)",
+        "comercial": "Tensoactivos sintéticos y fosfonatos",
+        "diferencia": "100% Biodegradable"
+      },
+      {
+        "concepto": "Estabilidad del envase",
+        "casero": "Estable si se guarda sin humedad",
+        "comercial": "Estabilizantes químicos agregados",
+        "diferencia": "Fórmula natural"
+      }
+    ]
+  },
+  {
+    "id": "jabon-aceite-usado",
+    "title": "Jabón Sólido de Aceite Usado mediante Saponificación",
+    "category": "hogar",
+    "subcategory": "limpieza",
+    "tag": "Limpieza",
+    "image": "assets/images/jabon_ceniza.png",
+    "views": 480000,
+    "summary": "Fabricación de pastillas de jabón de alta dureza para lavado de ropa y superficies mediante la reacción química en frío de hidróxido de sodio y aceite residual.",
+    "intro": "Esta receta es el pilar de la autosuficiencia en el hogar rural tradicional. Transforma un residuo altamente contaminante (el aceite de cocina usado) en un producto de limpieza biodegradable de altísima eficacia. Mediante la saponificación en frío, la sosa cáustica y los ácidos grasos del aceite se transforman completamente en jabón y glicerina natural.",
+    "healthBenefit": "Sustituye por completo a los detergentes comerciales sintéticos cargados de blanqueadores ópticos y perfumes artificiales que causan dermatitis de contacto e irritan pieles sensibles al impregnar la ropa.",
+    "time": "60 minutos",
+    "rawDuration": "Curado inicial: 4-6 semanas",
+    "finalDuration": "Pastillas terminadas: Más de 24 meses",
+    "cost": "0.60 €",
+    "metrics": {
+      "economy": 100,
+      "health": 85,
+      "ecosystem": 100
+    },
+    "shoppingList": [
+      {
+        "name": "Aceite de cocina usado (colado)",
+        "price": "0.00 € (reciclado)"
+      },
+      {
+        "name": "Hidróxido de sodio (sosa cáustica en escamas)",
+        "price": "0.40 € (135g)"
+      },
+      {
+        "name": "Agua destilada o de lluvia limpia",
+        "price": "0.20 € (300ml)"
+      },
+      {
+        "name": "Moldes de silicona o cartón forrado",
+        "price": "0.00 € (reciclado)"
+      }
+    ],
+    "steps": [
+      "IMPORTANTE: Ponte guantes de goma, gafas protectoras y trabaja en un lugar muy ventilado. La sosa cáustica es extremadamente corrosiva.",
+      "Filtra el aceite usado varias veces con una tela fina para eliminar impurezas alimenticias.",
+      "Vierte con mucho cuidado los 135g de sosa cáustica en los 300ml de agua destilada (NUNCA al revés). Remueve hasta disolver. Esta mezcla alcanzará unos 80°C de forma natural. Deja enfriar hasta que baje a unos 40°C.",
+      "Cuando la lejía de sosa y el aceite templado estén a una temperatura similar (aprox. 40°C), vierte lentamente la lejía en el aceite.",
+      "Bate la mezcla de forma constante (preferiblemente con una batidora de mano a pulsos lentos) hasta conseguir la 'traza' (cuando la mezcla tenga una textura similar a unas natillas espesas y deje marcas al levantar la batidora).",
+      "Vierte la traza en los moldes elegidos y golpéalos suavemente contra la mesa para eliminar burbujas de aire.",
+      "Cubre los moldes con una toalla vieja para mantener el calor y deja reposar 48 horas. Transcurrido ese tiempo, desmolda con guantes y corta en pastillas. Deja curar las pastillas en un lugar seco y ventilado durante 4 a 6 semanas antes de usar, para que termine el proceso de saponificación."
+    ],
+    "altUses": [
+      "Rallado para lavadora como detergente ecológico en polvo.",
+      "Jabón lavavajillas sólido frotando directamente el estropajo húmedo sobre la pastilla.",
+      "Limpiador multiusos disolviendo virutas de jabón en agua tibia para fregar suelos."
+    ],
+    "extraInfo": "La saponificación es la hidrólisis alcalina de los triacilgliceroles. Aunque la sosa cáustica pura es peligrosa de manipular inicialmente, una vez curado el jabón durante 40 días, la reacción se completa al 100%, de modo que no queda sosa activa en la pastilla final, convirtiéndose en un jabón neutro, seguro y muy duradero.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por pastilla (150g)",
+        "casero": "0.08 €",
+        "comercial": "1.20 € (Jabón comercial de barra)",
+        "diferencia": "Ahorro del 93.3%"
+      },
+      {
+        "concepto": "Residuos de aceite doméstico",
+        "casero": "Reciclado del 100% de aceites",
+        "comercial": "Desechado contaminante",
+        "diferencia": "Evita contaminación fluvial"
+      },
+      {
+        "concepto": "Curado e ingredientes",
+        "casero": "100% Libre de grasas animales industriales",
+        "comercial": "Suele contener grasas animales baratas (tallowate)",
+        "diferencia": "Aceite vegetal local"
+      }
+    ]
+  },
+  {
+    "id": "dentifrico-arcilla-blanca",
+    "title": "Polvo Dentífrico Mineral de Arcilla Blanca",
+    "category": "cuerpo",
+    "subcategory": "higiene",
+    "tag": "Higiene",
+    "image": "assets/images/pasta_dientes.png",
+    "views": 290000,
+    "summary": "Mezcla seca y alcalina de caolín y sales marinas para la higiene bucal diaria. Limpieza mecánica de baja abrasividad sin necesidad de conservantes líquidos.",
+    "intro": "Este dentífrico en polvo seco recupera las antiguas recetas minerales de limpieza bucal. A base de caolín (arcilla blanca ultrafina de grado alimentario) y sales de mar, neutraliza de manera natural el pH ácido de la boca que propicia las caries, limpia mecánicamente de forma muy suave y proporciona minerales esenciales a la dentadura sin agredir el esmalte.",
+    "healthBenefit": "Mantiene el pH bucal neutro y elimina el triclosán, los microplásticos y los edulcorantes artificiales (como la sacarina) que se ingieren en pequeñas dosis con los dentífricos industriales, evitando tóxicos innecesarios en tus mucosas.",
+    "time": "5 minutos",
+    "rawDuration": "Conservación ilimitada en seco",
+    "finalDuration": "Polvo terminado: 24 meses (en frasco estanco)",
+    "cost": "0.50 €",
+    "metrics": {
+      "economy": 90,
+      "health": 85,
+      "ecosystem": 95
+    },
+    "shoppingList": [
+      {
+        "name": "Arcilla blanca (caolín) de uso oral",
+        "price": "0.35 € (30g)"
+      },
+      {
+        "name": "Sal marina fina molida extrafina",
+        "price": "0.05 € (5g)"
+      },
+      {
+        "name": "Bicarbonato de sodio grado alimentario",
+        "price": "0.10 € (2g)"
+      },
+      {
+        "name": "Frasco pequeño de vidrio hermético",
+        "price": "0.00 € (reciclado)"
+      }
+    ],
+    "steps": [
+      "Asegúrate de que no haya elementos metálicos al manipular la arcilla, utiliza siempre utensilios de madera, plástico o cerámica para evitar que pierda sus propiedades minerales.",
+      "Pesa 30g de caolín de uso oral y añádelos al cuenco seco.",
+      "Añade 5g de sal marina extrafina (la sal común gruesa podría rayar el esmalte, debe estar molida casi a polvo).",
+      "Agrega los 2g de bicarbonato de sodio (aporta un plus de alcalinidad y control bacteriano).",
+      "Mezcla cuidadosamente todos los polvos con una espátula de madera.",
+      "Vierte la mezcla en el frasco pequeño de vidrio hermético.",
+      "Para utilizarlo: humedece las cerdas del cepillo de dientes, apóyalas suavemente sobre el polvo para que se adhiera una capa fina y cepíllate los dientes con normalidad."
+    ],
+    "altUses": [
+      "Enjuague bucal mineralizado disolviendo media cucharadita en medio vaso de agua tibia.",
+      "Pulido suave para pequeños objetos de plata aplicando el polvo seco con un paño de microfibra."
+    ],
+    "extraInfo": "La arcilla blanca o caolín es químicamente silicato de aluminio hidratado. Su índice de abrasividad relativa de la dentina (RDA) es extremadamente bajo comparado con el carbonato de calcio comercial o la sílice hidratada de los geles industriales, haciéndola segura para cepillado diario si no se ejerce excesiva presión mecánica.",
+    "comparisonTable": [
+      {
+        "concepto": "Abrasividad del esmalte",
+        "casero": "Muy baja (Caolín ultrafino)",
+        "comercial": "Media-alta (Sílice hidratada comercial)",
+        "diferencia": "Más respetuoso"
+      },
+      {
+        "concepto": "Químicos ingeridos",
+        "casero": "0% (Ingredientes de grado alimentario)",
+        "comercial": "Triclosán, Lauril Sulfato de Sodio (LSS)",
+        "diferencia": "Seguro si se traga"
+      },
+      {
+        "concepto": "Envase de desecho",
+        "casero": "Frasco de vidrio infinitamente reutilizable",
+        "comercial": "Tubos de plástico multicapa no reciclables",
+        "diferencia": "Residuos cero"
+      }
+    ]
+  },
+  {
+    "id": "repelente-alcohol-romero",
+    "title": "Loción Repelente de Alcohol de Romero",
+    "category": "cuerpo",
+    "subcategory": "remedios",
+    "tag": "Remedios",
+    "image": "assets/images/repelente_ajo.png",
+    "views": 370000,
+    "summary": "Maceración alcohólica de ramas de romero fresco. Actúa como barrera olfativa volátil de aplicación superficial en textiles, marcos de ventanas y puertas.",
+    "intro": "El romero (Salvia rosmarinus) es rico en aceites esenciales como el alcanfor, cineol y alfa-pineno, compuestos volátiles que los insectos interpretan como señales de alerta ambiental. Esta loción aprovecha el alcohol de 96° como solvente de extracción y vehículo de evaporación rápida, dejando una fina capa aromática natural repelente sobre la ropa o el hogar.",
+    "healthBenefit": "Evita la exposición directa por inhalación a repelentes químicos formulados con DEET y propelentes petroquímicos en formato aerosol que afectan al sistema nervioso central y dañan la fauna acuática.",
+    "time": "10 minutos (más 15 días de maceración)",
+    "rawDuration": "Maceración: 15 días",
+    "finalDuration": "Loción repelente: 18 meses",
+    "cost": "1.10 €",
+    "metrics": {
+      "economy": 85,
+      "health": 90,
+      "ecosystem": 95
+    },
+    "shoppingList": [
+      {
+        "name": "Alcohol etílico de 96° (uso farmacéutico)",
+        "price": "0.90 € (250ml)"
+      },
+      {
+        "name": "Ramas frescas de romero silvestre",
+        "price": "0.20 € (50g)"
+      },
+      {
+        "name": "Frasco hermético de vidrio oscuro",
+        "price": "0.00 € (reciclado)"
+      },
+      {
+        "name": "Envase pulverizador manual (spray)",
+        "price": "0.00 € (reciclado)"
+      }
+    ],
+    "steps": [
+      "Lava bien las ramas frescas de romero para eliminar tierra e insectos y déjalas secar por completo sobre papel absorbente.",
+      "Trocea las ramas con las manos para romper los sacos de aceite esencial y colócalas en el frasco hermético de vidrio oscuro hasta llenarlo hasta la mitad.",
+      "Vierte los 250ml de alcohol de 96° sobre el romero, cubriendo las ramas por completo.",
+      "Cierra el frasco herméticamente y guárdalo en un lugar fresco y oscuro durante 15 días.",
+      "Agita el frasco suavemente una vez al día para mejorar el proceso de extracción de principios activos.",
+      "Pasados los 15 días, filtra el alcohol con un colador fino o gasa limpia, desechando las ramas.",
+      "Vierte el alcohol de romero obtenido en el envase pulverizador limpio y pulveriza sobre ropa, calzado, cortinas, o marcos de puertas para ahuyentar insectos voladores."
+    ],
+    "altUses": [
+      "Fricción tonificante y calmante para aliviar piernas cansadas o dolor articular.",
+      "Desinfectante natural rápido para manos y superficies con aroma herbal."
+    ],
+    "extraInfo": "El alcanfor y el eucaliptol presentes en el romero bloquean temporalmente los receptores olfativos y térmicos de los mosquitos, dificultando que localicen el dióxido de carbono y el calor emitido por nuestro cuerpo. Al no contener aditivos fijadores sintéticos, su efectividad reside en la reaplicación periódica.",
+    "comparisonTable": [
+      {
+        "concepto": "Ingrediente Activo",
+        "casero": "Aceite esencial de Romero (terpenos naturales)",
+        "comercial": "DEET (Dietiltoluamida sintética)",
+        "diferencia": "Biodegradable"
+      },
+      {
+        "concepto": "Impacto en el organismo",
+        "casero": "Absorción dérmica inocua",
+        "comercial": "Toxicidad neurotóxica potencial",
+        "diferencia": "100% Seguro"
+      },
+      {
+        "concepto": "Envase y propelentes",
+        "casero": "Pulverizador manual mecánico sin gas",
+        "comercial": "Gas propelente (butano/propano) inflamable",
+        "diferencia": "Menor huella carbono"
+      }
+    ]
   }
 ];
 

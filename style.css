@@ -2115,5 +2115,149 @@ a {
   font-size: 0.95rem;
 }
 
+/* Automatic Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-app: #0d110f;
+    --bg-card: #151c18;
+    --color-primary: #8cb89f; /* light sage green for titles, text links */
+    --color-primary-rgb: 140, 184, 159;
+    --color-primary-light: #52705e;
+    --color-primary-pale: #1c2621;
+    --color-accent: #d4a38f;
+    --color-accent-pale: #291e1a;
+    --color-text-dark: #e2e8e5;
+    --color-text-muted: #9ab0a4;
+    --color-text-light: #708579;
+    
+    --glass-bg: rgba(21, 28, 24, 0.85);
+    --glass-border: rgba(140, 184, 159, 0.12);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  /* Override specific components for readability in dark mode */
+  .btn-newsletter,
+  .btn-hero-newsletter,
+  .btn-submit-comment,
+  .btn-admin-action:not(.btn-danger),
+  .btn-login {
+    background: var(--color-primary);
+    color: #0d110f !important; /* dark charcoal text on light sage background */
+  }
+  
+  .btn-newsletter:hover,
+  .btn-hero-newsletter:hover,
+  .btn-submit-comment:hover,
+  .btn-admin-action:not(.btn-danger):hover,
+  .btn-login:hover {
+    background: #a3ccb4;
+    color: #0d110f !important;
+  }
+  
+  .btn-filter.active {
+    background: var(--color-primary);
+    color: #0d110f !important;
+  }
+  
+  .card-views-badge {
+    background: rgba(28, 38, 33, 0.9) !important;
+    color: var(--color-primary) !important;
+    border: 1px solid rgba(140, 184, 159, 0.2);
+  }
+  
+  .badge-comparison.positive {
+    background: rgba(85, 166, 48, 0.15) !important;
+    color: #7ce653 !important;
+  }
+  
+  .badge-comparison.negative {
+    background: rgba(220, 53, 69, 0.15) !important;
+    color: #ff6b7b !important;
+  }
+
+  /* Inputs in dark mode */
+  input[type="email"],
+  input[type="text"],
+  textarea {
+    background: #151c18 !important;
+    color: var(--color-text-dark) !important;
+    border-color: rgba(140, 184, 159, 0.2) !important;
+  }
+
+  input[type="email"]:focus,
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(140, 184, 159, 0.15) !important;
+  }
+  
+  /* Comments area, table, card adjustments */
+  .comment-item {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-color: rgba(140, 184, 159, 0.1) !important;
+  }
+  
+  .shopping-item,
+  .step-item,
+  .alt-use-item {
+    border-bottom-color: rgba(140, 184, 159, 0.1) !important;
+  }
+  
+  .comparison-table th {
+    background: var(--color-primary-pale) !important;
+    color: var(--color-text-dark) !important;
+  }
+  
+  .comparison-table td {
+    border-bottom-color: rgba(140, 184, 159, 0.1) !important;
+  }
+  
+  /* Body backgrounds and elements */
+  body {
+    background-color: var(--bg-app);
+    color: var(--color-text-dark);
+  }
+  
+  .glow-1 {
+    background: radial-gradient(circle, rgba(140, 184, 159, 0.05) 0%, transparent 70%) !important;
+  }
+  
+  .glow-2 {
+    background: radial-gradient(circle, rgba(176, 124, 101, 0.05) 0%, transparent 70%) !important;
+  }
+
+  /* Admin Table */
+  .subscribers-table-wrapper {
+    background: #151c18 !important;
+    border-color: rgba(140, 184, 159, 0.15) !important;
+  }
+  
+  .subscribers-table th {
+    background: var(--color-primary-pale) !important;
+    color: var(--color-primary) !important;
+  }
+  
+  .subscribers-table td {
+    color: var(--color-text-dark) !important;
+    border-bottom-color: rgba(140, 184, 159, 0.1) !important;
+  }
+  
+  .subscribers-table tr:hover td {
+    background: rgba(140, 184, 159, 0.03) !important;
+  }
+
+  .login-overlay {
+    background: rgba(13, 17, 15, 0.98) !important;
+  }
+
+  .logo-link {
+    color: var(--color-text-dark) !important;
+  }
+
+  .back-link {
+    color: var(--color-primary) !important;
+  }
+}
+
 
 

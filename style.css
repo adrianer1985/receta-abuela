@@ -1426,3 +1426,100 @@ a {
   flex-direction: column;
 }
 
+/* --- Responsive & Cross-Browser Polishing (Mobile/Tablet) --- */
+
+/* Horizontal scrolling menu for tablet and mobile */
+@media (max-width: 1024px) {
+  .main-nav {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    padding: 0.25rem 0;
+  }
+  .main-nav::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    padding: 0.35rem 0.75rem;
+    margin: 0 auto;
+    gap: 0.4rem;
+  }
+  .nav-links a {
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive grid for tablets and mobile */
+@media (max-width: 900px) {
+  .recipes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .recipes-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  
+  .site-logo {
+    height: 46px;
+    width: 46px;
+  }
+  .site-title {
+    font-size: 1.35rem;
+  }
+  .site-slogan {
+    font-size: 0.75rem;
+  }
+  
+  /* Reduce hero section padding on small mobile */
+  .hero-section {
+    margin: 2rem auto 1.5rem;
+    padding: 0 1.25rem;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet & Mobile detail page container styling */
+@media (max-width: 768px) {
+  .modal-body-layout {
+    padding: 1.5rem !important;
+  }
+  
+  .article-detail-section {
+    padding: 0 1rem;
+    margin: 1.5rem auto 3rem;
+  }
+}
+
+/* Quiénes somos page image adjustment on mobile */
+@media (max-width: 600px) {
+  .about-hero-image-wrapper {
+    min-height: 250px !important;
+  }
+  
+  .about-hero-section {
+    padding: 0 1rem;
+    margin: 2rem auto 1.5rem;
+  }
+  
+  .about-content-section {
+    padding: 0 1.25rem;
+    margin-bottom: 3rem;
+  }
+}
+
+

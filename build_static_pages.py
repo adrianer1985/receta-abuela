@@ -322,4 +322,40 @@ for recipe in recipes:
     with open(f"{rid}.html", "w", encoding="utf-8") as f_out:
         f_out.write(page_html)
 
-print("SSG Complete. Generated 55 static pages successfully.")
+print(f"SSG Complete. Generated {len(recipes)} static pages successfully.")
+
+# 5. Generate sitemap.xml
+sitemap_urls = [
+    'https://www.recetadeabuela.com/',
+    'https://www.recetadeabuela.com/quienes-somos.html'
+]
+for recipe in recipes:
+    sitemap_urls.append(f'https://www.recetadeabuela.com/{recipe["id"]}.html')
+
+sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+for url in sitemap_urls:
+    priority = "1.0" if url == 'https://www.recetadeabuela.com/' else ("0.5" if "quienes-somos" in url else "0.8")
+    changefreq = "daily" if url == 'https://www.recetadeabuela.com/' else ("monthly" if "quienes-somos" in url else "weekly")
+    sitemap_xml += '  <url>\n'
+    sitemap_xml += f'    <loc>{url}</loc>\n'
+    sitemap_xml += f'    <changefreq>{changefreq}</changefreq>\n'
+    sitemap_xml += f'    <priority>{priority}</priority>\n'
+    sitemap_xml += '  </url>\n'
+sitemap_xml += '</urlset>\n'
+
+with open("sitemap.xml", "w", encoding="utf-8") as f_site:
+    f_site.write(sitemap_xml)
+print("sitemap.xml generated successfully.")
+
+# 6. Generate robots.txt
+robots_txt = """User-agent: *
+Allow: /
+Disallow: /inscritos.html
+
+Sitemap: https://www.recetadeabuela.com/sitemap.xml
+"""
+
+with open("robots.txt", "w", encoding="utf-8") as f_rob:
+    f_rob.write(robots_txt)
+print("robots.txt generated successfully.")

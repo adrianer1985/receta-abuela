@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffdf2" />
+      <stop offset="100%" stop-color="#f5ecd2" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.12" />
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bgGrad)" />
+
+  <!-- Decorative Botanical Frame/Details -->
+  <g opacity="0.05">
+    <circle cx="400" cy="400" r="320" fill="none" stroke="#2c4e3d" stroke-width="8" stroke-dasharray="15,10" />
+    <path d="M 150,150 C 200,100 300,100 350,150" fill="none" stroke="#2c4e3d" stroke-width="4" />
+    <path d="M 650,150 C 600,100 500,100 450,150" fill="none" stroke="#2c4e3d" stroke-width="4" />
+    <path d="M 150,650 C 200,700 300,700 350,650" fill="none" stroke="#2c4e3d" stroke-width="4" />
+    <path d="M 650,650 C 600,700 500,700 450,650" fill="none" stroke="#2c4e3d" stroke-width="4" />
+  </g>
+
+  <!-- Main Artwork -->
+  <g filter="url(#shadow)">
+    
+    <!-- Hexagonal Honeycomb Cell pattern (decorative) -->
+    <g opacity="0.1" stroke="#b07c65" stroke-width="4" fill="none">
+      <polygon points="550,200 600,170 650,200 650,260 600,290 550,260" />
+      <polygon points="600,290 650,260 700,290 700,350 650,380 600,350" />
+    </g>
+    
+    <!-- Block of raw yellow beeswax -->
+    <path d="M 180,480 L 280,440 L 380,470 L 380,540 L 280,560 L 180,510 Z" fill="#ffd54f" stroke="#ffb300" stroke-width="3" />
+    <path d="M 280,440 L 280,560 M 280,440 L 380,470" stroke="#ffb300" stroke-width="2" />
+    
+    <!-- Patterned cloth wraps draped over a bowl -->
+    <!-- Glass bowl outline -->
+    <path d="M 380,360 A 130,130 0 0 0 620,360 Z" fill="rgba(255, 255, 255, 0.4)" stroke="#7b9987" stroke-width="3" />
+    <ellipse cx="500" cy="360" rx="120" ry="20" fill="rgba(255, 255, 255, 0.5)" stroke="#7b9987" stroke-width="2" />
+    
+    <!-- Wraps (cloth fabric draped) -->
+    <path d="M 350,340 C 370,290 630,290 650,340 L 670,390 C 650,420 630,370 600,370 C 560,370 540,400 500,400 C 460,400 440,370 400,370 C 370,370 350,420 330,390 Z" fill="#a2e3c4" stroke="#2c4e3d" stroke-width="3" />
+    
+    <!-- Fabric patterns (lines/dots) on the wrap -->
+    <g opacity="0.3" stroke="#2c4e3d" stroke-width="2">
+      <!-- Checked pattern lines -->
+      <line x1="380" y1="310" x2="420" y2="390" />
+      <line x1="430" y1="310" x2="470" y2="390" />
+      <line x1="480" y1="310" x2="520" y2="390" />
+      <line x1="530" y1="310" x2="570" y2="390" />
+      <line x1="580" y1="310" x2="620" y2="390" />
+      
+      <line x1="420" y1="310" x2="380" y2="390" />
+      <line x1="470" y1="310" x2="430" y2="390" />
+      <line x1="520" y1="310" x2="480" y2="390" />
+      <line x1="570" y1="310" x2="530" y2="390" />
+      <line x1="620" y1="310" x2="580" y2="390" />
+    </g>
+    
+  </g>
+
+  <!-- Bottom Title Badge -->
+  <g transform="translate(400, 720)">
+    <rect x="-240" y="-30" width="480" height="60" rx="30" fill="#2c4e3d" />
+    <text x="0" y="8" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.05em">ENVOLTURAS ECOLÓGICAS DE CERA</text>
+  </g>
+</svg>

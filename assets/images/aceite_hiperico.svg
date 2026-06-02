@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff5eb" />
+      <stop offset="100%" stop-color="#ffe3cc" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.12" />
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <linearGradient id="oilGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff4500" />
+      <stop offset="60%" stop-color="#d01000" />
+      <stop offset="100%" stop-color="#800000" />
+    </linearGradient>
+    
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bgGrad)" />
+
+  <!-- Decorative Botanical Frame/Details -->
+  <g opacity="0.05">
+    <circle cx="400" cy="400" r="320" fill="none" stroke="#2c4e3d" stroke-width="8" stroke-dasharray="15,10" />
+    <path d="M 150,150 C 200,100 300,100 350,150" fill="none" stroke="#2c4e3d" stroke-width="4" />
+    <path d="M 650,150 C 600,100 500,100 450,150" fill="none" stroke="#2c4e3d" stroke-width="4" />
+    <path d="M 150,650 C 200,700 300,700 350,650" fill="none" stroke="#2c4e3d" stroke-width="4" />
+    <path d="M 650,650 C 600,700 500,700 450,650" fill="none" stroke="#2c4e3d" stroke-width="4" />
+  </g>
+
+  <!-- Main Artwork -->
+  <g filter="url(#shadow)">
+    
+    <!-- Radiant Sun Rays (Maceration) -->
+    <g opacity="0.1" filter="url(#glow)">
+      <circle cx="400" cy="350" r="280" fill="#ff9900" />
+    </g>
+    
+    <!-- Large Glass Jar -->
+    <path d="M 330,180 Q 330,230 280,260 L 280,520 A 30,30 0 0 0 310,550 L 490,550 A 30,30 0 0 0 520,520 L 520,260 Q 470,230 470,180 Z" fill="rgba(255, 255, 255, 0.75)" stroke="#b07c65" stroke-width="3" />
+    <rect x="370" y="140" width="60" height="40" rx="5" fill="#b07c65" /> <!-- Lid -->
+    
+    <!-- Vibrant Red-Orange Macerated Oil -->
+    <path d="M 285,340 L 285,510 A 25,25 0 0 0 310,535 L 490,535 A 25,25 0 0 0 515,510 L 515,340 Z" fill="url(#oilGrad)" opacity="0.85" />
+    
+    <!-- Hypericum Flowers (Yellow petals) outside -->
+    <g transform="translate(240, 500)">
+      <circle cx="0" cy="0" r="15" fill="#b07c65" opacity="0.2" />
+      <!-- 5 Petals -->
+      <path d="M 0,0 C -10,-35 10,-35 0,0" fill="#f8c818" />
+      <path d="M 0,0 C 25,-25 35,-5 0,0" fill="#f8c818" />
+      <path d="M 0,0 C 30,15 15,30 0,0" fill="#f8c818" />
+      <path d="M 0,0 C -15,30 -30,15 0,0" fill="#f8c818" />
+      <path d="M 0,0 C -35,-5 -25,-25 0,0" fill="#f8c818" />
+      <circle cx="0" cy="0" r="8" fill="#e07a10" />
+      <!-- Stamens -->
+      <path d="M -5,-5 L -10,-12 M 0,-7 L 0,-15 M 5,-5 L 10,-12" stroke="#e07a10" stroke-width="1.5" />
+    </g>
+    
+    <g transform="translate(540, 460) scale(0.8)">
+      <!-- Petals -->
+      <path d="M 0,0 C -10,-35 10,-35 0,0" fill="#f8c818" />
+      <path d="M 0,0 C 25,-25 35,-5 0,0" fill="#f8c818" />
+      <path d="M 0,0 C 30,15 15,30 0,0" fill="#f8c818" />
+      <path d="M 0,0 C -15,30 -30,15 0,0" fill="#f8c818" />
+      <path d="M 0,0 C -35,-5 -25,-25 0,0" fill="#f8c818" />
+      <circle cx="0" cy="0" r="8" fill="#e07a10" />
+    </g>
+    
+  </g>
+
+  <!-- Bottom Title Badge -->
+  <g transform="translate(400, 720)">
+    <rect x="-240" y="-30" width="480" height="60" rx="30" fill="#2c4e3d" />
+    <text x="0" y="8" font-family="'Outfit', 'Inter', sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.05em">ACEITE MACERADO DE HIPÉRICO</text>
+  </g>
+</svg>

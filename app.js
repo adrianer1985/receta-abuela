@@ -3285,7 +3285,7 @@ const recipes = [
     "title": "Huerto Vertical con Botellas de Plástico",
     "category": "tecnologia",
     "tag": "Alimentos",
-    "image": "assets/images/trampa_condensacion.png",
+    "image": "assets/images/huerto_vertical.svg",
     "views": 280000,
     "summary": "Optimiza el espacio urbano cultivando plantas aromáticas, lechugas y fresas en una estructura vertical modular hecha con botellas de plástico reutilizadas.",
     "intro": "El huerto vertical es una solución idónea para terrazas, balcones o paredes soleadas de espacio reducido. Utilizando botellas de plástico PET enlazadas en cascada, se genera un sistema de riego por gravedad donde el agua sobrante de una botella riega la de abajo.",

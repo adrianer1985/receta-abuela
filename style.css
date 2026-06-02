@@ -1134,29 +1134,41 @@ a {
 
 /* --- Phase 3 Additions --- */
 
-/* Card Hover Preview Overlay */
+/* Card Hover Preview Overlay (Whole Card) */
 .card-hover-preview {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(44, 78, 61, 0.96); /* deep green overlay */
-  padding: 1.75rem;
+  background: rgba(44, 78, 61, 0.98); /* Slightly darker for better readability */
+  padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.85rem;
+  gap: 1rem;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(15px);
   transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 5;
   color: #ffffff;
+  pointer-events: none; /* Make sure click triggers click event on the parent card */
 }
 
 .recipe-card:hover .card-hover-preview {
   opacity: 1;
   transform: translateY(0);
+}
+
+.hover-preview-recipe-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.25;
 }
 
 .hover-preview-title {
@@ -1165,31 +1177,31 @@ a {
   color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-top: 0.2rem;
-  margin-bottom: -0.2rem;
+  margin-top: 0.1rem;
+  margin-bottom: -0.4rem;
 }
 
 .hover-preview-text {
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  line-height: 1.5;
   margin: 0;
-  color: var(--color-primary-pale);
+  color: #f0f4f1;
 }
 
 .hover-ingredients-list {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.45rem;
 }
 
 .hover-ingredient-item {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   color: #ffffff;
 }
 
@@ -1199,7 +1211,7 @@ a {
 }
 
 .hover-cta-text {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #ffffff;
   margin-top: auto;
@@ -1207,10 +1219,13 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.3rem;
+  gap: 0.4rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.8rem;
 }
+
 
 /* About Us Page (Quiénes Somos) */
 .about-hero-section {

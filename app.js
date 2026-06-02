@@ -3,8 +3,8 @@ const recipes = [
   {
     id: "estufa-velas",
     title: "Estufa de Macetas de Arcilla y Velas",
-    category: "hogar",
-    tag: "Hogar Ecológico",
+    category: "tecnologia",
+    tag: "Tecnología Ancestral",
     image: "assets/images/estufa.png",
     views: 618000,
     summary: "Aprende a construir un sistema de calefacción radiante natural utilizando macetas de terracota y pequeñas velas de té. Calor ecológico, económico y sin electricidad.",
@@ -98,8 +98,8 @@ const recipes = [
   {
     id: "nevera-arcilla",
     title: "Refrigerador de Arcilla sin Electricidad (Nevera Zeer)",
-    category: "hogar",
-    tag: "Hogar Ecológico",
+    category: "tecnologia",
+    tag: "Tecnología Ancestral",
     image: "assets/images/nevera.png",
     views: 420000,
     summary: "Construye tu propio refrigerador evaporativo artesanal combinando dos macetas de terracota y arena húmeda. Conservación de alimentos 100% natural, sin cables y de bajo coste.",
@@ -191,6 +191,102 @@ const recipes = [
     ]
   },
   {
+    id: "filtro-agua",
+    title: "Filtro de Agua de Emergencia de Carbón y Arena",
+    category: "tecnologia",
+    tag: "Tecnología Ancestral",
+    image: "assets/images/filtro_agua.png",
+    views: 290000,
+    summary: "Construye un sistema mecánico de filtración biológica y química para purificar agua dulce de fuentes naturales mediante carbón activo, arena fina y grava.",
+    intro: "Este filtro de agua de emergencia simula el proceso de filtración natural del agua a través del subsuelo. Empleando carbón vegetal activo (que absorbe compuestos químicos y olores por adsorción física), arena fina (que retiene partículas en suspensión) y grava, es una herramienta indispensable para situaciones de corte de suministro o supervivencia.",
+    healthBenefit: "Purifica el agua eliminando sedimentos, cloro residual y patógenos por retención física, mientras que el carbón activo adsorbe toxinas y metales pesados. Al evitar el uso exclusivo de cloro o pastillas de purificación química comercial, reduces la ingesta de compuestos de cloro que irritan y debilitan la mucosa del colon y destruyen la microbiota intestinal protectora.",
+    time: "25 minutos",
+    rawDuration: "Materiales sueltos: Ilimitada",
+    finalDuration: "Filtro operativo: 3 meses (luego renovar carbón)",
+    cost: "1.50 €",
+    metrics: {
+      economy: 95,
+      health: 90,
+      ecosystem: 100
+    },
+    shoppingList: [
+      { name: "Envase grande de vidrio o botella PET (1.5L)", price: "0.20 €" },
+      { name: "Carbón vegetal activo triturado (200g)", price: "0.80 €" },
+      { name: "Arena fina de río lavada (300g)", price: "0.20 €" },
+      { name: "Grava o piedras pequeñas de río (300g)", price: "0.10 €" },
+      { name: "Algodón orgánico o paño de algodón limpio", price: "0.20 €" }
+    ],
+    steps: [
+      "Si usas una botella de plástico, corta la base. Si usas un envase de vidrio con grifo, límpialo bien.",
+      "Coloca en la boca del envase o grifo el algodón orgánico o el paño bien apretado para que actúe como barrera final.",
+      "Vierte la primera capa de carbón activo triturado fino (unos 8-10 cm de espesor). El carbón debe estar bien compactado.",
+      "Añade la capa de arena fina sobre el carbón (otros 8-10 cm). Esta capa atrapará las impurezas microscópicas.",
+      "Coloca una capa de arena gruesa o grava fina sobre la arena de río.",
+      "Completa la parte superior con piedras medianas o grava gruesa. Esta capa retendrá hojas, ramas e impurezas grandes.",
+      "Vierte agua y deja que drene. Descarta los primeros 2 litros filtrados (saldrán negros por el polvillo de carbón). El agua posterior saldrá cristalina y purificada."
+    ],
+    altUses: [
+      "Sistema de filtración para el agua de lluvia recogida para su uso en riego doméstico.",
+      "Purificador para estanques pequeños de jardín o acuarios artesanales.",
+      "Herramienta educativa de ciencias para enseñar el ciclo de purificación de aguas a niños."
+    ],
+    extraInfo: "Este filtro realiza filtración física y química. El carbón vegetal tiene una alta porosidad y un área superficial de hasta 1000 m² por gramo, lo que atrae y atrapa contaminantes orgánicos, cloro, herbicidas y pesticidas mediante fuerzas de Van der Waals. Nota: en casos de aguas muy contaminadas biológicamente, se recomienda hervir el agua después de filtrarla.",
+    comparisonTable: [
+      { concepto: "Coste por Filtro", casero: "1.50 €", comercial: "35.00 € (Jarra / Filtro comercial)", diferencia: "Ahorro del 95.7%" },
+      { concepto: "Químicos de Purificación", casero: "0% Natural (Físico/Adsorción)", comercial: "Cloro y resinas sintéticas", diferencia: "Sin químicos agresivos" },
+      { concepto: "Residuos de Cartucho", casero: "Compostables (Arena y carbón)", comercial: "Cartuchos de plástico cerrados no reciclables", diferencia: "Cero residuo plástico" },
+      { concepto: "Efectividad Física", casero: "Retiene partículas > 1 micra", comercial: "Retiene cloro y sedimentos", diferencia: "Equivalente" }
+    ]
+  },
+  {
+    id: "deshidratador-solar",
+    title: "Deshidratador Solar de Alimentos de Madera",
+    category: "tecnologia",
+    tag: "Tecnología Ancestral",
+    image: "assets/images/deshidratador.png",
+    views: 250000,
+    summary: "Aprende a construir un deshidratador pasivo por convección solar para conservar excedentes de cosechas, frutas y hierbas medicinales de forma limpia e higiénica.",
+    intro: "El deshidratador solar es una herramienta tradicional para conservar alimentos durante meses sin recurrir a la congelación. Consiste en una cabina de madera con una base oscura inclinada cubierta por vidrio que calienta el aire entrante. Por convección natural, el aire cálido sube a través de bandejas de rejilla eliminando la humedad de los alimentos de forma rápida y protegida de polvo e insectos.",
+    healthBenefit: "Conserva frutas, setas y plantas medicinales manteniendo intactos sus minerales, fibra y la mayor parte de sus vitaminas hidrosolubles y enzimas al no superar los 45°C. Evita por completo el uso de conservantes químicos industriales comerciales como el dióxido de azufre o los sulfitos, que se añaden a las frutas secas comerciales y provocan asma, reacciones alérgicas y migrañas.",
+    time: "45 minutos",
+    rawDuration: "Estructura: Años",
+    finalDuration: "Alimentos secos: 6 a 12 meses",
+    cost: "12.00 €",
+    metrics: {
+      economy: 90,
+      health: 95,
+      ecosystem: 100
+    },
+    shoppingList: [
+      { name: "Listones y tablas de madera reciclada", price: "4.50 €" },
+      { name: "Lámina de vidrio o metacrilato transparente", price: "4.00 €" },
+      { name: "Malla mosquitera de acero inoxidable o tela", price: "2.00 €" },
+      { name: "Pintura negra base agua ecológica (interior)", price: "1.00 €" },
+      { name: "Bisagras y tornillos pequeños", price: "0.50 €" }
+    ],
+    steps: [
+      "Construye un cajón rectangular de madera, dejando la parte superior inclinada a unos 30-40 grados para optimizar la incidencia solar.",
+      "Pinta el fondo interior del cajón de color negro mate (con pintura ecológica sin metales pesados) para absorber la radiación solar y generar calor.",
+      "Realiza aberturas de ventilación en la parte inferior (entrada de aire frío) y en la parte superior (salida de aire húmedo), cubriéndolas con mosquitera para evitar insectos.",
+      "Coloca listones en las paredes laterales internas para que sirvan de rieles donde deslizar las bandejas.",
+      "Construye marcos de madera con la malla mosquitera de acero inoxidable para crear las bandejas donde reposarán los alimentos.",
+      "Instala la cubierta de vidrio transparente en la parte superior inclinada con bisagras para abrir y cerrar el deshidratador.",
+      "Coloca el deshidratador orientado al sur en un punto soleado. Coloca rodajas finas de frutas (manzana, plátano, fresas) en las bandejas y cierra el vidrio."
+    ],
+    altUses: [
+      "Secador de hierbas aromáticas y medicinales (manzanilla, romero, menta) conservando sus aceites esenciales.",
+      "Conservador para setas y hongos silvestres recolectados en otoño.",
+      "Secador ecológico de semillas de huerto para guardarlas de un año para otro."
+    ],
+    extraInfo: "El secado solar se basa en el efecto invernadero. La luz solar atraviesa el vidrio y calienta el fondo negro del colector, que emite radiación infrarroja de onda larga que no puede escapar a través del vidrio. Esto eleva la temperatura interior. El aire caliente disminuye su humedad relativa y asciende, arrastrando el vapor de agua liberado por los alimentos hacia el exterior por diferencias de densidad.",
+    comparisonTable: [
+      { concepto: "Gasto de Energía", casero: "0W (Energía solar pasiva)", comercial: "500W por hora (Deshidratador eléctrico)", diferencia: "Ahorro del 100%" },
+      { concepto: "Preservación Química", casero: "Cero aditivos ni sulfitos", comercial: "Sulfitos para conservar el color brillante", diferencia: "Sin alérgenos" },
+      { concepto: "Higiene y Plagas", casero: "Hermético contra moscas y polvo", comercial: "N/A (Procesado industrial)", diferencia: "Muy higiénico" },
+      { concepto: "Temperatura de Secado", casero: "Suave (35°C - 45°C) preserva enzimas", comercial: "Altas temperaturas (destruye vitaminas)", diferencia: "Mayor calidad nutricional" }
+    ]
+  },
+  {
     id: "pasta-dientes",
     title: "Pasta de Dientes Remineralizante de Arcilla y Coco",
     category: "cuerpo",
@@ -217,7 +313,7 @@ const recipes = [
       { name: "Tarro pequeño de vidrio con tapa", price: "0.05 €" }
     ],
     steps: [
-      "Mezcla la arcilla blanca (caolín) and el bicarbonato de sodio en un bol de vidrio, cerámica o madera. Evita utensilios metálicos para no alterar las propiedades iónicas de la arcilla.",
+      "Mezcla la arcilla blanca (caolín) y el bicarbonato de sodio en un bol de vidrio, cerámica o madera. Evita utensilios metálicos para no alterar las propiedades iónicas de la arcilla.",
       "Si el aceite de coco está en estado sólido, disuélvelo al baño María a fuego muy suave hasta que quede líquido.",
       "Vierte el aceite de coco tibio sobre la mezcla de polvos secos de forma gradual.",
       "Remueve con paciencia utilizando una espátula de madera o silicona hasta lograr una consistencia pastosa cremosa.",
@@ -236,6 +332,101 @@ const recipes = [
       { concepto: "Flúor y Sulfatos (SLS)", casero: "0% Sin flúor ni SLS irritante", comercial: "Presentes como ingredientes estándar", diferencia: "Sin sustancias tóxicas" },
       { concepto: "Protección de Encías", casero: "Fórmula calmante y protectora", comercial: "El SLS reseca y favorece aftas bucales", diferencia: "Protección natural" },
       { concepto: "Tipo de Envase", casero: "Tarro de vidrio reutilizable", comercial: "Tubo de plástico laminado no reciclable", diferencia: "Residuo Cero" }
+    ]
+  },
+  {
+    id: "jabon-ceniza",
+    title: "Jabón de Lixivia de Ceniza de Madera y Oliva",
+    category: "hogar",
+    tag: "Hogar Ecológico",
+    image: "assets/images/jabon_ceniza.png",
+    views: 180000,
+    summary: "Aprende a fabricar un jabón líquido o blando concentrado utilizando la lixivia obtenida de cenizas de madera y aceite de oliva usado.",
+    intro: "La obtención de jabón mediante lixivia de cenizas es una de las técnicas químicas más antiguas de la humanidad. La ceniza de madera dura es rica en carbonato de potasio (potasa), una base alcalina que, al reaccionar con los ácidos grasos del aceite de oliva, produce saponificación. Es un jabón biodegradable excelente para lavar ropa y suelos.",
+    healthBenefit: "Evita el uso de geles y jabones comerciales que contienen tensoactivos petroquímicos fuertes, conservantes liberadores de formaldehído y fragancias de síntesis artificial. Estas sustancias dañan la barrera lipídica y el microbioma de la piel, y son absorbidas por el torrente sanguíneo, pudiendo actuar como alérgenos potentes y disruptores hormonales en el cuerpo.",
+    time: "1 hora (Reposo de lixivia: 2 días)",
+    rawDuration: "Ceniza seca: Ilimitada",
+    finalDuration: "Jabón líquido: 12 meses",
+    cost: "0.80 €",
+    metrics: {
+      economy: 95,
+      health: 90,
+      ecosystem: 100
+    },
+    shoppingList: [
+      { name: "Ceniza de madera dura tamizada (1 kg)", price: "0.00 €" },
+      { name: "Agua de lluvia o filtrada (4 Litros)", price: "0.10 €" },
+      { name: "Aceite de oliva usado filtrado (1 Litro)", price: "0.50 €" },
+      { name: "Aceite esencial de limón o romero (20 gotas)", price: "0.20 €" }
+    ],
+    steps: [
+      "Tamiza bien las cenizas de madera limpia de tu chimenea para eliminar trozos de carbón sin quemar. Utiliza ceniza blanca.",
+      "Mezcla en un balde de plástico la ceniza y el agua en una proporción de 1 parte de ceniza por 4 partes de agua caliente. Remueve bien con un palo de madera.",
+      "Deja reposar la mezcla tapada durante 48 horas en un lugar seguro, removiéndola dos veces al día. La lixivia potásica se concentrará.",
+      "Cuela con cuidado el líquido resultante empleando un paño de algodón grueso para obtener una lixivia limpia y de color ámbar. Usa guantes de seguridad.",
+      "En una olla de acero inoxidable (nunca aluminio), calienta el aceite de oliva a unos 60°C.",
+      "Vierte lentamente la lixivia concentrada sobre el aceite mientras remueves continuamente a fuego bajo durante unos 40 minutos hasta lograr una emulsión espesa.",
+      "Apaga el fuego, deja enfriar y añade el aceite esencial para aromatizar. Vierte en botellas de vidrio o garrafas reutilizadas."
+    ],
+    altUses: [
+      "Detergente biodegradable concentrado para coladas en lavadora lavando a mano.",
+      "Limpiador desinfectante para suelos rústicos de madera, piedra o baldosas.",
+      "Tratamiento preventivo para plagas agrícolas diluyéndolo en agua al 2% para pulverizar hojas."
+    ],
+    extraInfo: "La lixiviación extrae el carbonato potásico de la ceniza. La saponificación con potasa da como resultado un jabón blando o líquido (jabon potásico), a diferencia de la sosa cáustica (hidróxido de sodio) que produce jabones duros de sodio. La potasa de ceniza es extremadamente respetuosa con las aguas residuales ya que aporta potasio útil para las plantas del suelo.",
+    comparisonTable: [
+      { concepto: "Coste por Litro", casero: "0.20 €", comercial: "3.20 € (Jabón potásico comercial)", diferencia: "Ahorro del 93.7%" },
+      { concepto: "Origen del Álcali", casero: "Ceniza natural de madera", comercial: "Potasa cáustica purificada químicamente", diferencia: "Sin químicos sintéticos" },
+      { concepto: "Impacto en la Piel", casero: "Suave, libre de sulfatos", comercial: "Agentes espumantes irritantes", diferencia: "Protege la dermis" },
+      { concepto: "Residuos de Envase", casero: "Garrafas reutilizables de casa", comercial: "Botellas plásticas monouso", diferencia: "Sostenible" }
+    ]
+  },
+  {
+    id: "velas-aceite",
+    title: "Velones Ecológicos de Aceite de Cocina Usado",
+    category: "hogar",
+    tag: "Hogar Ecológico",
+    image: "assets/images/velas_aceite.png",
+    views: 150000,
+    summary: "Aprende a reciclar el aceite usado de la cocina para elaborar velas aromáticas caseras de combustión limpia y larga duración utilizando cera de soja.",
+    intro: "El aceite de cocina usado es uno de los mayores contaminantes del agua doméstica. Macerándolo y solidificándolo con cera de soja vegetal y mechas de algodón orgánico, podemos transformarlo en velones aromáticos decorativos de gran calidad, que no producen humos negros y purifican el ambiente doméstico.",
+    healthBenefit: "Al quemar estas velas vegetales evitas inhalar hidrocarburos como benceno y tolueno, compuestos altamente cancerígenos emitidos por las velas comerciales de parafina de petróleo al arder. Esto protege tu salud respiratoria interna, mantiene el aire limpio de toxinas volátiles y reduce el desarrollo de dolores de cabeza por vapores petroquímicos.",
+    time: "20 minutos",
+    rawDuration: "Aceite filtrado: 6 meses",
+    finalDuration: "Vela terminada: Años",
+    cost: "1.30 €",
+    metrics: {
+      economy: 90,
+      health: 95,
+      ecosystem: 100
+    },
+    shoppingList: [
+      { name: "Aceite de cocina usado bien filtrado (150ml)", price: "0.00 €" },
+      { name: "Cera de soja de bajo punto de fusión (150g)", price: "0.90 €" },
+      { name: "Mechas de algodón orgánico con base metálica", price: "0.20 €" },
+      { name: "Aceite esencial de eucalipto o canela (15 gotas)", price: "0.15 €" },
+      { name: "Tarros pequeños de vidrio reciclado", price: "0.05 €" }
+    ],
+    steps: [
+      "Filtra el aceite de cocina usado empleando un paño de algodón fino o filtro de café varias veces para eliminar cualquier resto de comida u olor frito.",
+      "Derrite la cera de soja al baño María en un recipiente resistente al calor hasta que esté completamente transparente.",
+      "Retira del fuego e incorpora lentamente el aceite de cocina purificado templado a la cera de soja fundida, removiendo suavemente para mezclar.",
+      "Añade las 15 gotas de tu aceite esencial favorito para neutralizar cualquier olor residual y aromatizar la vela.",
+      "Coloca la mecha de algodón centrada en el fondo del tarro de vidrio reciclado, sujetando la mecha en la parte superior con un palillo o pinza de ropa.",
+      "Vierte con cuidado la mezcla líquida de cera y aceite en el tarro de vidrio.",
+      "Deja enfriar a temperatura ambiente durante 4 horas hasta que solidifique por completo de un color blanco cremoso. Corta la mecha a 1 cm y enciende."
+    ],
+    altUses: [
+      "Velas de exterior repelentes de mosquitos añadiendo aceite esencial de citronela.",
+      "Puntos de luz de emergencia para kits de apagón eléctrico autónomos.",
+      "Detalle rústico aromático decorativo para el hogar."
+    ],
+    extraInfo: "La cera de soja vegetal tiene un punto de fusión bajo y funciona como un excelente aglutinante para aceites líquidos. Al combinarlos al 50%, la cera absorbe el aceite de oliva o girasol y genera una combustión lenta y limpia. Quemas cera natural sin liberar hollín ni compuestos de carbono tóxicos asociados a la parafina comercial.",
+    comparisonTable: [
+      { concepto: "Coste por Vela", casero: "0.65 € (Por tarro)", comercial: "6.00 € (Vela de cera natural)", diferencia: "Ahorro del 89.1%" },
+      { concepto: "Base de la Cera", casero: "Soja y aceite vegetal reciclado", comercial: "Parafina mineral (Derivado de petróleo)", diferencia: "Sin hidrocarburos" },
+      { concepto: "Hollín y Humos", casero: "Combustión limpia sin tóxicos", comercial: "Emisión de benceno y hollín negro", diferencia: "Aire doméstico limpio" },
+      { concepto: "Impacto de Residuos", casero: "Evita contaminar 1000L de agua de grifo", comercial: "Generación de envases y residuos industriales", diferencia: "Ecológico absoluto" }
     ]
   },
   {
@@ -287,6 +478,53 @@ const recipes = [
     ]
   },
   {
+    id: "pomada-llanten",
+    title: "Pomada Cicatrizante y Desinfectante de Llantén",
+    category: "cuerpo",
+    tag: "Cuidado Personal",
+    image: "assets/images/pomada_llanten.png",
+    views: 110000,
+    summary: "Ungüento antiséptico natural elaborado con hojas frescas de llantén mayor maceradas en aceite de oliva, ideal para curar eczemas, rozaduras y cortes menores.",
+    intro: "El llantén mayor (Plantago major) es una de las plantas medicinales tradicionales más valiosas por su contenido en aucubina (antiséptica), alantoína (regeneradora cutánea) y ácido silícico. Esta pomada artesanal proporciona un alivio rápido y seguro para heridas superficiales e irritaciones.",
+    healthBenefit: "Acelera la cicatrización natural y desinfecta la piel sin necesidad de cremas farmacéuticas con corticoides sintéticos (que adelgazan y debilitan la estructura de la epidermis) ni petrolatos. Al no contener aditivos artificiales, es perfectamente segura para personas con piel sensible, alergias o reactividad dermatológica.",
+    time: "35 minutos (Maceración: 20 días)",
+    rawDuration: "Hojas deshidratadas: 1 año",
+    finalDuration: "Pomada en tarro: 12 meses",
+    cost: "1.80 €",
+    metrics: {
+      economy: 85,
+      health: 100,
+      ecosystem: 95
+    },
+    shoppingList: [
+      { name: "Hojas frescas de llantén mayor recolectadas (50g)", price: "0.00 €" },
+      { name: "Aceite de oliva virgen extra (100ml)", price: "0.80 €" },
+      { name: "Cera de abejas natural pura (15g)", price: "0.90 €" },
+      { name: "Tarro pequeño de vidrio limpio", price: "0.10 €" }
+    ],
+    steps: [
+      "Recolecta hojas de llantén sanas. Lávalas bien y déjalas secar en un paño durante 24 horas para eliminar toda la humedad (el agua puede estropear la pomada).",
+      "Trocea las hojas secas y colócalas en un tarro de vidrio. Cúbrelas por completo con el aceite de oliva virgen extra.",
+      "Deja macerar al sol y sombra durante 20 días, o acelera el proceso calentándolo al baño María a 50°C durante 3 horas a fuego mínimo.",
+      "Filtra el aceite con un paño de algodón limpio, exprimiendo las hojas para extraer la clorofila y el extracto activo del llantén.",
+      "Calienta el aceite filtrado en un cazo a baño María y añade la cera de abejas en trozos.",
+      "Remueve con una cuchara de madera hasta que la cera se funda e integre perfectamente con el aceite de llantén.",
+      "Vierte inmediatamente la mezcla en el tarro de vidrio limpio y deja enfriar destapado hasta que solidifique."
+    ],
+    altUses: [
+      "Bálsamo calmante para aliviar el picor de picaduras de insectos, mosquitos o quemaduras de ortiga.",
+      "Tratamiento protector e hidratante para manos muy agrietadas por el trabajo en la tierra.",
+      "Alivio de rozaduras de calzado en talones y pies."
+    ],
+    extraInfo: "La aucubina contenida en el llantén tiene un potente efecto bactericida. Al combinarse con la alantoína, estimula el crecimiento celular y la renovación de la piel. Es una de las mejores alternativas naturales a las pomadas antibióticas genéricas para uso diario en el botiquín del hogar.",
+    comparisonTable: [
+      { concepto: "Coste por Tarro (50ml)", casero: "0.90 €", comercial: "9.50 € (Crema cicatrizante comercial)", diferencia: "Ahorro del 90.5%" },
+      { concepto: "Sustancias Hormonales", casero: "0% Corticoides ni siliconas", comercial: "Presencia frecuente de parabenes y petrolatum", diferencia: "Sin químicos alterantes" },
+      { concepto: "Regeneración Celular", casero: "Estimulada por alantoína natural", comercial: "Sintética a base de lípidos artificiales", diferencia: "Renovación limpia" },
+      { concepto: "Impacto del Sustrato", casero: "100% Biodegradable", comercial: "Drenaje de químicos al agua", diferencia: "Ecológico" }
+    ]
+  },
+  {
     id: "champu-solid",
     title: "Champú Sólido de Ortiga y Romero",
     category: "cuerpo",
@@ -332,6 +570,53 @@ const recipes = [
       { concepto: "Conservantes / Parabenos", casero: "0% Natural", comercial: "Metilparabeno, Siliconas", diferencia: "Sin tóxicos" },
       { concepto: "Vida útil (Lavados)", casero: "Hasta 80 lavados", comercial: "Aprox. 30 por botella", diferencia: "Mayor duración" },
       { concepto: "Huella de Carbono", casero: "Nula (Sin plástico ni agua libre)", comercial: "Alta (Transporte de agua y envase)", diferencia: "Ecológico" }
+    ]
+  },
+  {
+    id: "trampa-humedad",
+    title: "Deshumidificador Natural de Cloruro de Calcio",
+    category: "tecnologia",
+    tag: "Tecnología Ancestral",
+    image: "assets/images/trampa_humedad.png",
+    views: 85000,
+    summary: "Aprende a fabricar una trampa de humedad natural y silenciosa utilizando sal de cloruro de calcio y recipientes reciclados para prevenir el moho.",
+    intro: "El cloruro de calcio es un compuesto salino con una altísima capacidad higroscópica, lo que significa que absorbe activamente el vapor de agua del aire. Este deshumidificador casero captura el exceso de humedad en armarios o habitaciones de forma 100% pasiva y silenciosa.",
+    healthBenefit: "Controla la humedad en el hogar evitando la aparición de mohos domésticos y esporas fúngicas en las paredes. La inhalación de esporas de moho es uno de los principales desencadenantes de rinitis crónica, congestión de vías respiratorias, dolores de cabeza y asma bronquial, especialmente en niños y ancianos.",
+    time: "10 minutos",
+    rawDuration: "Materiales: Ilimitada",
+    finalDuration: "Activa: 1 a 2 meses (luego rellenar sal)",
+    cost: "0.90 €",
+    metrics: {
+      economy: 90,
+      health: 95,
+      ecosystem: 95
+    },
+    shoppingList: [
+      { name: "Sal de cloruro de calcio en escamas (250g)", price: "0.60 €" },
+      { name: "Tarro o recipiente de vidrio reciclado", price: "0.05 €" },
+      { name: "Malla fina, gasa de gasa o filtro de café", price: "0.15 €" },
+      { name: "Banda elástica o trozo de cuerda", price: "0.10 €" }
+    ],
+    steps: [
+      "Consigue un tarro grande de vidrio y un envase de plástico que encaje en su boca (o usa un colador pequeño colocado sobre el tarro).",
+      "Coloca el filtro de café o la gasa fina en el fondo del colador o envase superior.",
+      "Vierte las escamas de cloruro de calcio dentro del filtro de gasa.",
+      "Asegura la gasa con una banda elástica o cuerda para que el cloruro de calcio quede suspendido sobre el tarro de vidrio inferior.",
+      "Coloca el dispositivo en esquinas húmedas de la habitación, sótanos o armarios.",
+      "El compuesto comenzará a absorber la humedad ambiental, disolviéndose gradualmente y goteando agua en forma de salmuera líquida en el fondo del tarro de vidrio.",
+      "Vigila el tarro cada 3 semanas. Vacía el agua acumulada en el desagüe y añade más escamas de cloruro de calcio si es necesario."
+    ],
+    altUses: [
+      "Eliminador de olores a humedad en el interior de armarios de ropa y zapateros.",
+      "Protector contra oxidación de herramientas metálicas en cajas de herramientas.",
+      "Control de condensación en cristales de autocaravanas o caravanas durante el invierno."
+    ],
+    extraInfo: "El cloruro de calcio (CaCl2) es una sal muy higroscópica que tiene afinidad química con las moléculas de agua del aire. Cuando absorbe suficiente agua, experimenta un proceso llamado delictuescencia, disolviéndose por completo en el agua absorbida. No consume electricidad alguna, a diferencia de los deshumidificadores de compresor.",
+    comparisonTable: [
+      { concepto: "Coste Inicial", casero: "0.90 €", comercial: "12.00 € (Aparato antihumedad comercial)", diferencia: "Ahorro del 92.5%" },
+      { concepto: "Consumo Eléctrico", casero: "0W (Totalmente pasivo)", comercial: "200W - 400W por hora", diferencia: "Ahorro total" },
+      { concepto: "Salud Respiratoria", casero: "Evita esporas de moho y asma", comercial: "Equivalente con filtros HEPA", diferencia: "Excelente prevención" },
+      { concepto: "Ruido Acústico", casero: "0 dB (Silencio absoluto)", comercial: "35 dB (Ventilador continuo)", diferencia: "Protege el sueño" }
     ]
   },
   {
@@ -390,7 +675,6 @@ let searchQuery = "";
 // DOM Elements
 const searchInput = document.getElementById("search-input");
 const filterButtons = document.querySelectorAll(".btn-filter");
-const navLinks = document.querySelectorAll(".nav-links a");
 
 // Helper to format views
 function formatViews(views) {
@@ -407,7 +691,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const recipesGrid = document.getElementById("recipes-grid");
   const articleDetailContainer = document.getElementById("article-detail-container");
 
+  // Read category parameter from URL if on index.html
   if (recipesGrid) {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get("cat");
+    if (cat) {
+      activeCategory = cat;
+      // Set active link in nav
+      const navLinks = document.querySelectorAll(".nav-links a");
+      navLinks.forEach(l => l.classList.remove("active"));
+      const activeLink = document.getElementById(`nav-${cat}`);
+      if (activeLink) activeLink.classList.add("active");
+    }
+
     renderGrid(recipes);
     setupListeners();
   } else if (articleDetailContainer) {
@@ -472,25 +768,6 @@ function renderGrid(recipesData) {
           </svg>
           ${formatViews(recipe.views)}
         </span>
-        
-        <!-- Hover Preview Panel -->
-        <div class="card-hover-preview">
-          <span class="hover-preview-title">Beneficio Corporal</span>
-          <p class="hover-preview-text">${recipe.healthBenefit.split('.')[0] + '.'}</p>
-          <span class="hover-preview-title">Ingredientes Clave</span>
-          <ul class="hover-ingredients-list">
-            ${recipe.shoppingList.slice(0, 3).map(item => `
-              <li class="hover-ingredient-item">
-                <span class="hover-ingredient-bullet">✦</span>
-                <span>${item.name.split(' (')[0]}</span>
-              </li>
-            `).join("")}
-          </ul>
-          <span class="hover-cta-text">
-            Guía completa
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </span>
-        </div>
       </div>
       <div class="card-content">
         <h3 class="card-title">${recipe.title}</h3>
@@ -512,6 +789,26 @@ function renderGrid(recipesData) {
             <span class="metric-val">${recipe.metrics.ecosystem}%</span>
           </div>
         </div>
+      </div>
+      
+      <!-- Hover Preview Panel (Whole Card Overlay) -->
+      <div class="card-hover-preview">
+        <h3 class="hover-preview-recipe-title">${recipe.title}</h3>
+        <span class="hover-preview-title">Beneficio Corporal</span>
+        <p class="hover-preview-text">${recipe.healthBenefit.split('.')[0] + '.'}</p>
+        <span class="hover-preview-title">Ingredientes Clave</span>
+        <ul class="hover-ingredients-list">
+          ${recipe.shoppingList.slice(0, 3).map(item => `
+            <li class="hover-ingredient-item">
+              <span class="hover-ingredient-bullet">✦</span>
+              <span>${item.name.split(' (')[0]}</span>
+            </li>
+          `).join("")}
+        </ul>
+        <span class="hover-cta-text">
+          Ver guía completa
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </span>
       </div>
     `;
     
@@ -778,25 +1075,6 @@ function renderRecommendations(currentRecipe) {
           </svg>
           ${formatViews(recipe.views)}
         </span>
-        
-        <!-- Hover Preview Panel -->
-        <div class="card-hover-preview">
-          <span class="hover-preview-title">Beneficio Corporal</span>
-          <p class="hover-preview-text">${recipe.healthBenefit.split('.')[0] + '.'}</p>
-          <span class="hover-preview-title">Ingredientes Clave</span>
-          <ul class="hover-ingredients-list">
-            ${recipe.shoppingList.slice(0, 3).map(item => `
-              <li class="hover-ingredient-item">
-                <span class="hover-ingredient-bullet">✦</span>
-                <span>${item.name.split(' (')[0]}</span>
-              </li>
-            `).join("")}
-          </ul>
-          <span class="hover-cta-text">
-            Guía completa
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </span>
-        </div>
       </div>
       <div class="card-content">
         <h3 class="card-title">${recipe.title}</h3>
@@ -819,6 +1097,26 @@ function renderRecommendations(currentRecipe) {
           </div>
         </div>
       </div>
+      
+      <!-- Hover Preview Panel (Whole Card Overlay) -->
+      <div class="card-hover-preview">
+        <h3 class="hover-preview-recipe-title">${recipe.title}</h3>
+        <span class="hover-preview-title">Beneficio Corporal</span>
+        <p class="hover-preview-text">${recipe.healthBenefit.split('.')[0] + '.'}</p>
+        <span class="hover-preview-title">Ingredientes Clave</span>
+        <ul class="hover-ingredients-list">
+          ${recipe.shoppingList.slice(0, 3).map(item => `
+            <li class="hover-ingredient-item">
+              <span class="hover-ingredient-bullet">✦</span>
+              <span>${item.name.split(' (')[0]}</span>
+            </li>
+          `).join("")}
+        </ul>
+        <span class="hover-cta-text">
+          Ver guía completa
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </span>
+      </div>
     `;
 
     card.addEventListener("click", () => {
@@ -830,7 +1128,10 @@ function renderRecommendations(currentRecipe) {
 
 // Setup Event Listeners
 function setupListeners() {
+  const navLinks = document.querySelectorAll(".nav-links a");
+  
   // Search input change event
+  const searchInput = document.getElementById("search-input");
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       searchQuery = e.target.value;
@@ -839,6 +1140,7 @@ function setupListeners() {
   }
 
   // Sorting filter buttons
+  const filterButtons = document.querySelectorAll(".btn-filter");
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       filterButtons.forEach(b => b.classList.remove("active"));
@@ -864,6 +1166,8 @@ function setupListeners() {
         activeCategory = "hogar";
       } else if (id === "nav-cuerpo") {
         activeCategory = "cuerpo";
+      } else if (id === "nav-tecnologia") {
+        activeCategory = "tecnologia";
       }
       
       renderGrid(recipes);

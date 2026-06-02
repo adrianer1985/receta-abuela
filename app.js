@@ -1,32 +1,47 @@
 // Recipe dataset for www.recetadeabuela.com
 const recipes = [
   {
-    id: "estufa-velas",
-    title: "Estufa de Macetas de Arcilla y Velas",
-    category: "tecnologia",
-    tag: "Tecnología Ancestral",
-    image: "assets/images/estufa.png",
-    views: 618000,
-    summary: "Aprende a construir un sistema de calefacción radiante natural utilizando macetas de terracota y pequeñas velas de té. Calor ecológico, económico y sin electricidad.",
-    intro: "La estufa de macetas es un ingenioso calefactor casero que aprovecha el principio de la inercia térmica y la convección natural. La arcilla refractaria absorbe y multiplica la energía térmica generada por unas simples velas, distribuyéndola de manera radiante y constante en la estancia sin necesidad de ventiladores ni consumo de red eléctrica.",
-    healthBenefit: "A diferencia de los calefactores comerciales de aire forzado o radiadores de gas, esta estufa calienta por radiación térmica suave e inercia de la arcilla. Esto evita la sequedad extrema del aire (protegiendo tus mucosas respiratorias y garganta) y previene la dispersión en suspensión de polvo, polen y ácaros, resultando ideal para personas con asma o alergias.",
-    time: "15 minutos",
-    rawDuration: "Macetas: Ilimitada",
-    finalDuration: "Velas de té: 4 horas",
-    cost: "0.40 €",
-    metrics: {
-      economy: 90,
-      health: 85,
-      ecosystem: 90
+    "id": "estufa-velas",
+    "title": "Estufa de Macetas de Arcilla y Velas",
+    "category": "calefaccion",
+    "tag": "Calefacción",
+    "image": "assets/images/estufa.png",
+    "views": 618000,
+    "summary": "Aprende a construir un sistema de calefacción radiante natural utilizando macetas de terracota y pequeñas velas de té. Calor ecológico, económico y sin electricidad.",
+    "intro": "La estufa de macetas es un ingenioso calefactor casero que aprovecha el principio de la inercia térmica y la convección natural. La arcilla refractaria absorbe y multiplica la energía térmica generada por unas simples velas, distribuyéndola de manera radiante y constante en la estancia sin necesidad de ventiladores ni consumo de red eléctrica.",
+    "healthBenefit": "A diferencia de los calefactores comerciales de aire forzado o radiadores de gas, esta estufa calienta por radiación térmica suave e inercia de la arcilla. Esto evita la sequedad extrema del aire (protegiendo tus mucosas respiratorias y garganta) y previene la dispersión en suspensión de polvo, polen y ácaros, resultando ideal para personas con asma o alergias.",
+    "time": "15 minutos",
+    "rawDuration": "Macetas: Ilimitada",
+    "finalDuration": "Velas de té: 4 horas",
+    "cost": "0.40 €",
+    "metrics": {
+      "economy": 90,
+      "health": 85,
+      "ecosystem": 90
     },
-    shoppingList: [
-      { name: "Maceta de arcilla sin esmaltar (20cm)", price: "1.50 €" },
-      { name: "Maceta de arcilla sin esmaltar (15cm)", price: "1.00 €" },
-      { name: "Plato de base para maceta de arcilla", price: "0.80 €" },
-      { name: "Varilla roscada, tuercas y arandelas", price: "1.20 €" },
-      { name: "Velas de té de parafina vegetal (4 uds)", price: "0.40 €" }
+    "shoppingList": [
+      {
+        "name": "Maceta de arcilla sin esmaltar (20cm)",
+        "price": "1.50 €"
+      },
+      {
+        "name": "Maceta de arcilla sin esmaltar (15cm)",
+        "price": "1.00 €"
+      },
+      {
+        "name": "Plato de base para maceta de arcilla",
+        "price": "0.80 €"
+      },
+      {
+        "name": "Varilla roscada, tuercas y arandelas",
+        "price": "1.20 €"
+      },
+      {
+        "name": "Velas de té de parafina vegetal (4 uds)",
+        "price": "0.40 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Asegúrate de que las dos macetas y la base tengan un orificio central limpio y alineado.",
       "Introduce la varilla roscada a través del plato de arcilla que servirá como base firme del conjunto.",
       "Coloca una arandela y una tuerca para fijar la varilla en la base por ambos lados del plato.",
@@ -35,44 +50,73 @@ const recipes = [
       "Coloca 3 o 4 velas de té sobre el plato base y enciéndelas con cuidado.",
       "La campana de arcilla interior acumulará el calor directo y el aire caliente fluirá por convección a través del espacio intermedio, templando la maceta exterior para que irradie calor constante."
     ],
-    altUses: [
+    "altUses": [
       "Difusor de aromaterapia colocando unas gotas de aceites esenciales puros sobre la maceta exterior templada.",
       "Calentador rústico ecológico para invernaderos pequeños para evitar heladas nocturnas.",
       "Centro de mesa radiante para exteriores decorativo."
     ],
-    extraInfo: "La física detrás de este sistema radica en la transferencia de calor radiante. La campana interna absorbe la llama de la vela (que alcanza los 800°C en su núcleo) y previene la pérdida de calor directa hacia el techo. La campana externa actúa como un disipador térmico que calienta el aire frío que entra por la parte inferior mediante convección natural.",
-    comparisonTable: [
-      { concepto: "Coste por 4 Horas", casero: "0.40 € (Velas)", comercial: "1.50 € (Calefactor 1000W)", diferencia: "Ahorro del 73.3%" },
-      { concepto: "Humedad Ambiental", casero: "Preserva humedad natural", comercial: "Reseca las vías mucosas", diferencia: "Mejor respiración" },
-      { concepto: "Corrientes de Aire", casero: "0% Sin corrientes (Radiante)", comercial: "Mueve polvo, esporas y ácaros", diferencia: "Hipoalergénico" },
-      { concepto: "Autonomía de Red", casero: "100% Autónomo (Emergencia)", comercial: "Requiere red eléctrica o gas", diferencia: "Sin cables" }
+    "extraInfo": "La física detrás de este sistema radica en la transferencia de calor radiante. La campana interna absorbe la llama de la vela (que alcanza los 800°C en su núcleo) y previene la pérdida de calor directa hacia el techo. La campana externa actúa como un disipador térmico que calienta el aire frío que entra por la parte inferior mediante convección natural.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por 4 Horas",
+        "casero": "0.40 € (Velas)",
+        "comercial": "1.50 € (Calefactor 1000W)",
+        "diferencia": "Ahorro del 73.3%"
+      },
+      {
+        "concepto": "Humedad Ambiental",
+        "casero": "Preserva humedad natural",
+        "comercial": "Reseca las vías mucosas",
+        "diferencia": "Mejor respiración"
+      },
+      {
+        "concepto": "Corrientes de Aire",
+        "casero": "0% Sin corrientes (Radiante)",
+        "comercial": "Mueve polvo, esporas y ácaros",
+        "diferencia": "Hipoalergénico"
+      },
+      {
+        "concepto": "Autonomía de Red",
+        "casero": "100% Autónomo (Emergencia)",
+        "comercial": "Requiere red eléctrica o gas",
+        "diferencia": "Sin cables"
+      }
     ]
   },
   {
-    id: "detergente-hiedra",
-    title: "Detergente Líquido de Hiedra y Lavanda",
-    category: "hogar",
-    tag: "Hogar Ecológico",
-    image: "assets/images/detergente.png",
-    views: 600000,
-    summary: "Aprende a elaborar tu propio detergente ecológico concentrado a partir de hojas de hiedra común (rica en saponinas naturales) y aromatizado con esencia silvestre de lavanda.",
-    intro: "La hiedra común (Hedera helix) contiene entre un 5% y un 8% de saponinas, un tensoactivo natural que actúa como jabón para desprender la suciedad de las fibras textiles. Este detergente casero no contiene fosfatos, blanqueadores ópticos ni sulfatos químicos, lo que lo convierte en una solución perfecta para pieles atópicas y para reducir drásticamente el impacto ecológico de las aguas residuales domésticas.",
-    healthBenefit: "Evita la exposición directa a disruptores endocrinos, fragancias artificiales y blanqueadores ópticos presentes en los detergentes comerciales. Estos compuestos sintéticos quedan atrapados en las fibras textiles y penetran en el torrente sanguíneo por contacto dérmico constante, siendo causantes principales de brotes de dermatitis atópica, alergias de contacto e irritaciones respiratorias al inhalar los perfumes de la ropa.",
-    time: "25 minutos",
-    rawDuration: "Hojas frescas: 2 semanas",
-    finalDuration: "Detergente líquido: 6 meses",
-    cost: "0.50 €",
-    metrics: {
-      economy: 95,
-      health: 90,
-      ecosystem: 100
+    "id": "detergente-hiedra",
+    "title": "Detergente Líquido de Hiedra y Lavanda",
+    "category": "limpieza",
+    "tag": "Limpieza",
+    "image": "assets/images/detergente.png",
+    "views": 600000,
+    "summary": "Aprende a elaborar tu propio detergente ecológico concentrado a partir de hojas de hiedra común (rica en saponinas naturales) y aromatizado con esencia silvestre de lavanda.",
+    "intro": "La hiedra común (Hedera helix) contiene entre un 5% y un 8% de saponinas, un tensoactivo natural que actúa como jabón para desprender la suciedad de las fibras textiles. Este detergente casero no contiene fosfatos, blanqueadores ópticos ni sulfatos químicos, lo que lo convierte en una solución perfecta para pieles atópicas y para reducir drásticamente el impacto ecológico de las aguas residuales domésticas.",
+    "healthBenefit": "Evita la exposición directa a disruptores endocrinos, fragancias artificiales y blanqueadores ópticos presentes en los detergentes comerciales. Estos compuestos sintéticos quedan atrapados en las fibras textiles y penetran en el torrente sanguíneo por contacto dérmico constante, siendo causantes principales de brotes de dermatitis atópica, alergias de contacto e irritaciones respiratorias al inhalar los perfumes de la ropa.",
+    "time": "25 minutos",
+    "rawDuration": "Hojas frescas: 2 semanas",
+    "finalDuration": "Detergente líquido: 6 meses",
+    "cost": "0.50 €",
+    "metrics": {
+      "economy": 95,
+      "health": 90,
+      "ecosystem": 100
     },
-    shoppingList: [
-      { name: "Hojas de hiedra común (recolectadas)", price: "0.00 €" },
-      { name: "Agua de grifo purificada (2 Litros)", price: "0.05 €" },
-      { name: "Aceite esencial de lavanda pura (30 gotas)", price: "0.45 €" }
+    "shoppingList": [
+      {
+        "name": "Hojas de hiedra común (recolectadas)",
+        "price": "0.00 €"
+      },
+      {
+        "name": "Agua de grifo purificada (2 Litros)",
+        "price": "0.05 €"
+      },
+      {
+        "name": "Aceite esencial de lavanda pura (30 gotas)",
+        "price": "0.45 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Recolecta unas 60-80 hojas frescas de hiedra común (evita las que estén cerca de carreteras principales). Lávalas a fondo en agua fría para retirar la tierra.",
       "Trocea o machaca ligeramente las hojas con las manos para liberar las saponinas internas de las fibras vegetales.",
       "Coloca las hojas troceadas en una olla grande con 2 litros de agua. Lleva a ebullición a fuego medio.",
@@ -82,45 +126,77 @@ const recipes = [
       "Añade las 30 gotas de aceite esencial de lavanda y remueve bien para homogeneizar. Vierte en una botella de vidrio o plástico reciclado.",
       "Dosificación: Usa 150ml (una taza estándar) directamente en el cajetín de la lavadora por cada carga completa de ropa."
     ],
-    altUses: [
+    "altUses": [
       "Lavavajillas manual biodegradable diluyendo el líquido resultante al 50% con agua.",
       "Limpiador foliar para plantas: pulverizado sobre las hojas actúa como abrillantador y repelente natural de plagas como el pulgón.",
       "Abono orgánico ligero: los restos de hiedra cocidos se pueden compostar aportando nitrógeno al suelo."
     ],
-    extraInfo: "Las saponinas de la hiedra son solubles en agua caliente y liberan espuma natural al agitarse. No es necesario añadir espesantes artificiales. Para ropa blanca muy sucia, se recomienda complementar la colada agregando dos cucharadas de percarbonato de sodio directamente en el tambor de la lavadora.",
-    comparisonTable: [
-      { concepto: "Coste por Litro", casero: "0.25 €", comercial: "3.50 €", diferencia: "Ahorro del 92.8%" },
-      { concepto: "Químicos / Sulfatos", casero: "0% (Solo saponina natural)", comercial: "Tensoactivos sintéticos y PEG", diferencia: "Sin alérgenos" },
-      { concepto: "Residuos de Envase", casero: "Cero (Envase reutilizable)", comercial: "Botellas plásticas HDPE monouso", diferencia: "100% Sostenible" },
-      { concepto: "Rendimiento (Cargas)", casero: "13 lavados por litro", comercial: "20 lavados por litro", diferencia: "Similar eficiencia" }
+    "extraInfo": "Las saponinas de la hiedra son solubles en agua caliente y liberan espuma natural al agitarse. No es necesario añadir espesantes artificiales. Para ropa blanca muy sucia, se recomienda complementar la colada agregando dos cucharadas de percarbonato de sodio directamente en el tambor de la lavadora.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por Litro",
+        "casero": "0.25 €",
+        "comercial": "3.50 €",
+        "diferencia": "Ahorro del 92.8%"
+      },
+      {
+        "concepto": "Químicos / Sulfatos",
+        "casero": "0% (Solo saponina natural)",
+        "comercial": "Tensoactivos sintéticos y PEG",
+        "diferencia": "Sin alérgenos"
+      },
+      {
+        "concepto": "Residuos de Envase",
+        "casero": "Cero (Envase reutilizable)",
+        "comercial": "Botellas plásticas HDPE monouso",
+        "diferencia": "100% Sostenible"
+      },
+      {
+        "concepto": "Rendimiento (Cargas)",
+        "casero": "13 lavados por litro",
+        "comercial": "20 lavados por litro",
+        "diferencia": "Similar eficiencia"
+      }
     ]
   },
   {
-    id: "nevera-arcilla",
-    title: "Refrigerador de Arcilla sin Electricidad (Nevera Zeer)",
-    category: "tecnologia",
-    tag: "Tecnología Ancestral",
-    image: "assets/images/nevera.png",
-    views: 420000,
-    summary: "Construye tu propio refrigerador evaporativo artesanal combinando dos macetas de terracota y arena húmeda. Conservación de alimentos 100% natural, sin cables y de bajo coste.",
-    intro: "La nevera Zeer es una estructura evaporativa que permite conservar verduras, frutas y líquidos a temperaturas frescas sin electricidad. Es ideal para climas cálidos y secos y funciona mediante las leyes de la termodinámica, enfriando la maceta interior a medida que el agua contenida en la arena exterior se evapora a través de la arcilla porosa.",
-    healthBenefit: "Mantiene los alimentos frescos en un ambiente de humedad natural constante que evita la deshidratación rápida de las verduras, preservando sus vitaminas y antioxidantes solubles por más tiempo. Además, funciona con absoluto silencio (0 dB), eliminando la contaminación acústica del compresor eléctrico comercial que altera tu descanso e incrementa los niveles corporales de cortisol (la hormona del estrés).",
-    time: "30 minutos",
-    rawDuration: "Macetas: Ilimitada",
-    finalDuration: "Arena húmeda: Recarga diaria",
-    cost: "9.50 €",
-    metrics: {
-      economy: 85,
-      health: 90,
-      ecosystem: 95
+    "id": "nevera-arcilla",
+    "title": "Refrigerador de Arcilla sin Electricidad (Nevera Zeer)",
+    "category": "alimentos",
+    "tag": "Alimentos",
+    "image": "assets/images/nevera.png",
+    "views": 420000,
+    "summary": "Construye tu propio refrigerador evaporativo artesanal combinando dos macetas de terracota y arena húmeda. Conservación de alimentos 100% natural, sin cables y de bajo coste.",
+    "intro": "La nevera Zeer es una estructura evaporativa que permite conservar verduras, frutas y líquidos a temperaturas frescas sin electricidad. Es ideal para climas cálidos y secos y funciona mediante las leyes de la termodinámica, enfriando la maceta interior a medida que el agua contenida en la arena exterior se evapora a través de la arcilla porosa.",
+    "healthBenefit": "Mantiene los alimentos frescos en un ambiente de humedad natural constante que evita la deshidratación rápida de las verduras, preservando sus vitaminas y antioxidantes solubles por más tiempo. Además, funciona con absoluto silencio (0 dB), eliminando la contaminación acústica del compresor eléctrico comercial que altera tu descanso e incrementa los niveles corporales de cortisol (la hormona del estrés).",
+    "time": "30 minutos",
+    "rawDuration": "Macetas: Ilimitada",
+    "finalDuration": "Arena húmeda: Recarga diaria",
+    "cost": "9.50 €",
+    "metrics": {
+      "economy": 85,
+      "health": 90,
+      "ecosystem": 95
     },
-    shoppingList: [
-      { name: "Maceta grande de arcilla sin esmaltar (40cm)", price: "5.50 €" },
-      { name: "Maceta pequeña de arcilla sin esmaltar (30cm)", price: "3.00 €" },
-      { name: "Arena fina de río (1 saco)", price: "0.80 €" },
-      { name: "Paño de arpillera o algodón grueso", price: "0.20 €" }
+    "shoppingList": [
+      {
+        "name": "Maceta grande de arcilla sin esmaltar (40cm)",
+        "price": "5.50 €"
+      },
+      {
+        "name": "Maceta pequeña de arcilla sin esmaltar (30cm)",
+        "price": "3.00 €"
+      },
+      {
+        "name": "Arena fina de río (1 saco)",
+        "price": "0.80 €"
+      },
+      {
+        "name": "Paño de arpillera o algodón grueso",
+        "price": "0.20 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Bloquea y sella herméticamente los agujeros de drenaje de ambas macetas con arcilla húmeda o corcho para evitar fugas de arena.",
       "Coloca una capa firme de 5 cm de arena fina en el fondo de la maceta grande.",
       "Centra la maceta pequeña dentro de la maceta grande sobre la capa de arena inicial.",
@@ -130,45 +206,77 @@ const recipes = [
       "Cubre la abertura con un paño de arpillera o algodón grueso previamente humedecido.",
       "Coloca el refrigerador en una zona sombreada y ventilada. Mójalo dos veces al día para mantener el proceso evaporativo activo."
     ],
-    altUses: [
+    "altUses": [
       "Enfriador ecológico de bebidas y refrescos para terrazas, jardines o acampadas.",
       "Cámara para la maduración controlada de quesos artesanales que requieren humedad alta.",
       "Almacenamiento y conservación a largo plazo de patatas, ajos y cebollas en sótanos."
     ],
-    extraInfo: "Este refrigerador funciona de forma óptima en climas con baja humedad relativa. A medida que el aire seco pasa sobre las paredes húmedas de la maceta exterior, provoca la evaporación del agua. Este cambio de estado requiere energía (calor latente), la cual se extrae del interior del refrigerador, logrando disminuir la temperatura interna entre 5°C y 15°C por debajo de la temperatura ambiental.",
-    comparisonTable: [
-      { concepto: "Consumo de Luz", casero: "0W (Cero electricidad)", comercial: "150W - 300W continuos", diferencia: "Ahorro del 100%" },
-      { concepto: "Preservación Verde", casero: "Humedad óptima (Sin resecar)", comercial: "El frío seco deshidrata vegetales", diferencia: "Alimentos más frescos" },
-      { concepto: "Ruido Acústico", casero: "0 dB (Silencio absoluto)", comercial: "35-45 dB (Compresor constante)", diferencia: "Reduce el estrés" },
-      { concepto: "Refrigerantes Químicos", casero: "Solo agua corriente", comercial: "Gases HFC dañinos para la capa de ozono", diferencia: "100% Ecológico" }
+    "extraInfo": "Este refrigerador funciona de forma óptima en climas con baja humedad relativa. A medida que el aire seco pasa sobre las paredes húmedas de la maceta exterior, provoca la evaporación del agua. Este cambio de estado requiere energía (calor latente), la cual se extrae del interior del refrigerador, logrando disminuir la temperatura interna entre 5°C y 15°C por debajo de la temperatura ambiental.",
+    "comparisonTable": [
+      {
+        "concepto": "Consumo de Luz",
+        "casero": "0W (Cero electricidad)",
+        "comercial": "150W - 300W continuos",
+        "diferencia": "Ahorro del 100%"
+      },
+      {
+        "concepto": "Preservación Verde",
+        "casero": "Humedad óptima (Sin resecar)",
+        "comercial": "El frío seco deshidrata vegetales",
+        "diferencia": "Alimentos más frescos"
+      },
+      {
+        "concepto": "Ruido Acústico",
+        "casero": "0 dB (Silencio absoluto)",
+        "comercial": "35-45 dB (Compresor constante)",
+        "diferencia": "Reduce el estrés"
+      },
+      {
+        "concepto": "Refrigerantes Químicos",
+        "casero": "Solo agua corriente",
+        "comercial": "Gases HFC dañinos para la capa de ozono",
+        "diferencia": "100% Ecológico"
+      }
     ]
   },
   {
-    id: "repelente-ajo",
-    title: "Repelente Orgánico de Ajo y Aceite de Nim",
-    category: "hogar",
-    tag: "Hogar Ecológico",
-    image: "assets/images/repelente_ajo.png",
-    views: 330000,
-    summary: "Protege tu huerto o plantas de interior de plagas comunes como pulgón y mosca blanca con un pulverizador natural a base de ajo fermentado y aceite puro de Neem.",
-    intro: "El ajo contiene potentes compuestos organosulfurados, como la alicina, que actúan como repelente olfativo y larvicida natural. Combinado con el aceite de nim (rico en azadiractina), este repelente orgánico interrumpe el ciclo biológico de las plagas sin dañar a los insectos polinizadores (como las abejas) ni contaminar el sustrato con residuos químicos sintéticos.",
-    healthBenefit: "Evita el contacto e inhalación de insecticidas comerciales basados en piretroides y organofosforados, que actúan como potentes neurotoxinas acumulativas y disruptores endocrinos. Al usar este repelente natural, proteges tu hogar y tus cultivos domésticos de plagas sin introducir sustancias tóxicas que puedan depositarse en las hojas comestibles o ser inhaladas por tus niños o mascotas.",
-    time: "20 minutos (Maceración: 24 horas)",
-    rawDuration: "Aceite de Nim: 1 año",
-    finalDuration: "Solución preparada: 2 semanas",
-    cost: "1.10 €",
-    metrics: {
-      economy: 90,
-      health: 95,
-      ecosystem: 100
+    "id": "repelente-ajo",
+    "title": "Repelente Orgánico de Ajo y Aceite de Nim",
+    "category": "alimentos",
+    "tag": "Alimentos",
+    "image": "assets/images/repelente_ajo.png",
+    "views": 330000,
+    "summary": "Protege tu huerto o plantas de interior de plagas comunes como pulgón y mosca blanca con un pulverizador natural a base de ajo fermentado y aceite puro de Neem.",
+    "intro": "El ajo contiene potentes compuestos organosulfurados, como la alicina, que actúan como repelente olfativo y larvicida natural. Combinado con el aceite de nim (rico en azadiractina), este repelente orgánico interrumpe el ciclo biológico de las plagas sin dañar a los insectos polinizadores (como las abejas) ni contaminar el sustrato con residuos químicos sintéticos.",
+    "healthBenefit": "Evita el contacto e inhalación de insecticidas comerciales basados en piretroides y organofosforados, que actúan como potentes neurotoxinas acumulativas y disruptores endocrinos. Al usar este repelente natural, proteges tu hogar y tus cultivos domésticos de plagas sin introducir sustancias tóxicas que puedan depositarse en las hojas comestibles o ser inhaladas por tus niños o mascotas.",
+    "time": "20 minutos (Maceración: 24 horas)",
+    "rawDuration": "Aceite de Nim: 1 año",
+    "finalDuration": "Solución preparada: 2 semanas",
+    "cost": "1.10 €",
+    "metrics": {
+      "economy": 90,
+      "health": 95,
+      "ecosystem": 100
     },
-    shoppingList: [
-      { name: "Cabeza de ajo fresco entera", price: "0.40 €" },
-      { name: "Aceite de nim (Neem) puro prensado (10ml)", price: "0.50 €" },
-      { name: "Jabón potásico o neutro biodegradable (10g)", price: "0.15 €" },
-      { name: "Agua destilada o sin cloro (1 Litro)", price: "0.05 €" }
+    "shoppingList": [
+      {
+        "name": "Cabeza de ajo fresco entera",
+        "price": "0.40 €"
+      },
+      {
+        "name": "Aceite de nim (Neem) puro prensado (10ml)",
+        "price": "0.50 €"
+      },
+      {
+        "name": "Jabón potásico o neutro biodegradable (10g)",
+        "price": "0.15 €"
+      },
+      {
+        "name": "Agua destilada o sin cloro (1 Litro)",
+        "price": "0.05 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Desgrana la cabeza de ajo completa y tritura todos los dientes pelados junto con 500ml de agua en una batidora hasta lograr una pasta fina.",
       "Vierte la mezcla batida en un tarro de vidrio, ciérralo y déjalo reposar a temperatura ambiente durante 24 horas para que fermente y libere la alicina.",
       "Filtra la maceración de ajo con un paño de algodón o gasa fina, exprimiendo bien para separar toda la pulpa vegetal que pueda obstruir el pulverizador.",
@@ -177,46 +285,81 @@ const recipes = [
       "Combina la emulsión de aceite de nim con el extracto colado de ajo en una botella con atomizador.",
       "Aplica la mezcla pulverizándola directamente sobre las hojas (haz y envés) del huerto al atardecer, cada 7 días como preventivo o cada 3 días ante plagas activas."
     ],
-    altUses: [
+    "altUses": [
       "Barrera protectora contra hormigas y caracoles rociando la base de las macetas.",
       "Desinfectante antifúngico preventivo para suelos propensos al enmohecimiento.",
       "Insecticida natural seguro para plantas decorativas en oficinas y hogares sin olores químicos residuales."
     ],
-    extraInfo: "La azadiractina del aceite de nim actúa por contacto e ingestión. Es un análogo de la ecdisona (la hormona de la muda en los insectos), lo que bloquea el desarrollo de las larvas e impide que lleguen a su fase reproductora. Al no ser un veneno neurotóxico directo de amplio espectro, respeta a la fauna beneficiosa como mariquitas y abejas si se aplica cuando estas no están activas.",
-    comparisonTable: [
-      { concepto: "Coste por Litro", casero: "1.10 €", comercial: "14.50 € (Pesticida comercial)", diferencia: "Ahorro del 92.4%" },
-      { concepto: "Residuos en Cosecha", casero: "0% Residuo persistente", comercial: "Requiere plazos de seguridad de días", diferencia: "Comida limpia" },
-      { concepto: "Toxicidad Pulmonar", casero: "Completamente seguro e inofensivo", comercial: "Tóxico por inhalación y contacto", diferencia: "Sin riesgos" },
-      { concepto: "Biodegradabilidad", casero: "100% Rápida en el suelo", comercial: "Persistente en aguas subterráneas", diferencia: "Protege el agua" }
+    "extraInfo": "La azadiractina del aceite de nim actúa por contacto e ingestión. Es un análogo de la ecdisona (la hormona de la muda en los insectos), lo que bloquea el desarrollo de las larvas e impide que lleguen a su fase reproductora. Al no ser un veneno neurotóxico directo de amplio espectro, respeta a la fauna beneficiosa como mariquitas y abejas si se aplica cuando estas no están activas.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por Litro",
+        "casero": "1.10 €",
+        "comercial": "14.50 € (Pesticida comercial)",
+        "diferencia": "Ahorro del 92.4%"
+      },
+      {
+        "concepto": "Residuos en Cosecha",
+        "casero": "0% Residuo persistente",
+        "comercial": "Requiere plazos de seguridad de días",
+        "diferencia": "Comida limpia"
+      },
+      {
+        "concepto": "Toxicidad Pulmonar",
+        "casero": "Completamente seguro e inofensivo",
+        "comercial": "Tóxico por inhalación y contacto",
+        "diferencia": "Sin riesgos"
+      },
+      {
+        "concepto": "Biodegradabilidad",
+        "casero": "100% Rápida en el suelo",
+        "comercial": "Persistente en aguas subterráneas",
+        "diferencia": "Protege el agua"
+      }
     ]
   },
   {
-    id: "filtro-agua",
-    title: "Filtro de Agua de Emergencia de Carbón y Arena",
-    category: "tecnologia",
-    tag: "Tecnología Ancestral",
-    image: "assets/images/filtro_agua.png",
-    views: 290000,
-    summary: "Construye un sistema mecánico de filtración biológica y química para purificar agua dulce de fuentes naturales mediante carbón activo, arena fina y grava.",
-    intro: "Este filtro de agua de emergencia simula el proceso de filtración natural del agua a través del subsuelo. Empleando carbón vegetal activo (que absorbe compuestos químicos y olores por adsorción física), arena fina (que retiene partículas en suspensión) y grava, es una herramienta indispensable para situaciones de corte de suministro o supervivencia.",
-    healthBenefit: "Purifica el agua eliminando sedimentos, cloro residual y patógenos por retención física, mientras que el carbón activo adsorbe toxinas y metales pesados. Al evitar el uso exclusivo de cloro o pastillas de purificación química comercial, reduces la ingesta de compuestos de cloro que irritan y debilitan la mucosa del colon y destruyen la microbiota intestinal protectora.",
-    time: "25 minutos",
-    rawDuration: "Materiales sueltos: Ilimitada",
-    finalDuration: "Filtro operativo: 3 meses (luego renovar carbón)",
-    cost: "1.50 €",
-    metrics: {
-      economy: 95,
-      health: 90,
-      ecosystem: 100
+    "id": "filtro-agua",
+    "title": "Filtro de Agua de Emergencia de Carbón y Arena",
+    "category": "agua",
+    "tag": "Agua",
+    "image": "assets/images/filtro_agua.png",
+    "views": 290000,
+    "summary": "Construye un sistema mecánico de filtración biológica y química para purificar agua dulce de fuentes naturales mediante carbón activo, arena fina y grava.",
+    "intro": "Este filtro de agua de emergencia simula el proceso de filtración natural del agua a través del subsuelo. Empleando carbón vegetal activo (que absorbe compuestos químicos y olores por adsorción física), arena fina (que retiene partículas en suspensión) y grava, es una herramienta indispensable para situaciones de corte de suministro o supervivencia.",
+    "healthBenefit": "Purifica el agua eliminando sedimentos, cloro residual y patógenos por retención física, mientras que el carbón activo adsorbe toxinas y metales pesados. Al evitar el uso exclusivo de cloro o pastillas de purificación química comercial, reduces la ingesta de compuestos de cloro que irritan y debilitan la mucosa del colon y destruyen la microbiota intestinal protectora.",
+    "time": "25 minutos",
+    "rawDuration": "Materiales sueltos: Ilimitada",
+    "finalDuration": "Filtro operativo: 3 meses (luego renovar carbón)",
+    "cost": "1.50 €",
+    "metrics": {
+      "economy": 95,
+      "health": 90,
+      "ecosystem": 100
     },
-    shoppingList: [
-      { name: "Envase grande de vidrio o botella PET (1.5L)", price: "0.20 €" },
-      { name: "Carbón vegetal activo triturado (200g)", price: "0.80 €" },
-      { name: "Arena fina de río lavada (300g)", price: "0.20 €" },
-      { name: "Grava o piedras pequeñas de río (300g)", price: "0.10 €" },
-      { name: "Algodón orgánico o paño de algodón limpio", price: "0.20 €" }
+    "shoppingList": [
+      {
+        "name": "Envase grande de vidrio o botella PET (1.5L)",
+        "price": "0.20 €"
+      },
+      {
+        "name": "Carbón vegetal activo triturado (200g)",
+        "price": "0.80 €"
+      },
+      {
+        "name": "Arena fina de río lavada (300g)",
+        "price": "0.20 €"
+      },
+      {
+        "name": "Grava o piedras pequeñas de río (300g)",
+        "price": "0.10 €"
+      },
+      {
+        "name": "Algodón orgánico o paño de algodón limpio",
+        "price": "0.20 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Si usas una botella de plástico, corta la base. Si usas un envase de vidrio con grifo, límpialo bien.",
       "Coloca en la boca del envase o grifo el algodón orgánico o el paño bien apretado para que actúe como barrera final.",
       "Vierte la primera capa de carbón activo triturado fino (unos 8-10 cm de espesor). El carbón debe estar bien compactado.",
@@ -225,46 +368,81 @@ const recipes = [
       "Completa la parte superior con piedras medianas o grava gruesa. Esta capa retendrá hojas, ramas e impurezas grandes.",
       "Vierte agua y deja que drene. Descarta los primeros 2 litros filtrados (saldrán negros por el polvillo de carbón). El agua posterior saldrá cristalina y purificada."
     ],
-    altUses: [
+    "altUses": [
       "Sistema de filtración para el agua de lluvia recogida para su uso en riego doméstico.",
       "Purificador para estanques pequeños de jardín o acuarios artesanales.",
       "Herramienta educativa de ciencias para enseñar el ciclo de purificación de aguas a niños."
     ],
-    extraInfo: "Este filtro realiza filtración física y química. El carbón vegetal tiene una alta porosidad y un área superficial de hasta 1000 m² por gramo, lo que atrae y atrapa contaminantes orgánicos, cloro, herbicidas y pesticidas mediante fuerzas de Van der Waals. Nota: en casos de aguas muy contaminadas biológicamente, se recomienda hervir el agua después de filtrarla.",
-    comparisonTable: [
-      { concepto: "Coste por Filtro", casero: "1.50 €", comercial: "35.00 € (Jarra / Filtro comercial)", diferencia: "Ahorro del 95.7%" },
-      { concepto: "Químicos de Purificación", casero: "0% Natural (Físico/Adsorción)", comercial: "Cloro y resinas sintéticas", diferencia: "Sin químicos agresivos" },
-      { concepto: "Residuos de Cartucho", casero: "Compostables (Arena y carbón)", comercial: "Cartuchos de plástico cerrados no reciclables", diferencia: "Cero residuo plástico" },
-      { concepto: "Efectividad Física", casero: "Retiene partículas > 1 micra", comercial: "Retiene cloro y sedimentos", diferencia: "Equivalente" }
+    "extraInfo": "Este filtro realiza filtración física y química. El carbón vegetal tiene una alta porosidad y un área superficial de hasta 1000 m² por gramo, lo que atrae y atrapa contaminantes orgánicos, cloro, herbicidas y pesticidas mediante fuerzas de Van der Waals. Nota: en casos de aguas muy contaminadas biológicamente, se recomienda hervir el agua después de filtrarla.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por Filtro",
+        "casero": "1.50 €",
+        "comercial": "35.00 € (Jarra / Filtro comercial)",
+        "diferencia": "Ahorro del 95.7%"
+      },
+      {
+        "concepto": "Químicos de Purificación",
+        "casero": "0% Natural (Físico/Adsorción)",
+        "comercial": "Cloro y resinas sintéticas",
+        "diferencia": "Sin químicos agresivos"
+      },
+      {
+        "concepto": "Residuos de Cartucho",
+        "casero": "Compostables (Arena y carbón)",
+        "comercial": "Cartuchos de plástico cerrados no reciclables",
+        "diferencia": "Cero residuo plástico"
+      },
+      {
+        "concepto": "Efectividad Física",
+        "casero": "Retiene partículas > 1 micra",
+        "comercial": "Retiene cloro y sedimentos",
+        "diferencia": "Equivalente"
+      }
     ]
   },
   {
-    id: "deshidratador-solar",
-    title: "Deshidratador Solar de Alimentos de Madera",
-    category: "tecnologia",
-    tag: "Tecnología Ancestral",
-    image: "assets/images/deshidratador.png",
-    views: 250000,
-    summary: "Aprende a construir un deshidratador pasivo por convección solar para conservar excedentes de cosechas, frutas y hierbas medicinales de forma limpia e higiénica.",
-    intro: "El deshidratador solar es una herramienta tradicional para conservar alimentos durante meses sin recurrir a la congelación. Consiste en una cabina de madera con una base oscura inclinada cubierta por vidrio que calienta el aire entrante. Por convección natural, el aire cálido sube a través de bandejas de rejilla eliminando la humedad de los alimentos de forma rápida y protegida de polvo e insectos.",
-    healthBenefit: "Conserva frutas, setas y plantas medicinales manteniendo intactos sus minerales, fibra y la mayor parte de sus vitaminas hidrosolubles y enzimas al no superar los 45°C. Evita por completo el uso de conservantes químicos industriales comerciales como el dióxido de azufre o los sulfitos, que se añaden a las frutas secas comerciales y provocan asma, reacciones alérgicas y migrañas.",
-    time: "45 minutos",
-    rawDuration: "Estructura: Años",
-    finalDuration: "Alimentos secos: 6 a 12 meses",
-    cost: "12.00 €",
-    metrics: {
-      economy: 90,
-      health: 95,
-      ecosystem: 100
+    "id": "deshidratador-solar",
+    "title": "Deshidratador Solar de Alimentos de Madera",
+    "category": "alimentos",
+    "tag": "Alimentos",
+    "image": "assets/images/deshidratador.png",
+    "views": 250000,
+    "summary": "Aprende a construir un deshidratador pasivo por convección solar para conservar excedentes de cosechas, frutas y hierbas medicinales de forma limpia e higiénica.",
+    "intro": "El deshidratador solar es una herramienta tradicional para conservar alimentos durante meses sin recurrir a la congelación. Consiste en una cabina de madera con una base oscura inclinada cubierta por vidrio que calienta el aire entrante. Por convección natural, el aire cálido sube a través de bandejas de rejilla eliminando la humedad de los alimentos de forma rápida y protegida de polvo e insectos.",
+    "healthBenefit": "Conserva frutas, setas y plantas medicinales manteniendo intactos sus minerales, fibra y la mayor parte de sus vitaminas hidrosolubles y enzimas al no superar los 45°C. Evita por completo el uso de conservantes químicos industriales comerciales como el dióxido de azufre o los sulfitos, que se añaden a las frutas secas comerciales y provocan asma, reacciones alérgicas y migrañas.",
+    "time": "45 minutos",
+    "rawDuration": "Estructura: Años",
+    "finalDuration": "Alimentos secos: 6 a 12 meses",
+    "cost": "12.00 €",
+    "metrics": {
+      "economy": 90,
+      "health": 95,
+      "ecosystem": 100
     },
-    shoppingList: [
-      { name: "Listones y tablas de madera reciclada", price: "4.50 €" },
-      { name: "Lámina de vidrio o metacrilato transparente", price: "4.00 €" },
-      { name: "Malla mosquitera de acero inoxidable o tela", price: "2.00 €" },
-      { name: "Pintura negra base agua ecológica (interior)", price: "1.00 €" },
-      { name: "Bisagras y tornillos pequeños", price: "0.50 €" }
+    "shoppingList": [
+      {
+        "name": "Listones y tablas de madera reciclada",
+        "price": "4.50 €"
+      },
+      {
+        "name": "Lámina de vidrio o metacrilato transparente",
+        "price": "4.00 €"
+      },
+      {
+        "name": "Malla mosquitera de acero inoxidable o tela",
+        "price": "2.00 €"
+      },
+      {
+        "name": "Pintura negra base agua ecológica (interior)",
+        "price": "1.00 €"
+      },
+      {
+        "name": "Bisagras y tornillos pequeños",
+        "price": "0.50 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Construye un cajón rectangular de madera, dejando la parte superior inclinada a unos 30-40 grados para optimizar la incidencia solar.",
       "Pinta el fondo interior del cajón de color negro mate (con pintura ecológica sin metales pesados) para absorber la radiación solar y generar calor.",
       "Realiza aberturas de ventilación en la parte inferior (entrada de aire frío) y en la parte superior (salida de aire húmedo), cubriéndolas con mosquitera para evitar insectos.",
@@ -273,46 +451,81 @@ const recipes = [
       "Instala la cubierta de vidrio transparente en la parte superior inclinada con bisagras para abrir y cerrar el deshidratador.",
       "Coloca el deshidratador orientado al sur en un punto soleado. Coloca rodajas finas de frutas (manzana, plátano, fresas) en las bandejas y cierra el vidrio."
     ],
-    altUses: [
+    "altUses": [
       "Secador de hierbas aromáticas y medicinales (manzanilla, romero, menta) conservando sus aceites esenciales.",
       "Conservador para setas y hongos silvestres recolectados en otoño.",
       "Secador ecológico de semillas de huerto para guardarlas de un año para otro."
     ],
-    extraInfo: "El secado solar se basa en el efecto invernadero. La luz solar atraviesa el vidrio y calienta el fondo negro del colector, que emite radiación infrarroja de onda larga que no puede escapar a través del vidrio. Esto eleva la temperatura interior. El aire caliente disminuye su humedad relativa y asciende, arrastrando el vapor de agua liberado por los alimentos hacia el exterior por diferencias de densidad.",
-    comparisonTable: [
-      { concepto: "Gasto de Energía", casero: "0W (Energía solar pasiva)", comercial: "500W por hora (Deshidratador eléctrico)", diferencia: "Ahorro del 100%" },
-      { concepto: "Preservación Química", casero: "Cero aditivos ni sulfitos", comercial: "Sulfitos para conservar el color brillante", diferencia: "Sin alérgenos" },
-      { concepto: "Higiene y Plagas", casero: "Hermético contra moscas y polvo", comercial: "N/A (Procesado industrial)", diferencia: "Muy higiénico" },
-      { concepto: "Temperatura de Secado", casero: "Suave (35°C - 45°C) preserva enzimas", comercial: "Altas temperaturas (destruye vitaminas)", diferencia: "Mayor calidad nutricional" }
+    "extraInfo": "El secado solar se basa en el efecto invernadero. La luz solar atraviesa el vidrio y calienta el fondo negro del colector, que emite radiación infrarroja de onda larga que no puede escapar a través del vidrio. Esto eleva la temperatura interior. El aire caliente disminuye su humedad relativa y asciende, arrastrando el vapor de agua liberado por los alimentos hacia el exterior por diferencias de densidad.",
+    "comparisonTable": [
+      {
+        "concepto": "Gasto de Energía",
+        "casero": "0W (Energía solar pasiva)",
+        "comercial": "500W por hora (Deshidratador eléctrico)",
+        "diferencia": "Ahorro del 100%"
+      },
+      {
+        "concepto": "Preservación Química",
+        "casero": "Cero aditivos ni sulfitos",
+        "comercial": "Sulfitos para conservar el color brillante",
+        "diferencia": "Sin alérgenos"
+      },
+      {
+        "concepto": "Higiene y Plagas",
+        "casero": "Hermético contra moscas y polvo",
+        "comercial": "N/A (Procesado industrial)",
+        "diferencia": "Muy higiénico"
+      },
+      {
+        "concepto": "Temperatura de Secado",
+        "casero": "Suave (35°C - 45°C) preserva enzimas",
+        "comercial": "Altas temperaturas (destruye vitaminas)",
+        "diferencia": "Mayor calidad nutricional"
+      }
     ]
   },
   {
-    id: "pasta-dientes",
-    title: "Pasta de Dientes Remineralizante de Arcilla y Coco",
-    category: "cuerpo",
-    tag: "Cuidado Personal",
-    image: "assets/images/pasta_dientes.png",
-    views: 210000,
-    summary: "Elabora una pasta dental alcalinizante y libre de flúor sintético utilizando caolín (arcilla blanca de uso interno) purificante, bicarbonato y aceite de coco antibacteriano.",
-    intro: "Esta receta ofrece una alternativa saludable, ecológica y totalmente libre de químicos a las pastas dentales industriales. La arcilla blanca limpia y remineraliza el esmalte sin desgastarlo gracias a su baja abrasividad, mientras que el aceite de coco virgen combate los microorganismos patógenos y el bicarbonato equilibra la acidez de la cavidad bucal de forma totalmente natural.",
-    healthBenefit: "Prescinde por completo del flúor sintético (asociado a toxicidad sistémica y acumulación de fluorosis en los huesos), del lauril sulfato de sodio (un espumante industrial muy irritante que genera microlesiones y aftas bucales) y de los microplásticos. Esta fórmula natural alcaliniza el pH bucal, remineraliza el esmalte con calcio vegetal y limpia eficazmente respetando el microbioma oral protector.",
-    time: "10 minutos",
-    rawDuration: "Arcilla e ingredientes: 1 año",
-    finalDuration: "Pasta dental: 3 meses",
-    cost: "1.20 €",
-    metrics: {
-      economy: 85,
-      health: 100,
-      ecosystem: 95
+    "id": "pasta-dientes",
+    "title": "Pasta de Dientes Remineralizante de Arcilla y Coco",
+    "category": "higiene",
+    "tag": "Higiene",
+    "image": "assets/images/pasta_dientes.png",
+    "views": 210000,
+    "summary": "Elabora una pasta dental alcalinizante y libre de flúor sintético utilizando caolín (arcilla blanca de uso interno) purificante, bicarbonato y aceite de coco antibacteriano.",
+    "intro": "Esta receta ofrece una alternativa saludable, ecológica y totalmente libre de químicos a las pastas dentales industriales. La arcilla blanca limpia y remineraliza el esmalte sin desgastarlo gracias a su baja abrasividad, mientras que el aceite de coco virgen combate los microorganismos patógenos y el bicarbonato equilibra la acidez de la cavidad bucal de forma totalmente natural.",
+    "healthBenefit": "Prescinde por completo del flúor sintético (asociado a toxicidad sistémica y acumulación de fluorosis en los huesos), del lauril sulfato de sodio (un espumante industrial muy irritante que genera microlesiones y aftas bucales) y de los microplásticos. Esta fórmula natural alcaliniza el pH bucal, remineraliza el esmalte con calcio vegetal y limpia eficazmente respetando el microbioma oral protector.",
+    "time": "10 minutos",
+    "rawDuration": "Arcilla e ingredientes: 1 año",
+    "finalDuration": "Pasta dental: 3 meses",
+    "cost": "1.20 €",
+    "metrics": {
+      "economy": 85,
+      "health": 100,
+      "ecosystem": 95
     },
-    shoppingList: [
-      { name: "Arcilla blanca de uso interno (Caolín) (30g)", price: "0.50 €" },
-      { name: "Aceite de coco virgen extra orgánico (20g)", price: "0.40 €" },
-      { name: "Bicarbonato de sodio grado alimentario (5g)", price: "0.05 €" },
-      { name: "Aceite esencial de menta piperita (10 gotas)", price: "0.20 €" },
-      { name: "Tarro pequeño de vidrio con tapa", price: "0.05 €" }
+    "shoppingList": [
+      {
+        "name": "Arcilla blanca de uso interno (Caolín) (30g)",
+        "price": "0.50 €"
+      },
+      {
+        "name": "Aceite de coco virgen extra orgánico (20g)",
+        "price": "0.40 €"
+      },
+      {
+        "name": "Bicarbonato de sodio grado alimentario (5g)",
+        "price": "0.05 €"
+      },
+      {
+        "name": "Aceite esencial de menta piperita (10 gotas)",
+        "price": "0.20 €"
+      },
+      {
+        "name": "Tarro pequeño de vidrio con tapa",
+        "price": "0.05 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Mezcla la arcilla blanca (caolín) y el bicarbonato de sodio en un bol de vidrio, cerámica o madera. Evita utensilios metálicos para no alterar las propiedades iónicas de la arcilla.",
       "Si el aceite de coco está en estado sólido, disuélvelo al baño María a fuego muy suave hasta que quede líquido.",
       "Vierte el aceite de coco tibio sobre la mezcla de polvos secos de forma gradual.",
@@ -321,45 +534,77 @@ const recipes = [
       "Pasa la pasta terminada al tarro pequeño de vidrio limpio y tápalo.",
       "Uso: Coge una porción pequeña (tamaño de un guisante) con una espátula limpia o con el propio cepillo seco. Cepilla suavemente durante 3 minutos y enjuaga bien."
     ],
-    altUses: [
+    "altUses": [
       "Aplicación directa en picaduras de insectos para calmar la picazón y desinfectar.",
       "Limpiador ultra suave no abrasivo para recuperar el brillo de piezas de plata.",
       "Desodorante axilar de emergencia gracias al bicarbonato y aceite de coco."
     ],
-    extraInfo: "La arcilla blanca o caolín es rica en sílice y minerales que nutren las encías y apoyan la remineralización del esmalte. Al contrario que el carbonato cálcico de mala calidad de algunas pastas comerciales, el caolín tiene un índice de abrasividad extremadamente bajo, lo que protege el esmalte dental sensible. El aceite de coco contiene ácido láurico, que ataca bacterias nocivas como la *Streptococcus mutans*.",
-    comparisonTable: [
-      { concepto: "Coste por 60ml", casero: "1.20 €", comercial: "4.50 € (Pasta ecológica)", diferencia: "Ahorro del 73.3%" },
-      { concepto: "Flúor y Sulfatos (SLS)", casero: "0% Sin flúor ni SLS irritante", comercial: "Presentes como ingredientes estándar", diferencia: "Sin sustancias tóxicas" },
-      { concepto: "Protección de Encías", casero: "Fórmula calmante y protectora", comercial: "El SLS reseca y favorece aftas bucales", diferencia: "Protección natural" },
-      { concepto: "Tipo de Envase", casero: "Tarro de vidrio reutilizable", comercial: "Tubo de plástico laminado no reciclable", diferencia: "Residuo Cero" }
+    "extraInfo": "La arcilla blanca o caolín es rica en sílice y minerales que nutren las encías y apoyan la remineralización del esmalte. Al contrario que el carbonato cálcico de mala calidad de algunas pastas comerciales, el caolín tiene un índice de abrasividad extremadamente bajo, lo que protege el esmalte dental sensible. El aceite de coco contiene ácido láurico, que ataca bacterias nocivas como la *Streptococcus mutans*.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por 60ml",
+        "casero": "1.20 €",
+        "comercial": "4.50 € (Pasta ecológica)",
+        "diferencia": "Ahorro del 73.3%"
+      },
+      {
+        "concepto": "Flúor y Sulfatos (SLS)",
+        "casero": "0% Sin flúor ni SLS irritante",
+        "comercial": "Presentes como ingredientes estándar",
+        "diferencia": "Sin sustancias tóxicas"
+      },
+      {
+        "concepto": "Protección de Encías",
+        "casero": "Fórmula calmante y protectora",
+        "comercial": "El SLS reseca y favorece aftas bucales",
+        "diferencia": "Protección natural"
+      },
+      {
+        "concepto": "Tipo de Envase",
+        "casero": "Tarro de vidrio reutilizable",
+        "comercial": "Tubo de plástico laminado no reciclable",
+        "diferencia": "Residuo Cero"
+      }
     ]
   },
   {
-    id: "jabon-ceniza",
-    title: "Jabón de Lixivia de Ceniza de Madera y Oliva",
-    category: "hogar",
-    tag: "Hogar Ecológico",
-    image: "assets/images/jabon_ceniza.png",
-    views: 180000,
-    summary: "Aprende a fabricar un jabón líquido o blando concentrado utilizando la lixivia obtenida de cenizas de madera y aceite de oliva usado.",
-    intro: "La obtención de jabón mediante lixivia de cenizas es una de las técnicas químicas más antiguas de la humanidad. La ceniza de madera dura es rica en carbonato de potasio (potasa), una base alcalina que, al reaccionar con los ácidos grasos del aceite de oliva, produce saponificación. Es un jabón biodegradable excelente para lavar ropa y suelos.",
-    healthBenefit: "Evita el uso de geles y jabones comerciales que contienen tensoactivos petroquímicos fuertes, conservantes liberadores de formaldehído y fragancias de síntesis artificial. Estas sustancias dañan la barrera lipídica y el microbioma de la piel, y son absorbidas por el torrente sanguíneo, pudiendo actuar como alérgenos potentes y disruptores hormonales en el cuerpo.",
-    time: "1 hora (Reposo de lixivia: 2 días)",
-    rawDuration: "Ceniza seca: Ilimitada",
-    finalDuration: "Jabón líquido: 12 meses",
-    cost: "0.80 €",
-    metrics: {
-      economy: 95,
-      health: 90,
-      ecosystem: 100
+    "id": "jabon-ceniza",
+    "title": "Jabón de Lixivia de Ceniza de Madera y Oliva",
+    "category": "limpieza",
+    "tag": "Limpieza",
+    "image": "assets/images/jabon_ceniza.png",
+    "views": 180000,
+    "summary": "Aprende a fabricar un jabón líquido o blando concentrado utilizando la lixivia obtenida de cenizas de madera y aceite de oliva usado.",
+    "intro": "La obtención de jabón mediante lixivia de cenizas es una de las técnicas químicas más antiguas de la humanidad. La ceniza de madera dura es rica en carbonato de potasio (potasa), una base alcalina que, al reaccionar con los ácidos grasos del aceite de oliva, produce saponificación. Es un jabón biodegradable excelente para lavar ropa y suelos.",
+    "healthBenefit": "Evita el uso de geles y jabones comerciales que contienen tensoactivos petroquímicos fuertes, conservantes liberadores de formaldehído y fragancias de síntesis artificial. Estas sustancias dañan la barrera lipídica y el microbioma de la piel, y son absorbidas por el torrente sanguíneo, pudiendo actuar como alérgenos potentes y disruptores hormonales en el cuerpo.",
+    "time": "1 hora (Reposo de lixivia: 2 días)",
+    "rawDuration": "Ceniza seca: Ilimitada",
+    "finalDuration": "Jabón líquido: 12 meses",
+    "cost": "0.80 €",
+    "metrics": {
+      "economy": 95,
+      "health": 90,
+      "ecosystem": 100
     },
-    shoppingList: [
-      { name: "Ceniza de madera dura tamizada (1 kg)", price: "0.00 €" },
-      { name: "Agua de lluvia o filtrada (4 Litros)", price: "0.10 €" },
-      { name: "Aceite de oliva usado filtrado (1 Litro)", price: "0.50 €" },
-      { name: "Aceite esencial de limón o romero (20 gotas)", price: "0.20 €" }
+    "shoppingList": [
+      {
+        "name": "Ceniza de madera dura tamizada (1 kg)",
+        "price": "0.00 €"
+      },
+      {
+        "name": "Agua de lluvia o filtrada (4 Litros)",
+        "price": "0.10 €"
+      },
+      {
+        "name": "Aceite de oliva usado filtrado (1 Litro)",
+        "price": "0.50 €"
+      },
+      {
+        "name": "Aceite esencial de limón o romero (20 gotas)",
+        "price": "0.20 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Tamiza bien las cenizas de madera limpia de tu chimenea para eliminar trozos de carbón sin quemar. Utiliza ceniza blanca.",
       "Mezcla en un balde de plástico la ceniza y el agua en una proporción de 1 parte de ceniza por 4 partes de agua caliente. Remueve bien con un palo de madera.",
       "Deja reposar la mezcla tapada durante 48 horas en un lugar seguro, removiéndola dos veces al día. La lixivia potásica se concentrará.",
@@ -368,46 +613,81 @@ const recipes = [
       "Vierte lentamente la lixivia concentrada sobre el aceite mientras remueves continuamente a fuego bajo durante unos 40 minutos hasta lograr una emulsión espesa.",
       "Apaga el fuego, deja enfriar y añade el aceite esencial para aromatizar. Vierte en botellas de vidrio o garrafas reutilizadas."
     ],
-    altUses: [
+    "altUses": [
       "Detergente biodegradable concentrado para coladas en lavadora lavando a mano.",
       "Limpiador desinfectante para suelos rústicos de madera, piedra o baldosas.",
       "Tratamiento preventivo para plagas agrícolas diluyéndolo en agua al 2% para pulverizar hojas."
     ],
-    extraInfo: "La lixiviación extrae el carbonato potásico de la ceniza. La saponificación con potasa da como resultado un jabón blando o líquido (jabon potásico), a diferencia de la sosa cáustica (hidróxido de sodio) que produce jabones duros de sodio. La potasa de ceniza es extremadamente respetuosa con las aguas residuales ya que aporta potasio útil para las plantas del suelo.",
-    comparisonTable: [
-      { concepto: "Coste por Litro", casero: "0.20 €", comercial: "3.20 € (Jabón potásico comercial)", diferencia: "Ahorro del 93.7%" },
-      { concepto: "Origen del Álcali", casero: "Ceniza natural de madera", comercial: "Potasa cáustica purificada químicamente", diferencia: "Sin químicos sintéticos" },
-      { concepto: "Impacto en la Piel", casero: "Suave, libre de sulfatos", comercial: "Agentes espumantes irritantes", diferencia: "Protege la dermis" },
-      { concepto: "Residuos de Envase", casero: "Garrafas reutilizables de casa", comercial: "Botellas plásticas monouso", diferencia: "Sostenible" }
+    "extraInfo": "La lixiviación extrae el carbonato potásico de la ceniza. La saponificación con potasa da como resultado un jabón blando o líquido (jabon potásico), a diferencia de la sosa cáustica (hidróxido de sodio) que produce jabones duros de sodio. La potasa de ceniza es extremadamente respetuosa con las aguas residuales ya que aporta potasio útil para las plantas del suelo.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por Litro",
+        "casero": "0.20 €",
+        "comercial": "3.20 € (Jabón potásico comercial)",
+        "diferencia": "Ahorro del 93.7%"
+      },
+      {
+        "concepto": "Origen del Álcali",
+        "casero": "Ceniza natural de madera",
+        "comercial": "Potasa cáustica purificada químicamente",
+        "diferencia": "Sin químicos sintéticos"
+      },
+      {
+        "concepto": "Impacto en la Piel",
+        "casero": "Suave, libre de sulfatos",
+        "comercial": "Agentes espumantes irritantes",
+        "diferencia": "Protege la dermis"
+      },
+      {
+        "concepto": "Residuos de Envase",
+        "casero": "Garrafas reutilizables de casa",
+        "comercial": "Botellas plásticas monouso",
+        "diferencia": "Sostenible"
+      }
     ]
   },
   {
-    id: "velas-aceite",
-    title: "Velones Ecológicos de Aceite de Cocina Usado",
-    category: "hogar",
-    tag: "Hogar Ecológico",
-    image: "assets/images/velas_aceite.png",
-    views: 150000,
-    summary: "Aprende a reciclar el aceite usado de la cocina para elaborar velas aromáticas caseras de combustión limpia y larga duración utilizando cera de soja.",
-    intro: "El aceite de cocina usado es uno de los mayores contaminantes del agua doméstica. Macerándolo y solidificándolo con cera de soja vegetal y mechas de algodón orgánico, podemos transformarlo en velones aromáticos decorativos de gran calidad, que no producen humos negros y purifican el ambiente doméstico.",
-    healthBenefit: "Al quemar estas velas vegetales evitas inhalar hidrocarburos como benceno y tolueno, compuestos altamente cancerígenos emitidos por las velas comerciales de parafina de petróleo al arder. Esto protege tu salud respiratoria interna, mantiene el aire limpio de toxinas volátiles y reduce el desarrollo de dolores de cabeza por vapores petroquímicos.",
-    time: "20 minutos",
-    rawDuration: "Aceite filtrado: 6 meses",
-    finalDuration: "Vela terminada: Años",
-    cost: "1.30 €",
-    metrics: {
-      economy: 90,
-      health: 95,
-      ecosystem: 100
+    "id": "velas-aceite",
+    "title": "Velones Ecológicos de Aceite de Cocina Usado",
+    "category": "calefaccion",
+    "tag": "Calefacción",
+    "image": "assets/images/velas_aceite.png",
+    "views": 150000,
+    "summary": "Aprende a reciclar el aceite usado de la cocina para elaborar velas aromáticas caseras de combustión limpia y larga duración utilizando cera de soja.",
+    "intro": "El aceite de cocina usado es uno de los mayores contaminantes del agua doméstica. Macerándolo y solidificándolo con cera de soja vegetal y mechas de algodón orgánico, podemos transformarlo en velones aromáticos decorativos de gran calidad, que no producen humos negros y purifican el ambiente doméstico.",
+    "healthBenefit": "Al quemar estas velas vegetales evitas inhalar hidrocarburos como benceno y tolueno, compuestos altamente cancerígenos emitidos por las velas comerciales de parafina de petróleo al arder. Esto protege tu salud respiratoria interna, mantiene el aire limpio de toxinas volátiles y reduce el desarrollo de dolores de cabeza por vapores petroquímicos.",
+    "time": "20 minutos",
+    "rawDuration": "Aceite filtrado: 6 meses",
+    "finalDuration": "Vela terminada: Años",
+    "cost": "1.30 €",
+    "metrics": {
+      "economy": 90,
+      "health": 95,
+      "ecosystem": 100
     },
-    shoppingList: [
-      { name: "Aceite de cocina usado bien filtrado (150ml)", price: "0.00 €" },
-      { name: "Cera de soja de bajo punto de fusión (150g)", price: "0.90 €" },
-      { name: "Mechas de algodón orgánico con base metálica", price: "0.20 €" },
-      { name: "Aceite esencial de eucalipto o canela (15 gotas)", price: "0.15 €" },
-      { name: "Tarros pequeños de vidrio reciclado", price: "0.05 €" }
+    "shoppingList": [
+      {
+        "name": "Aceite de cocina usado bien filtrado (150ml)",
+        "price": "0.00 €"
+      },
+      {
+        "name": "Cera de soja de bajo punto de fusión (150g)",
+        "price": "0.90 €"
+      },
+      {
+        "name": "Mechas de algodón orgánico con base metálica",
+        "price": "0.20 €"
+      },
+      {
+        "name": "Aceite esencial de eucalipto o canela (15 gotas)",
+        "price": "0.15 €"
+      },
+      {
+        "name": "Tarros pequeños de vidrio reciclado",
+        "price": "0.05 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Filtra el aceite de cocina usado empleando un paño de algodón fino o filtro de café varias veces para eliminar cualquier resto de comida u olor frito.",
       "Derrite la cera de soja al baño María en un recipiente resistente al calor hasta que esté completamente transparente.",
       "Retira del fuego e incorpora lentamente el aceite de cocina purificado templado a la cera de soja fundida, removiendo suavemente para mezclar.",
@@ -416,45 +696,77 @@ const recipes = [
       "Vierte con cuidado la mezcla líquida de cera y aceite en el tarro de vidrio.",
       "Deja enfriar a temperatura ambiente durante 4 horas hasta que solidifique por completo de un color blanco cremoso. Corta la mecha a 1 cm y enciende."
     ],
-    altUses: [
+    "altUses": [
       "Velas de exterior repelentes de mosquitos añadiendo aceite esencial de citronela.",
       "Puntos de luz de emergencia para kits de apagón eléctrico autónomos.",
       "Detalle rústico aromático decorativo para el hogar."
     ],
-    extraInfo: "La cera de soja vegetal tiene un punto de fusión bajo y funciona como un excelente aglutinante para aceites líquidos. Al combinarlos al 50%, la cera absorbe el aceite de oliva o girasol y genera una combustión lenta y limpia. Quemas cera natural sin liberar hollín ni compuestos de carbono tóxicos asociados a la parafina comercial.",
-    comparisonTable: [
-      { concepto: "Coste por Vela", casero: "0.65 € (Por tarro)", comercial: "6.00 € (Vela de cera natural)", diferencia: "Ahorro del 89.1%" },
-      { concepto: "Base de la Cera", casero: "Soja y aceite vegetal reciclado", comercial: "Parafina mineral (Derivado de petróleo)", diferencia: "Sin hidrocarburos" },
-      { concepto: "Hollín y Humos", casero: "Combustión limpia sin tóxicos", comercial: "Emisión de benceno y hollín negro", diferencia: "Aire doméstico limpio" },
-      { concepto: "Impacto de Residuos", casero: "Evita contaminar 1000L de agua de grifo", comercial: "Generación de envases y residuos industriales", diferencia: "Ecológico absoluto" }
+    "extraInfo": "La cera de soja vegetal tiene un punto de fusión bajo y funciona como un excelente aglutinante para aceites líquidos. Al combinarlos al 50%, la cera absorbe el aceite de oliva o girasol y genera una combustión lenta y limpia. Quemas cera natural sin liberar hollín ni compuestos de carbono tóxicos asociados a la parafina comercial.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por Vela",
+        "casero": "0.65 € (Por tarro)",
+        "comercial": "6.00 € (Vela de cera natural)",
+        "diferencia": "Ahorro del 89.1%"
+      },
+      {
+        "concepto": "Base de la Cera",
+        "casero": "Soja y aceite vegetal reciclado",
+        "comercial": "Parafina mineral (Derivado de petróleo)",
+        "diferencia": "Sin hidrocarburos"
+      },
+      {
+        "concepto": "Hollín y Humos",
+        "casero": "Combustión limpia sin tóxicos",
+        "comercial": "Emisión de benceno y hollín negro",
+        "diferencia": "Aire doméstico limpio"
+      },
+      {
+        "concepto": "Impacto de Residuos",
+        "casero": "Evita contaminar 1000L de agua de grifo",
+        "comercial": "Generación de envases y residuos industriales",
+        "diferencia": "Ecológico absoluto"
+      }
     ]
   },
   {
-    id: "balsamo-calendula",
-    title: "Bálsamo Reparador de Caléndula y Aceite de Oliva",
-    category: "cuerpo",
-    tag: "Cuidado Personal",
-    image: "assets/images/balsamo.png",
-    views: 120000,
-    summary: "Ungüento balsámico tradicional formulado para aliviar quemaduras leves, irritaciones de la piel y sequedad extrema mediante flores de caléndula maceradas en aceite de oliva y cera de abejas.",
-    intro: "El oleato de caléndula posee propiedades calmantes, cicatrizantes y antiinflamatorias gracias a sus flavonoides y triterpenos. Combinado con el aceite de oliva virgen extra y la cera pura de abejas, este bálsamo forma una barrera protectora transpirable sobre la piel que acelera la regeneración celular y nutre en profundidad, sin aditivos de origen mineral ni petrolatos.",
-    healthBenefit: "Aporta nutrientes lipídicos y vitaminas esenciales directamente a las células cutáneas mediante aceites vegetales puros, en lugar de recubrir la piel con aceites minerales derivados del petróleo (como la vaselina o parafina líquida). Los derivados de hidrocarburos crean una película impermeable plástica que obstruye los poros e impide que la piel elimine toxinas de manera natural.",
-    time: "35 minutos (Maceración previa de 40 días)",
-    rawDuration: "Flores secas: 2 años",
-    finalDuration: "Bálsamo terminado: 12 meses",
-    cost: "3.20 €",
-    metrics: {
-      economy: 80,
-      health: 100,
-      ecosystem: 95
+    "id": "balsamo-calendula",
+    "title": "Bálsamo Reparador de Caléndula y Aceite de Oliva",
+    "category": "remedios",
+    "tag": "Remedios",
+    "image": "assets/images/balsamo.png",
+    "views": 120000,
+    "summary": "Ungüento balsámico tradicional formulado para aliviar quemaduras leves, irritaciones de la piel y sequedad extrema mediante flores de caléndula maceradas en aceite de oliva y cera de abejas.",
+    "intro": "El oleato de caléndula posee propiedades calmantes, cicatrizantes y antiinflamatorias gracias a sus flavonoides y triterpenos. Combinado con el aceite de oliva virgen extra y la cera pura de abejas, este bálsamo forma una barrera protectora transpirable sobre la piel que acelera la regeneración celular y nutre en profundidad, sin aditivos de origen mineral ni petrolatos.",
+    "healthBenefit": "Aporta nutrientes lipídicos y vitaminas esenciales directamente a las células cutáneas mediante aceites vegetales puros, en lugar de recubrir la piel con aceites minerales derivados del petróleo (como la vaselina o parafina líquida). Los derivados de hidrocarburos crean una película impermeable plástica que obstruye los poros e impide que la piel elimine toxinas de manera natural.",
+    "time": "35 minutos (Maceración previa de 40 días)",
+    "rawDuration": "Flores secas: 2 años",
+    "finalDuration": "Bálsamo terminado: 12 meses",
+    "cost": "3.20 €",
+    "metrics": {
+      "economy": 80,
+      "health": 100,
+      "ecosystem": 95
     },
-    shoppingList: [
-      { name: "Aceite de oliva virgen extra (100ml)", price: "0.80 €" },
-      { name: "Flores secas de caléndula orgánica (15g)", price: "0.90 €" },
-      { name: "Cera pura de abejas natural (15g)", price: "1.20 €" },
-      { name: "Tarro de vidrio ámbar de 50ml", price: "0.30 €" }
+    "shoppingList": [
+      {
+        "name": "Aceite de oliva virgen extra (100ml)",
+        "price": "0.80 €"
+      },
+      {
+        "name": "Flores secas de caléndula orgánica (15g)",
+        "price": "0.90 €"
+      },
+      {
+        "name": "Cera pura de abejas natural (15g)",
+        "price": "1.20 €"
+      },
+      {
+        "name": "Tarro de vidrio ámbar de 50ml",
+        "price": "0.30 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Preparación del oleato: Coloca las flores secas de caléndula en un frasco de vidrio limpio. Cúbrelas por completo con el aceite de oliva virgen extra. Cierra el frasco y déjalo macerar en un lugar cálido y seco alejado de la luz solar directa durante 40 días, agitándolo suavemente cada día.",
       "Transcurridos los 40 días, filtra el aceite usando un paño limpio o colador de tela fina, exprimiendo las flores para extraer todo el extracto concentrado de caléndula.",
       "Vierte los 100ml del aceite filtrado en un recipiente de vidrio resistente al calor.",
@@ -464,45 +776,77 @@ const recipes = [
       "Vierte el líquido inmediatamente en el tarro de vidrio ámbar de 50ml antes de que empiece a solidificar.",
       "Deja enfriar a temperatura ambiente destapado durante 3-4 horas hasta que adquiera su consistencia cerosa definitiva. Coloca la tapa hermética y guárdalo en un lugar fresco."
     ],
-    altUses: [
+    "altUses": [
       "Crema pañalera para bebés: su suavidad extrema protege contra la dermatitis del pañal sin aportar siliconas ni perfumes sintéticos.",
       "Bálsamo labial nutritivo de emergencia para labios agrietados por el frío o el viento.",
       "Crema hidratante intensiva para talones y codos secos."
     ],
-    extraInfo: "Si deseas preparar el bálsamo más rápido sin esperar los 40 días, puedes calentar las flores secas con el aceite de oliva al baño María a fuego muy lento (sin superar los 50°C) durante unas 3 horas, revolviendo de vez en cuando. Este método caliente extrae los principios activos de forma acelerada.",
-    comparisonTable: [
-      { concepto: "Coste por 50ml", casero: "1.60 € (Por tarro)", comercial: "12.50 € (Farmacia)", diferencia: "Ahorro del 87.2%" },
-      { concepto: "Base de formulación", casero: "Aceite de oliva virgen", comercial: "Vaselina / Petrolatum (Petróleo)", diferencia: "100% Orgánica" },
-      { concepto: "Alérgenos y Perfume", casero: "Sin perfumes sintéticos", comercial: "Fragrancia y conservantes PEG", diferencia: "Hipoalergénico" },
-      { concepto: "Estabilidad a la luz", casero: "Vidrio ámbar protector", comercial: "Envase plástico genérico", diferencia: "Mejor conservación" }
+    "extraInfo": "Si deseas preparar el bálsamo más rápido sin esperar los 40 días, puedes calentar las flores secas con el aceite de oliva al baño María a fuego muy lento (sin superar los 50°C) durante unas 3 horas, revolviendo de vez en cuando. Este método caliente extrae los principios activos de forma acelerada.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por 50ml",
+        "casero": "1.60 € (Por tarro)",
+        "comercial": "12.50 € (Farmacia)",
+        "diferencia": "Ahorro del 87.2%"
+      },
+      {
+        "concepto": "Base de formulación",
+        "casero": "Aceite de oliva virgen",
+        "comercial": "Vaselina / Petrolatum (Petróleo)",
+        "diferencia": "100% Orgánica"
+      },
+      {
+        "concepto": "Alérgenos y Perfume",
+        "casero": "Sin perfumes sintéticos",
+        "comercial": "Fragrancia y conservantes PEG",
+        "diferencia": "Hipoalergénico"
+      },
+      {
+        "concepto": "Estabilidad a la luz",
+        "casero": "Vidrio ámbar protector",
+        "comercial": "Envase plástico genérico",
+        "diferencia": "Mejor conservación"
+      }
     ]
   },
   {
-    id: "pomada-llanten",
-    title: "Pomada Cicatrizante y Desinfectante de Llantén",
-    category: "cuerpo",
-    tag: "Cuidado Personal",
-    image: "assets/images/pomada_llanten.png",
-    views: 110000,
-    summary: "Ungüento antiséptico natural elaborado con hojas frescas de llantén mayor maceradas en aceite de oliva, ideal para curar eczemas, rozaduras y cortes menores.",
-    intro: "El llantén mayor (Plantago major) es una de las plantas medicinales tradicionales más valiosas por su contenido en aucubina (antiséptica), alantoína (regeneradora cutánea) y ácido silícico. Esta pomada artesanal proporciona un alivio rápido y seguro para heridas superficiales e irritaciones.",
-    healthBenefit: "Acelera la cicatrización natural y desinfecta la piel sin necesidad de cremas farmacéuticas con corticoides sintéticos (que adelgazan y debilitan la estructura de la epidermis) ni petrolatos. Al no contener aditivos artificiales, es perfectamente segura para personas con piel sensible, alergias o reactividad dermatológica.",
-    time: "35 minutos (Maceración: 20 días)",
-    rawDuration: "Hojas deshidratadas: 1 año",
-    finalDuration: "Pomada en tarro: 12 meses",
-    cost: "1.80 €",
-    metrics: {
-      economy: 85,
-      health: 100,
-      ecosystem: 95
+    "id": "pomada-llanten",
+    "title": "Pomada Cicatrizante y Desinfectante de Llantén",
+    "category": "remedios",
+    "tag": "Remedios",
+    "image": "assets/images/pomada_llanten.png",
+    "views": 110000,
+    "summary": "Ungüento antiséptico natural elaborado con hojas frescas de llantén mayor maceradas en aceite de oliva, ideal para curar eczemas, rozaduras y cortes menores.",
+    "intro": "El llantén mayor (Plantago major) es una de las plantas medicinales tradicionales más valiosas por su contenido en aucubina (antiséptica), alantoína (regeneradora cutánea) y ácido silícico. Esta pomada artesanal proporciona un alivio rápido y seguro para heridas superficiales e irritaciones.",
+    "healthBenefit": "Acelera la cicatrización natural y desinfecta la piel sin necesidad de cremas farmacéuticas con corticoides sintéticos (que adelgazan y debilitan la estructura de la epidermis) ni petrolatos. Al no contener aditivos artificiales, es perfectamente segura para personas con piel sensible, alergias o reactividad dermatológica.",
+    "time": "35 minutos (Maceración: 20 días)",
+    "rawDuration": "Hojas deshidratadas: 1 año",
+    "finalDuration": "Pomada en tarro: 12 meses",
+    "cost": "1.80 €",
+    "metrics": {
+      "economy": 85,
+      "health": 100,
+      "ecosystem": 95
     },
-    shoppingList: [
-      { name: "Hojas frescas de llantén mayor recolectadas (50g)", price: "0.00 €" },
-      { name: "Aceite de oliva virgen extra (100ml)", price: "0.80 €" },
-      { name: "Cera de abejas natural pura (15g)", price: "0.90 €" },
-      { name: "Tarro pequeño de vidrio limpio", price: "0.10 €" }
+    "shoppingList": [
+      {
+        "name": "Hojas frescas de llantén mayor recolectadas (50g)",
+        "price": "0.00 €"
+      },
+      {
+        "name": "Aceite de oliva virgen extra (100ml)",
+        "price": "0.80 €"
+      },
+      {
+        "name": "Cera de abejas natural pura (15g)",
+        "price": "0.90 €"
+      },
+      {
+        "name": "Tarro pequeño de vidrio limpio",
+        "price": "0.10 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Recolecta hojas de llantén sanas. Lávalas bien y déjalas secar en un paño durante 24 horas para eliminar toda la humedad (el agua puede estropear la pomada).",
       "Trocea las hojas secas y colócalas en un tarro de vidrio. Cúbrelas por completo con el aceite de oliva virgen extra.",
       "Deja macerar al sol y sombra durante 20 días, o acelera el proceso calentándolo al baño María a 50°C durante 3 horas a fuego mínimo.",
@@ -511,46 +855,81 @@ const recipes = [
       "Remueve con una cuchara de madera hasta que la cera se funda e integre perfectamente con el aceite de llantén.",
       "Vierte inmediatamente la mezcla en el tarro de vidrio limpio y deja enfriar destapado hasta que solidifique."
     ],
-    altUses: [
+    "altUses": [
       "Bálsamo calmante para aliviar el picor de picaduras de insectos, mosquitos o quemaduras de ortiga.",
       "Tratamiento protector e hidratante para manos muy agrietadas por el trabajo en la tierra.",
       "Alivio de rozaduras de calzado en talones y pies."
     ],
-    extraInfo: "La aucubina contenida en el llantén tiene un potente efecto bactericida. Al combinarse con la alantoína, estimula el crecimiento celular y la renovación de la piel. Es una de las mejores alternativas naturales a las pomadas antibióticas genéricas para uso diario en el botiquín del hogar.",
-    comparisonTable: [
-      { concepto: "Coste por Tarro (50ml)", casero: "0.90 €", comercial: "9.50 € (Crema cicatrizante comercial)", diferencia: "Ahorro del 90.5%" },
-      { concepto: "Sustancias Hormonales", casero: "0% Corticoides ni siliconas", comercial: "Presencia frecuente de parabenes y petrolatum", diferencia: "Sin químicos alterantes" },
-      { concepto: "Regeneración Celular", casero: "Estimulada por alantoína natural", comercial: "Sintética a base de lípidos artificiales", diferencia: "Renovación limpia" },
-      { concepto: "Impacto del Sustrato", casero: "100% Biodegradable", comercial: "Drenaje de químicos al agua", diferencia: "Ecológico" }
+    "extraInfo": "La aucubina contenida en el llantén tiene un potente efecto bactericida. Al combinarse con la alantoína, estimula el crecimiento celular y la renovación de la piel. Es una de las mejores alternativas naturales a las pomadas antibióticas genéricas para uso diario en el botiquín del hogar.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por Tarro (50ml)",
+        "casero": "0.90 €",
+        "comercial": "9.50 € (Crema cicatrizante comercial)",
+        "diferencia": "Ahorro del 90.5%"
+      },
+      {
+        "concepto": "Sustancias Hormonales",
+        "casero": "0% Corticoides ni siliconas",
+        "comercial": "Presencia frecuente de parabenes y petrolatum",
+        "diferencia": "Sin químicos alterantes"
+      },
+      {
+        "concepto": "Regeneración Celular",
+        "casero": "Estimulada por alantoína natural",
+        "comercial": "Sintética a base de lípidos artificiales",
+        "diferencia": "Renovación limpia"
+      },
+      {
+        "concepto": "Impacto del Sustrato",
+        "casero": "100% Biodegradable",
+        "comercial": "Drenaje de químicos al agua",
+        "diferencia": "Ecológico"
+      }
     ]
   },
   {
-    id: "champu-solid",
-    title: "Champú Sólido de Ortiga y Romero",
-    category: "cuerpo",
-    tag: "Cuidado Personal",
-    image: "assets/images/champu.png",
-    views: 95000,
-    summary: "Una pastilla de champú biodegradable formulada para fortalecer el folículo piloso, regular el exceso de sebo capilar y reactivar la circulación gracias a la ortiga verde y el romero.",
-    intro: "La combinación de la ortiga verde (Urtica dioica) y el romero (Salvia rosmarinus) aporta minerales como silicio y hierro, además de antioxidantes. Esta pastilla de champú limpia en profundidad sin eliminar los aceites naturales del cuero cabelludo, evitando el molesto 'efecto rebote' de producción de grasa provocado por los sulfatos convencionales. Al ser sólido, prescinde al 100% de envases plásticos.",
-    healthBenefit: "Libera a tu cuero cabelludo de los sulfatos agresivos (SLS/SLES) y las siliconas sintéticas que obstruyen los folículos capilares e impiden la transpiración y respiración celular de la piel. Al utilizar ingredientes limpios, regulas la producción natural de sebo capilar sin causar sequedad, descamación, caspa ni debilitamiento folicular, promoviendo un crecimiento capilar fuerte y saludable.",
-    time: "45 minutos",
-    rawDuration: "Materia prima seca: 1 año",
-    finalDuration: "Pastilla de champú: 12 meses",
-    cost: "2.20 €",
-    metrics: {
-      economy: 75,
-      health: 95,
-      ecosystem: 90
+    "id": "champu-solid",
+    "title": "Champú Sólido de Ortiga y Romero",
+    "category": "higiene",
+    "tag": "Higiene",
+    "image": "assets/images/champu.png",
+    "views": 95000,
+    "summary": "Una pastilla de champú biodegradable formulada para fortalecer el folículo piloso, regular el exceso de sebo capilar y reactivar la circulación gracias a la ortiga verde y el romero.",
+    "intro": "La combinación de la ortiga verde (Urtica dioica) y el romero (Salvia rosmarinus) aporta minerales como silicio y hierro, además de antioxidantes. Esta pastilla de champú limpia en profundidad sin eliminar los aceites naturales del cuero cabelludo, evitando el molesto 'efecto rebote' de producción de grasa provocado por los sulfatos convencionales. Al ser sólido, prescinde al 100% de envases plásticos.",
+    "healthBenefit": "Libera a tu cuero cabelludo de los sulfatos agresivos (SLS/SLES) y las siliconas sintéticas que obstruyen los folículos capilares e impiden la transpiración y respiración celular de la piel. Al utilizar ingredientes limpios, regulas la producción natural de sebo capilar sin causar sequedad, descamación, caspa ni debilitamiento folicular, promoviendo un crecimiento capilar fuerte y saludable.",
+    "time": "45 minutos",
+    "rawDuration": "Materia prima seca: 1 año",
+    "finalDuration": "Pastilla de champú: 12 meses",
+    "cost": "2.20 €",
+    "metrics": {
+      "economy": 75,
+      "health": 95,
+      "ecosystem": 90
     },
-    shoppingList: [
-      { name: "Tensoactivo natural SCI (coco) (70g)", price: "1.40 €" },
-      { name: "Polvo de ortiga verde deshidratada (10g)", price: "0.30 €" },
-      { name: "Aceite de oliva virgen extra macerado con romero (10g)", price: "0.20 €" },
-      { name: "Infusión concentrada de romero silvestre (10ml)", price: "0.05 €" },
-      { name: "Aceite esencial de romero puro (15 gotas)", price: "0.25 €" }
+    "shoppingList": [
+      {
+        "name": "Tensoactivo natural SCI (coco) (70g)",
+        "price": "1.40 €"
+      },
+      {
+        "name": "Polvo de ortiga verde deshidratada (10g)",
+        "price": "0.30 €"
+      },
+      {
+        "name": "Aceite de oliva virgen extra macerado con romero (10g)",
+        "price": "0.20 €"
+      },
+      {
+        "name": "Infusión concentrada de romero silvestre (10ml)",
+        "price": "0.05 €"
+      },
+      {
+        "name": "Aceite esencial de romero puro (15 gotas)",
+        "price": "0.25 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Ponte una mascarilla antipolvo y mezcla el tensoactivo SCI y el polvo de ortiga verde en un bol resistente al calor.",
       "Añade al bol el aceite de oliva macerado con romero y la infusión concentrada de romero.",
       "Coloca el bol al baño María a fuego muy lento para ablandar los tensoactivos, removiendo pacientemente con una espátula de madera durante unos 5-8 minutos hasta obtener una pasta densa y manejable.",
@@ -560,44 +939,76 @@ const recipes = [
       "Desmolda y deja curar la pastilla en un lugar seco y ventilado durante otras 48 horas antes de su primer uso.",
       "Uso: Humedece el cabello, frota la pastilla directamente en el cuero cabelludo hasta generar espuma, masajea y enjuaga con abundante agua."
     ],
-    altUses: [
+    "altUses": [
       "Jabón corporal exfoliante suave para pieles grasas o propensas al acné.",
       "Pastilla para lavado de barbas: el romero actúa como desinfectante y acondicionador capilar facial."
     ],
-    extraInfo: "Para alargar la vida útil de tu champú sólido, colócalo siempre en una jabonera con drenaje de agua después de usarlo. Si se mantiene seco entre lavados, una sola pastilla de 100g puede durar entre 70 y 80 lavados, equivaliendo a casi 3 botellas de champú líquido comercial.",
-    comparisonTable: [
-      { concepto: "Coste por 100g", casero: "2.20 €", comercial: "8.00 € (Supermercado)", diferencia: "Ahorro del 72.5%" },
-      { concepto: "Conservantes / Parabenos", casero: "0% Natural", comercial: "Metilparabeno, Siliconas", diferencia: "Sin tóxicos" },
-      { concepto: "Vida útil (Lavados)", casero: "Hasta 80 lavados", comercial: "Aprox. 30 por botella", diferencia: "Mayor duración" },
-      { concepto: "Huella de Carbono", casero: "Nula (Sin plástico ni agua libre)", comercial: "Alta (Transporte de agua y envase)", diferencia: "Ecológico" }
+    "extraInfo": "Para alargar la vida útil de tu champú sólido, colócalo siempre en una jabonera con drenaje de agua después de usarlo. Si se mantiene seco entre lavados, una sola pastilla de 100g puede durar entre 70 y 80 lavados, equivaliendo a casi 3 botellas de champú líquido comercial.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por 100g",
+        "casero": "2.20 €",
+        "comercial": "8.00 € (Supermercado)",
+        "diferencia": "Ahorro del 72.5%"
+      },
+      {
+        "concepto": "Conservantes / Parabenos",
+        "casero": "0% Natural",
+        "comercial": "Metilparabeno, Siliconas",
+        "diferencia": "Sin tóxicos"
+      },
+      {
+        "concepto": "Vida útil (Lavados)",
+        "casero": "Hasta 80 lavados",
+        "comercial": "Aprox. 30 por botella",
+        "diferencia": "Mayor duración"
+      },
+      {
+        "concepto": "Huella de Carbono",
+        "casero": "Nula (Sin plástico ni agua libre)",
+        "comercial": "Alta (Transporte de agua y envase)",
+        "diferencia": "Ecológico"
+      }
     ]
   },
   {
-    id: "trampa-humedad",
-    title: "Deshumidificador Natural de Cloruro de Calcio",
-    category: "tecnologia",
-    tag: "Tecnología Ancestral",
-    image: "assets/images/trampa_humedad.png",
-    views: 85000,
-    summary: "Aprende a fabricar una trampa de humedad natural y silenciosa utilizando sal de cloruro de calcio y recipientes reciclados para prevenir el moho.",
-    intro: "El cloruro de calcio es un compuesto salino con una altísima capacidad higroscópica, lo que significa que absorbe activamente el vapor de agua del aire. Este deshumidificador casero captura el exceso de humedad en armarios o habitaciones de forma 100% pasiva y silenciosa.",
-    healthBenefit: "Controla la humedad en el hogar evitando la aparición de mohos domésticos y esporas fúngicas en las paredes. La inhalación de esporas de moho es uno de los principales desencadenantes de rinitis crónica, congestión de vías respiratorias, dolores de cabeza y asma bronquial, especialmente en niños y ancianos.",
-    time: "10 minutos",
-    rawDuration: "Materiales: Ilimitada",
-    finalDuration: "Activa: 1 a 2 meses (luego rellenar sal)",
-    cost: "0.90 €",
-    metrics: {
-      economy: 90,
-      health: 95,
-      ecosystem: 95
+    "id": "trampa-humedad",
+    "title": "Deshumidificador Natural de Cloruro de Calcio",
+    "category": "calefaccion",
+    "tag": "Calefacción",
+    "image": "assets/images/trampa_humedad.png",
+    "views": 85000,
+    "summary": "Aprende a fabricar una trampa de humedad natural y silenciosa utilizando sal de cloruro de calcio y recipientes reciclados para prevenir el moho.",
+    "intro": "El cloruro de calcio es un compuesto salino con una altísima capacidad higroscópica, lo que significa que absorbe activamente el vapor de agua del aire. Este deshumidificador casero captura el exceso de humedad en armarios o habitaciones de forma 100% pasiva y silenciosa.",
+    "healthBenefit": "Controla la humedad en el hogar evitando la aparición de mohos domésticos y esporas fúngicas en las paredes. La inhalación de esporas de moho es uno de los principales desencadenantes de rinitis crónica, congestión de vías respiratorias, dolores de cabeza y asma bronquial, especialmente en niños y ancianos.",
+    "time": "10 minutos",
+    "rawDuration": "Materiales: Ilimitada",
+    "finalDuration": "Activa: 1 a 2 meses (luego rellenar sal)",
+    "cost": "0.90 €",
+    "metrics": {
+      "economy": 90,
+      "health": 95,
+      "ecosystem": 95
     },
-    shoppingList: [
-      { name: "Sal de cloruro de calcio en escamas (250g)", price: "0.60 €" },
-      { name: "Tarro o recipiente de vidrio reciclado", price: "0.05 €" },
-      { name: "Malla fina, gasa de gasa o filtro de café", price: "0.15 €" },
-      { name: "Banda elástica o trozo de cuerda", price: "0.10 €" }
+    "shoppingList": [
+      {
+        "name": "Sal de cloruro de calcio en escamas (250g)",
+        "price": "0.60 €"
+      },
+      {
+        "name": "Tarro o recipiente de vidrio reciclado",
+        "price": "0.05 €"
+      },
+      {
+        "name": "Malla fina, gasa de gasa o filtro de café",
+        "price": "0.15 €"
+      },
+      {
+        "name": "Banda elástica o trozo de cuerda",
+        "price": "0.10 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Consigue un tarro grande de vidrio y un envase de plástico que encaje en su boca (o usa un colador pequeño colocado sobre el tarro).",
       "Coloca el filtro de café o la gasa fina en el fondo del colador o envase superior.",
       "Vierte las escamas de cloruro de calcio dentro del filtro de gasa.",
@@ -606,45 +1017,77 @@ const recipes = [
       "El compuesto comenzará a absorber la humedad ambiental, disolviéndose gradualmente y goteando agua en forma de salmuera líquida en el fondo del tarro de vidrio.",
       "Vigila el tarro cada 3 semanas. Vacía el agua acumulada en el desagüe y añade más escamas de cloruro de calcio si es necesario."
     ],
-    altUses: [
+    "altUses": [
       "Eliminador de olores a humedad en el interior de armarios de ropa y zapateros.",
       "Protector contra oxidación de herramientas metálicas en cajas de herramientas.",
       "Control de condensación en cristales de autocaravanas o caravanas durante el invierno."
     ],
-    extraInfo: "El cloruro de calcio (CaCl2) es una sal muy higroscópica que tiene afinidad química con las moléculas de agua del aire. Cuando absorbe suficiente agua, experimenta un proceso llamado delictuescencia, disolviéndose por completo en el agua absorbida. No consume electricidad alguna, a diferencia de los deshumidificadores de compresor.",
-    comparisonTable: [
-      { concepto: "Coste Inicial", casero: "0.90 €", comercial: "12.00 € (Aparato antihumedad comercial)", diferencia: "Ahorro del 92.5%" },
-      { concepto: "Consumo Eléctrico", casero: "0W (Totalmente pasivo)", comercial: "200W - 400W por hora", diferencia: "Ahorro total" },
-      { concepto: "Salud Respiratoria", casero: "Evita esporas de moho y asma", comercial: "Equivalente con filtros HEPA", diferencia: "Excelente prevención" },
-      { concepto: "Ruido Acústico", casero: "0 dB (Silencio absoluto)", comercial: "35 dB (Ventilador continuo)", diferencia: "Protege el sueño" }
+    "extraInfo": "El cloruro de calcio (CaCl2) es una sal muy higroscópica que tiene afinidad química con las moléculas de agua del aire. Cuando absorbe suficiente agua, experimenta un proceso llamado delictuescencia, disolviéndose por completo en el agua absorbida. No consume electricidad alguna, a diferencia de los deshumidificadores de compresor.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste Inicial",
+        "casero": "0.90 €",
+        "comercial": "12.00 € (Aparato antihumedad comercial)",
+        "diferencia": "Ahorro del 92.5%"
+      },
+      {
+        "concepto": "Consumo Eléctrico",
+        "casero": "0W (Totalmente pasivo)",
+        "comercial": "200W - 400W por hora",
+        "diferencia": "Ahorro total"
+      },
+      {
+        "concepto": "Salud Respiratoria",
+        "casero": "Evita esporas de moho y asma",
+        "comercial": "Equivalente con filtros HEPA",
+        "diferencia": "Excelente prevención"
+      },
+      {
+        "concepto": "Ruido Acústico",
+        "casero": "0 dB (Silencio absoluto)",
+        "comercial": "35 dB (Ventilador continuo)",
+        "diferencia": "Protege el sueño"
+      }
     ]
   },
   {
-    id: "limpiador-citricos",
-    title: "Limpiador Multiusos de Pieles de Cítricos y Vinagre",
-    category: "hogar",
-    tag: "Hogar Ecológico",
-    image: "assets/images/limpiador.png",
-    views: 75000,
-    summary: "Un limpiador desinfectante y abrillantador casero elaborado a base de la maceración de pieles de naranja y limón en vinagre blanco de limpieza. Elimina cal, grasa y malos olores.",
-    intro: "El vinagre blanco es conocido por su alta concentración de ácido acético (alrededor del 8%), un potente agente descalcificador y antibacteriano natural. Sin embargo, su olor penetrante a veces resulta molesto. Macerando cáscaras de cítricos liberamos limoneno y aceites esenciales cítricos de las pieles, que neutralizan el olor a vinagre y aportan propiedades desengrasantes y desinfectantes adicionales.",
-    healthBenefit: "Protege tu sistema respiratorio y tus mucosas oculares eliminando los limpiadores químicos industriales que liberan gases irritantes a base de amoníaco, cloro y compuestos orgánicos volátiles (COV). La inhalación continuada de estos vapores domésticos irrita los bronquios y pulmones, siendo un factor de riesgo directo para el desarrollo de asma y sensibilidad química múltiple.",
-    time: "15 minutos (Maceración de 14 días)",
-    rawDuration: "Pieles frescas: 3 días",
-    finalDuration: "Limpiador multiusos: 12 meses",
-    cost: "0.30 €",
-    metrics: {
-      economy: 98,
-      health: 95,
-      ecosystem: 100
+    "id": "limpiador-citricos",
+    "title": "Limpiador Multiusos de Pieles de Cítricos y Vinagre",
+    "category": "limpieza",
+    "tag": "Limpieza",
+    "image": "assets/images/limpiador.png",
+    "views": 75000,
+    "summary": "Un limpiador desinfectante y abrillantador casero elaborado a base de la maceración de pieles de naranja y limón en vinagre blanco de limpieza. Elimina cal, grasa y malos olores.",
+    "intro": "El vinagre blanco es conocido por su alta concentración de ácido acético (alrededor del 8%), un potente agente descalcificador y antibacteriano natural. Sin embargo, su olor penetrante a veces resulta molesto. Macerando cáscaras de cítricos liberamos limoneno y aceites esenciales cítricos de las pieles, que neutralizan el olor a vinagre y aportan propiedades desengrasantes y desinfectantes adicionales.",
+    "healthBenefit": "Protege tu sistema respiratorio y tus mucosas oculares eliminando los limpiadores químicos industriales que liberan gases irritantes a base de amoníaco, cloro y compuestos orgánicos volátiles (COV). La inhalación continuada de estos vapores domésticos irrita los bronquios y pulmones, siendo un factor de riesgo directo para el desarrollo de asma y sensibilidad química múltiple.",
+    "time": "15 minutos (Maceración de 14 días)",
+    "rawDuration": "Pieles frescas: 3 días",
+    "finalDuration": "Limpiador multiusos: 12 meses",
+    "cost": "0.30 €",
+    "metrics": {
+      "economy": 98,
+      "health": 95,
+      "ecosystem": 100
     },
-    shoppingList: [
-      { name: "Vinagre blanco de limpieza (1 Litro)", price: "0.20 €" },
-      { name: "Pieles de naranjas y limones de residuo (4 uds)", price: "0.00 €" },
-      { name: "Agua filtrada destilada (500ml)", price: "0.05 €" },
-      { name: "Botella pulverizadora de vidrio reusable", price: "0.05 €" }
+    "shoppingList": [
+      {
+        "name": "Vinagre blanco de limpieza (1 Litro)",
+        "price": "0.20 €"
+      },
+      {
+        "name": "Pieles de naranjas y limones de residuo (4 uds)",
+        "price": "0.00 €"
+      },
+      {
+        "name": "Agua filtrada destilada (500ml)",
+        "price": "0.05 €"
+      },
+      {
+        "name": "Botella pulverizadora de vidrio reusable",
+        "price": "0.05 €"
+      }
     ],
-    steps: [
+    "steps": [
       "Lava bien las naranjas y limones antes de pelarlos para retirar impurezas. Guarda las cáscaras resultantes del consumo habitual.",
       "Trocea las pieles de los cítricos y colócalas dentro de un tarro grande de vidrio de boca ancha hasta llenarlo aproximadamente a la mitad.",
       "Vierte el vinagre blanco de limpieza sobre las cáscaras de cítricos hasta cubrirlas por completo. Cierra bien el tarro.",
@@ -653,23 +1096,43 @@ const recipes = [
       "Para preparar el limpiador de uso diario, mezcla 1 parte de vinagre cítrico concentrado con 1 parte de agua destilada (dilución al 50%) dentro de tu botella pulverizadora de vidrio.",
       "Agita bien antes de cada uso. Aplícalo directamente sobre encimeras, azulejos, grifería, cristales o sanitarios y limpia con un paño de microfibra o algodón."
     ],
-    altUses: [
+    "altUses": [
       "Suavizante ecológico para ropa: añade 100ml del vinagre cítrico concentrado (sin diluir con agua) en el cajetín del suavizante en tu lavadora. La ropa saldrá suave y sin olor a vinagre.",
       "Desatascador de tuberías ligero: añade media taza de bicarbonato de sodio por el desagüe y vierte inmediatamente una taza de este vinagre cítrico caliente. Deja actuar y aclara con agua hirviendo."
     ],
-    extraInfo: "Advertencia de uso: Debido a la acidez natural del ácido acético del vinagre, evita usar este limpiador sobre superficies delicadas de piedra caliza natural como el mármol o granito pulido, ya que podría desgastar el brillo natural de la piedra con el uso continuado.",
-    comparisonTable: [
-      { concepto: "Coste por Litro", casero: "0.15 €", comercial: "2.80 € (Antical grasa)", diferencia: "Ahorro del 94.6%" },
-      { concepto: "Tóxicos inhalados", casero: "Cero gases tóxicos", comercial: "Amoniaco, fragancias sintéticas", diferencia: "100% Saludable" },
-      { concepto: "Efecto sobre la cal", casero: "Muy eficaz (Ácido acético)", comercial: "Eficaz con químicos fuertes", diferencia: "Misma eficacia" },
-      { concepto: "Seguridad ambiental", casero: "Biodegradable al 100%", comercial: "Peligroso para fauna acuática", diferencia: "Sin contaminantes" }
+    "extraInfo": "Advertencia de uso: Debido a la acidez natural del ácido acético del vinagre, evita usar este limpiador sobre superficies delicadas de piedra caliza natural como el mármol o granito pulido, ya que podría desgastar el brillo natural de la piedra con el uso continuado.",
+    "comparisonTable": [
+      {
+        "concepto": "Coste por Litro",
+        "casero": "0.15 €",
+        "comercial": "2.80 € (Antical grasa)",
+        "diferencia": "Ahorro del 94.6%"
+      },
+      {
+        "concepto": "Tóxicos inhalados",
+        "casero": "Cero gases tóxicos",
+        "comercial": "Amoniaco, fragancias sintéticas",
+        "diferencia": "100% Saludable"
+      },
+      {
+        "concepto": "Efecto sobre la cal",
+        "casero": "Muy eficaz (Ácido acético)",
+        "comercial": "Eficaz con químicos fuertes",
+        "diferencia": "Misma eficacia"
+      },
+      {
+        "concepto": "Seguridad ambiental",
+        "casero": "Biodegradable al 100%",
+        "comercial": "Peligroso para fauna acuática",
+        "diferencia": "Sin contaminantes"
+      }
     ]
   },
-{
+  {
     "id": "desodorante-coco",
     "title": "Desodorante Natural de Bicarbonato y Aceite de Coco",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "higiene",
+    "tag": "Higiene",
     "image": "assets/images/pasta_dientes.png",
     "views": 380000,
     "summary": "Protege tus axilas y elimina bacterias con un desodorante suave y libre de sales de aluminio a base de aceite de coco orgánico y almidón de arrurruz.",
@@ -745,8 +1208,8 @@ const recipes = [
   {
     "id": "colutorio-clavo",
     "title": "Colutorio Antiséptico de Clavo y Canela",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "higiene",
+    "tag": "Higiene",
     "image": "assets/images/detergente.png",
     "views": 310000,
     "summary": "Enjuague bucal purificante a base de una decocción concentrada de clavos de olor y canela. Aliento fresco, encías sanas y protección antibacteriana.",
@@ -823,8 +1286,8 @@ const recipes = [
   {
     "id": "jarabe-tomillo",
     "title": "Jarabe Natural de Tomillo y Miel para la Tos",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "remedios",
+    "tag": "Remedios",
     "image": "assets/images/balsamo.png",
     "views": 270000,
     "summary": "Remedio de abuela para aliviar la tos, despejar los bronquios y calmar la garganta irritada con una infusión concentrada de tomillo silvestre y miel de abeja pura.",
@@ -901,8 +1364,8 @@ const recipes = [
   {
     "id": "mascarilla-arcilla",
     "title": "Mascarilla Purificante de Arcilla Verde y Árbol de Té",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "higiene",
+    "tag": "Higiene",
     "image": "assets/images/pasta_dientes.png",
     "views": 220000,
     "summary": "Tratamiento facial purificante de arcilla verde bentonita y aceite de árbol de té. Absorbe toxinas, regula la grasa capilar e hidrata sin aditivos.",
@@ -979,8 +1442,8 @@ const recipes = [
   {
     "id": "aceite-hiperico",
     "title": "Aceite Macerado de Hipérico para Golpes y Quemaduras",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "remedios",
+    "tag": "Remedios",
     "image": "assets/images/balsamo.png",
     "views": 195000,
     "summary": "El famoso 'aceite de las heridas' o 'aceite de San Juan', elaborado macerando flores de hipérico fresco en aceite de oliva al sol para regenerar la piel.",
@@ -1053,8 +1516,8 @@ const recipes = [
   {
     "id": "crema-avena",
     "title": "Crema Hidratante de Avena y Aloe Vera",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "higiene",
+    "tag": "Higiene",
     "image": "assets/images/balsamo.png",
     "views": 140000,
     "summary": "Una loción hidratante ultra suave formulada para pieles sensibles o atópicas con mucílagos de avena coloidal, gel puro de aloe vera y aceite de almendras.",
@@ -1135,8 +1598,8 @@ const recipes = [
   {
     "id": "tonico-quina",
     "title": "Tónico Capilar Anticaída de Romero y Quina",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "remedios",
+    "tag": "Remedios",
     "image": "assets/images/champu.png",
     "views": 105000,
     "summary": "Remedio capilar tradicional formulado con corteza de quina y hojas de romero fresco para fortalecer el cabello y estimular la microcirculación.",
@@ -1213,8 +1676,8 @@ const recipes = [
   {
     "id": "balsamo-labial",
     "title": "Bálsamo Labial de Manteca de Cacao y Menta",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "higiene",
+    "tag": "Higiene",
     "image": "assets/images/balsamo.png",
     "views": 88000,
     "summary": "Protector e hidratante labial artesanal formulado con manteca de cacao pura, aceite de almendras y cera de abejas. Labios suaves y frescos sin vaselina.",
@@ -1290,8 +1753,8 @@ const recipes = [
   {
     "id": "infusion-valeriana",
     "title": "Infusión Relajante de Valeriana y Pasiflora",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "remedios",
+    "tag": "Remedios",
     "image": "assets/images/velas_aceite.png",
     "views": 65000,
     "summary": "Preparado de hierbas medicinales a base de raíz de valeriana, pasiflora y melisa para favorecer el descanso nocturno y reducir el estrés de forma natural.",
@@ -1363,8 +1826,8 @@ const recipes = [
   {
     "id": "exfoliante-cafe",
     "title": "Exfoliante Corporal de Café y Aceite de Almendras",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "higiene",
+    "tag": "Higiene",
     "image": "assets/images/pasta_dientes.png",
     "views": 45000,
     "summary": "Tratamiento exfoliante natural elaborado con posos de café reciclados y aceite nutritivo de almendras para reactivar la circulación y suavizar la piel.",
@@ -1440,8 +1903,8 @@ const recipes = [
   {
     "id": "pomada-arnica",
     "title": "Pomada de Árnica para Dolores Musculares",
-    "category": "cuerpo",
-    "tag": "Cuidado Personal",
+    "category": "remedios",
+    "tag": "Remedios",
     "image": "assets/images/pomada_llanten.png",
     "views": 250000,
     "summary": "Pomada antiinflamatoria de árnica montana y cera pura de abejas, ideal para calmar dolores de articulaciones, contusiones y torceduras.",
@@ -1513,8 +1976,8 @@ const recipes = [
   {
     "id": "lavavajillas-mostaza",
     "title": "Lavavajillas Líquido de Mostaza en Polvo y Vinagre",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "limpieza",
+    "tag": "Limpieza",
     "image": "assets/images/limpiador.png",
     "views": 580000,
     "summary": "Método tradicional ruso para lavar vajillas grasientas combinando mostaza seca molida desengrasante, bicarbonato sódico y vinagre blanco.",
@@ -1590,8 +2053,8 @@ const recipes = [
   {
     "id": "suavizante-vinagre",
     "title": "Suavizante de Ropa de Vinagre y Bicarbonato",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "limpieza",
+    "tag": "Limpieza",
     "image": "assets/images/detergente.png",
     "views": 520000,
     "summary": "Suavizante textil natural que elimina la cal del agua, ablanda las fibras de la ropa y previene olores sin dejar aceites sintéticos en los tejidos.",
@@ -1663,8 +2126,8 @@ const recipes = [
   {
     "id": "insecticida-ortiga",
     "title": "Purín de Ortiga Fermentado (Insecticida y Abono)",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/repelente_ajo.png",
     "views": 460000,
     "summary": "Aprende a elaborar un purín fermentado de ortigas silvestres, el mejor insecticida ecológico preventivo y activador de defensas para plantas de huerto.",
@@ -1733,8 +2196,8 @@ const recipes = [
   {
     "id": "limpiacristales-romero",
     "title": "Limpiacristales Natural de Alcohol de Romero",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "limpieza",
+    "tag": "Limpieza",
     "image": "assets/images/limpiador.png",
     "views": 350000,
     "summary": "Consigue cristales, espejos y ventanas impecables y sin reflejos con un limpiador casero de rápida evaporación a base de alcohol isopropílico macerado con romero.",
@@ -1810,8 +2273,8 @@ const recipes = [
   {
     "id": "abono-platano",
     "title": "Abono Líquido de Piel de Plátano y Café",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/detergente.png",
     "views": 300000,
     "summary": "Un fertilizante casero rico en potasio y nitrógeno formulado para potenciar la floración de tus plantas de interior y exterior reutilizando restos orgánicos.",
@@ -1888,8 +2351,8 @@ const recipes = [
   {
     "id": "pastillas-wc",
     "title": "Pastillas Efervescentes Desinfectantes para el WC",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "limpieza",
+    "tag": "Limpieza",
     "image": "assets/images/pasta_dientes.png",
     "views": 240000,
     "summary": "Aprende a elaborar tus propias pastillas efervescentes para limpiar, descalcificar y aromatizar el inodoro de forma 100% natural utilizando bicarbonato y ácido cítrico.",
@@ -1962,8 +2425,8 @@ const recipes = [
   {
     "id": "fungicida-leche",
     "title": "Fungicida Orgánico de Leche y Bicarbonato",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/repelente_ajo.png",
     "views": 175000,
     "summary": "Combate el oídio, mildiu y roya de tus plantas y huerto con un fungicida natural a base de suero de leche de vaca y bicarbonato sódico.",
@@ -2035,8 +2498,8 @@ const recipes = [
   {
     "id": "envolturas-cera",
     "title": "Envolturas Ecológicas de Cera de Abeja",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/velas_aceite.png",
     "views": 135000,
     "summary": "Alternativa reutilizable al papel film plástico. Elabora tus envoltorios de tela de algodón impermeabilizados con cera de abejas para conservar alimentos.",
@@ -2113,8 +2576,8 @@ const recipes = [
   {
     "id": "limpiamaderas-limon",
     "title": "Limpiador de Madera de Aceite de Oliva y Limón",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "limpieza",
+    "tag": "Limpieza",
     "image": "assets/images/limpiador.png",
     "views": 90000,
     "summary": "Nutre, abrillanta y protege tus muebles de madera natural con un pulidor ecológico a base de aceite de oliva virgen y zumo de limón fresco.",
@@ -2186,8 +2649,8 @@ const recipes = [
   {
     "id": "trampa-avispas",
     "title": "Trampa de Vinagre y Azúcar para Avispas y Moscas",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/trampa_humedad.png",
     "views": 70000,
     "summary": "Protege tus comidas en el exterior con una trampa ecológica y selectiva para avispas y moscas utilizando vinagre de sidra y una botella de plástico reciclada.",
@@ -2264,8 +2727,8 @@ const recipes = [
   {
     "id": "ambientador-solido",
     "title": "Bloques Ambientadores de Bicarbonato y Aceites Esenciales",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "limpieza",
+    "tag": "Limpieza",
     "image": "assets/images/trampa_humedad.png",
     "views": 55000,
     "summary": "Desodoriza armarios, zapateros y baños con bloques compactos aromatizados con aceites puros de eucalipto, lavanda y limón.",
@@ -2337,8 +2800,8 @@ const recipes = [
   {
     "id": "insecticida-jabon",
     "title": "Insecticida de Jabón Potásico Casero",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/repelente_ajo.png",
     "views": 35000,
     "summary": "Protege tus plantas de pulgón, cochinilla y mosca blanca con un pulverizador insecticida seguro basado en jabón potásico biodegradable diluido.",
@@ -2410,8 +2873,8 @@ const recipes = [
   {
     "id": "friegasuelos-hierbas",
     "title": "Desinfectante de Suelos de Vinagre de Hierbas",
-    "category": "hogar",
-    "tag": "Hogar Ecológico",
+    "category": "limpieza",
+    "tag": "Limpieza",
     "image": "assets/images/jabon_ceniza.png",
     "views": 15000,
     "summary": "Limpia y desinfecta los suelos de baldosa y gres con un limpiador biodegradable macerado con hierbas silvestres antisépticas como tomillo y eucalipto.",
@@ -2483,8 +2946,8 @@ const recipes = [
   {
     "id": "horno-solar",
     "title": "Horno Solar Portátil de Caja de Cartón",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "calefaccion",
+    "tag": "Calefacción",
     "image": "assets/images/deshidratador.png",
     "views": 550000,
     "summary": "Construye un horno ecológico que cocina alimentos alcanzando los 120°C utilizando dos cajas de cartón, papel de aluminio y un vidrio.",
@@ -2561,8 +3024,8 @@ const recipes = [
   {
     "id": "bomba-ariete",
     "title": "Bomba de Agua Manual de PVC (Bomba de Ariete)",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "agua",
+    "tag": "Agua",
     "image": "assets/images/filtro_agua.png",
     "views": 490000,
     "summary": "Construye una bomba hidráulica de PVC que eleva agua a metros de altura sin electricidad ni combustible aprovechando el golpe de ariete.",
@@ -2639,8 +3102,8 @@ const recipes = [
   {
     "id": "calentador-manguera",
     "title": "Calentador Solar de Agua con Manguera Negra",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "calefaccion",
+    "tag": "Calefacción",
     "image": "assets/images/estufa.png",
     "views": 400000,
     "summary": "Construye un sistema termofónico para calentar agua de uso doméstico o ducha exterior utilizando una manguera de polietileno negra en espiral.",
@@ -2709,8 +3172,8 @@ const recipes = [
   {
     "id": "trampa-condensacion",
     "title": "Trampa de Condensación Solar para Agua de Riego",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/trampa_humedad.png",
     "views": 340000,
     "summary": "Sistema de destilación y riego solar pasivo ultralocalizado para plantas y cultivos, reduciendo a la mitad el consumo de agua mediante condensación.",
@@ -2778,8 +3241,8 @@ const recipes = [
   {
     "id": "huerto-vertical",
     "title": "Huerto Vertical con Botellas de Plástico",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/nevera.png",
     "views": 280000,
     "summary": "Optimiza el espacio urbano cultivando plantas aromáticas, lechugas y fresas en una estructura vertical modular hecha con botellas de plástico reutilizadas.",
@@ -2852,8 +3315,8 @@ const recipes = [
   {
     "id": "biodigestor-casero",
     "title": "Generador de Gas Metano Casero (Biodigestor)",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/nevera.png",
     "views": 230000,
     "summary": "Aprende a construir un biodigestor anaeróbico a pequeña escala para producir gas metano ecológico (biogás) a partir de restos orgánicos.",
@@ -2926,8 +3389,8 @@ const recipes = [
   {
     "id": "prensa-briquetas",
     "title": "Prensa de Papel para Briquetas de Combustible",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "calefaccion",
+    "tag": "Calefacción",
     "image": "assets/images/deshidratador.png",
     "views": 185000,
     "summary": "Recicla periódicos, cartones viejos y serrín para elaborar briquetas compactas de alta densidad y larga duración para tu chimenea o estufa.",
@@ -2996,8 +3459,8 @@ const recipes = [
   {
     "id": "filtro-biochar",
     "title": "Filtro de Biochar para Purificación de Suelos",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "agua",
+    "tag": "Agua",
     "image": "assets/images/filtro_agua.png",
     "views": 160000,
     "summary": "Aprende a producir carbón vegetal pirolizado (Biochar) para filtrar toxinas, fijar carbono y mejorar la fertilidad de suelos agrícolas.",
@@ -3070,8 +3533,8 @@ const recipes = [
   {
     "id": "lampara-alcohol",
     "title": "Lámpara de Emergencia de Alcohol y Cuerda",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "calefaccion",
+    "tag": "Calefacción",
     "image": "assets/images/velas_aceite.png",
     "views": 125000,
     "summary": "Construye una lámpara de luz constante utilizando un tarro de vidrio reciclado, alcohol sanitario de 96 grados y una mecha de cuerda de algodón.",
@@ -3148,8 +3611,8 @@ const recipes = [
   {
     "id": "estufa-rocket",
     "title": "Estufa de Emergencia 'Rocket' de Latas",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "calefaccion",
+    "tag": "Calefacción",
     "image": "assets/images/estufa.png",
     "views": 98000,
     "summary": "Construye una estufa de alta eficiencia térmica que hierve agua en minutos utilizando tres latas de conserva metálicas y ceniza aislante.",
@@ -3222,8 +3685,8 @@ const recipes = [
   {
     "id": "nevera-arena",
     "title": "Nevera de Arena Desértica sin Electricidad",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/nevera.png",
     "views": 78000,
     "summary": "Variante del refrigerador Zeer optimizada para conservar botellas de agua y lácteos utilizando una vasija de terracota y arena silícea húmeda.",
@@ -3292,8 +3755,8 @@ const recipes = [
   {
     "id": "riego-solar",
     "title": "Sistema de Riego por Goteo Solar",
-    "category": "tecnologia",
-    "tag": "Tecnología Ancestral",
+    "category": "alimentos",
+    "tag": "Alimentos",
     "image": "assets/images/trampa_humedad.png",
     "views": 50000,
     "summary": "Aprende a fabricar un sistema de riego por goteo solar pasivo utilizando botellas de plástico, reduciendo a la mitad la evaporación de agua del suelo.",
@@ -3855,12 +4318,8 @@ function setupListeners() {
       
       if (id === "nav-all") {
         activeCategory = "all";
-      } else if (id === "nav-hogar") {
-        activeCategory = "hogar";
-      } else if (id === "nav-cuerpo") {
-        activeCategory = "cuerpo";
-      } else if (id === "nav-tecnologia") {
-        activeCategory = "tecnologia";
+      } else {
+        activeCategory = id.replace("nav-", "");
       }
       
       renderGrid(recipes);

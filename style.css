@@ -5,6 +5,7 @@
   --bg-app: #fcfbf9;
   --bg-card: #ffffff;
   --color-primary: #2c4e3d; /* Deep Forest Green */
+  --color-primary-dark: #1b3528;
   --color-primary-rgb: 44, 78, 61;
   --color-primary-light: #7b9987; /* Soft Sage Green */
   --color-primary-pale: #f0f4f1; /* Light Leaf Green */
@@ -2121,6 +2122,7 @@ a {
     --bg-app: #0d110f;
     --bg-card: #151c18;
     --color-primary: #8cb89f; /* light sage green for titles, text links */
+    --color-primary-dark: #a3ccb4;
     --color-primary-rgb: 140, 184, 159;
     --color-primary-light: #52705e;
     --color-primary-pale: #1c2621;
@@ -2135,65 +2137,107 @@ a {
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
   }
 
-  /* Override specific components for readability in dark mode */
-  .btn-newsletter,
-  .btn-hero-newsletter,
-  .btn-submit-comment,
-  .btn-admin-action:not(.btn-danger),
-  .btn-login {
-    background: var(--color-primary);
-    color: #0d110f !important; /* dark charcoal text on light sage background */
+  /* Core Body adjustments */
+  body {
+    background-color: var(--bg-app);
+    color: var(--color-text-dark);
+  }
+
+  /* Specific Components overrides for Dark Mode */
+  
+  /* Input & Search Box */
+  .search-box {
+    background: var(--bg-card) !important;
+    border-color: rgba(140, 184, 159, 0.15) !important;
   }
   
-  .btn-newsletter:hover,
-  .btn-hero-newsletter:hover,
-  .btn-submit-comment:hover,
-  .btn-admin-action:not(.btn-danger):hover,
-  .btn-login:hover {
-    background: #a3ccb4;
-    color: #0d110f !important;
+  .search-box:focus-within {
+    box-shadow: 0 0 0 3px rgba(140, 184, 159, 0.15) !important;
+  }
+
+  /* Filter buttons (Index controls) */
+  .btn-filter {
+    background: var(--bg-card) !important;
+    border-color: rgba(140, 184, 159, 0.15) !important;
+    color: var(--color-text-muted) !important;
+  }
+  
+  .btn-filter:hover {
+    background: var(--color-primary-pale) !important;
+    color: var(--color-primary) !important;
+    border-color: var(--color-primary-light) !important;
   }
   
   .btn-filter.active {
-    background: var(--color-primary);
+    background: var(--color-primary) !important;
     color: #0d110f !important;
-  }
-  
-  .card-views-badge {
-    background: rgba(28, 38, 33, 0.9) !important;
-    color: var(--color-primary) !important;
-    border: 1px solid rgba(140, 184, 159, 0.2);
-  }
-  
-  .badge-comparison.positive {
-    background: rgba(85, 166, 48, 0.15) !important;
-    color: #7ce653 !important;
-  }
-  
-  .badge-comparison.negative {
-    background: rgba(220, 53, 69, 0.15) !important;
-    color: #ff6b7b !important;
+    border-color: var(--color-primary) !important;
   }
 
-  /* Inputs in dark mode */
-  input[type="email"],
-  input[type="text"],
-  textarea {
-    background: #151c18 !important;
-    color: var(--color-text-dark) !important;
+  /* Subcategory chips */
+  .subcategory-filters {
+    border-color: rgba(140, 184, 159, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .btn-subchip {
+    background: var(--bg-app) !important;
+    border-color: rgba(140, 184, 159, 0.1) !important;
+    color: var(--color-text-muted) !important;
+  }
+  
+  .btn-subchip:hover {
+    background: var(--color-primary-pale) !important;
+    color: var(--color-primary) !important;
+    border-color: rgba(140, 184, 159, 0.25) !important;
+  }
+  
+  .btn-subchip.active {
+    background: var(--color-primary) !important;
+    color: #0d110f !important;
+    border-color: var(--color-primary) !important;
+  }
+
+  /* Recipe Cards */
+  .recipe-card {
+    border-color: rgba(140, 184, 159, 0.12) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  .recipe-card:hover {
+    border-color: rgba(140, 184, 159, 0.25) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  .card-tag {
+    background: rgba(21, 28, 24, 0.95) !important;
+    color: var(--color-primary) !important;
+    border-color: rgba(140, 184, 159, 0.2) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  .card-metrics {
+    border-top-color: rgba(140, 184, 159, 0.1) !important;
+  }
+
+  /* Detail Dialogs */
+  .dialog-content-wrapper {
+    border-color: rgba(140, 184, 159, 0.15) !important;
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  .recipe-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* Detail inner layout elements */
+  .body-health-highlight {
+    background: rgba(140, 184, 159, 0.08) !important;
     border-color: rgba(140, 184, 159, 0.2) !important;
   }
 
-  input[type="email"]:focus,
-  input[type="text"]:focus,
-  textarea:focus {
-    border-color: var(--color-primary) !important;
-    box-shadow: 0 0 0 3px rgba(140, 184, 159, 0.15) !important;
-  }
-  
-  /* Comments area, table, card adjustments */
-  .comment-item {
-    background: rgba(255, 255, 255, 0.02) !important;
+  .meta-box {
+    background: var(--color-primary-pale) !important;
     border-color: rgba(140, 184, 159, 0.1) !important;
   }
   
@@ -2202,7 +2246,13 @@ a {
   .alt-use-item {
     border-bottom-color: rgba(140, 184, 159, 0.1) !important;
   }
-  
+
+  .alt-uses-box,
+  .extra-info-box {
+    background: var(--color-primary-pale) !important;
+    border-color: rgba(140, 184, 159, 0.1) !important;
+  }
+
   .comparison-table th {
     background: var(--color-primary-pale) !important;
     color: var(--color-text-dark) !important;
@@ -2211,22 +2261,92 @@ a {
   .comparison-table td {
     border-bottom-color: rgba(140, 184, 159, 0.1) !important;
   }
-  
-  /* Body backgrounds and elements */
-  body {
-    background-color: var(--bg-app);
-    color: var(--color-text-dark);
+
+  .comparison-table-wrapper {
+    border-color: rgba(140, 184, 159, 0.1) !important;
   }
   
-  .glow-1 {
-    background: radial-gradient(circle, rgba(140, 184, 159, 0.05) 0%, transparent 70%) !important;
-  }
-  
-  .glow-2 {
-    background: radial-gradient(circle, rgba(176, 124, 101, 0.05) 0%, transparent 70%) !important;
+  .comparison-table tr:hover td {
+    background: rgba(140, 184, 159, 0.03) !important;
   }
 
-  /* Admin Table */
+  /* Comments Area & Form */
+  .comments-section {
+    border-color: rgba(140, 184, 159, 0.15) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  .comment-item {
+    background: rgba(255, 255, 255, 0.01) !important;
+    border-color: rgba(140, 184, 159, 0.08) !important;
+  }
+
+  .comment-form {
+    background: rgba(140, 184, 159, 0.03) !important;
+    border-color: rgba(140, 184, 159, 0.1) !important;
+  }
+
+  .form-group input[type="text"],
+  .form-group textarea,
+  input[type="email"],
+  input[type="text"],
+  textarea {
+    background: #151c18 !important;
+    color: var(--color-text-dark) !important;
+    border-color: rgba(140, 184, 159, 0.2) !important;
+  }
+
+  .form-group input[type="text"]:focus,
+  .form-group textarea:focus,
+  input[type="email"]:focus,
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(140, 184, 159, 0.15) !important;
+  }
+
+  .file-upload-label {
+    background: #151c18 !important;
+    border-color: rgba(140, 184, 159, 0.25) !important;
+    color: var(--color-text-muted) !important;
+  }
+  
+  .file-upload-label:hover {
+    background: var(--color-primary-pale) !important;
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+  }
+
+  .comment-attached-image {
+    border-color: rgba(140, 184, 159, 0.12) !important;
+  }
+
+  /* Buttons & CTAs */
+  .btn-newsletter,
+  .btn-hero-newsletter,
+  .btn-submit-comment,
+  .btn-admin-action:not(.btn-danger),
+  .btn-login {
+    background: var(--color-primary) !important;
+    color: #0d110f !important; /* dark text on light green */
+    border-color: var(--color-primary) !important;
+  }
+  
+  .btn-newsletter:hover,
+  .btn-hero-newsletter:hover,
+  .btn-submit-comment:hover,
+  .btn-admin-action:not(.btn-danger):hover,
+  .btn-login:hover {
+    background: #a3ccb4 !important;
+    color: #0d110f !important;
+  }
+
+  /* Admin Dashboard panel & Overlay */
+  .admin-section {
+    border-color: rgba(140, 184, 159, 0.15) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
+  }
+
   .subscribers-table-wrapper {
     background: #151c18 !important;
     border-color: rgba(140, 184, 159, 0.15) !important;
@@ -2246,16 +2366,36 @@ a {
     background: rgba(140, 184, 159, 0.03) !important;
   }
 
+  .stats-box {
+    background: rgba(140, 184, 159, 0.05) !important;
+    border-left-color: var(--color-primary) !important;
+  }
+
   .login-overlay {
     background: rgba(13, 17, 15, 0.98) !important;
   }
+  
+  .login-card {
+    border-color: rgba(140, 184, 159, 0.15) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+  }
 
+  /* Links & Slogans */
   .logo-link {
     color: var(--color-text-dark) !important;
   }
 
   .back-link {
     color: var(--color-primary) !important;
+  }
+  
+  /* Decorative glows */
+  .glow-1 {
+    background: radial-gradient(circle, rgba(140, 184, 159, 0.04) 0%, transparent 70%) !important;
+  }
+  
+  .glow-2 {
+    background: radial-gradient(circle, rgba(176, 124, 101, 0.04) 0%, transparent 70%) !important;
   }
 }
 

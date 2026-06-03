@@ -101,28 +101,28 @@ a {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.25rem 2rem;
+  padding: 1.75rem 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
 
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .site-logo {
-  height: 56px;
-  width: 56px;
+  height: 76px;
+  width: 76px;
   object-fit: contain;
   border-radius: 50%;
   border: 1px solid var(--glass-border);
   background: #ffffff;
-  padding: 2px;
+  padding: 3px;
 }
 
 .logo-text {
@@ -131,18 +131,19 @@ a {
 }
 
 .site-title {
-  font-size: 1.6rem;
+  font-size: 2.1rem;
   font-weight: 700;
   line-height: 1.1;
   font-family: 'Outfit', sans-serif;
   color: var(--color-primary);
+  letter-spacing: -0.02em;
 }
 
 .site-slogan {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--color-text-muted);
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -1471,14 +1472,14 @@ a {
   }
   
   .site-logo {
-    height: 46px;
-    width: 46px;
+    height: 56px;
+    width: 56px;
   }
   .site-title {
-    font-size: 1.35rem;
+    font-size: 1.6rem;
   }
   .site-slogan {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
   
   /* Reduce hero section padding on small mobile */

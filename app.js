@@ -4361,7 +4361,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Configuración del servidor de suscripciones (Google Sheets)
   // Reemplaza esta cadena con la URL Web App que te dará Google Apps Script
-  const NEWSLETTER_API_URL = "SU_URL_DE_GOOGLE_APPS_SCRIPT";
+  const NEWSLETTER_API_URL = "https://script.google.com/macros/s/AKfycbydcUv6kqW9z3Bbspne7BVScGjBhhdHdevQbb_4mG_zh94n_4oQoSN76y7PR_n9-VxW/exec";
 
   // Newsletter Forms handler (both Hero and Footer)
   function setupNewsletterForm(formId, emailId, successId) {

@@ -383,14 +383,50 @@
       const btnClear = document.getElementById("btn-clear");
       const btnMock = document.getElementById("btn-mock");
 
+      // Configuración del servidor de suscripciones (Google Sheets)
+      // Reemplaza esta cadena con la misma URL de Google Apps Script que uses en app.js
+      const NEWSLETTER_API_URL = "SU_URL_DE_GOOGLE_APPS_SCRIPT";
+
+      let activeSubscribers = [];
+
       function loadSubscribers() {
-        const stored = localStorage.getItem("newsletter_subscribers");
-        const list = stored ? JSON.parse(stored) : [];
-        
-        countSpan.textContent = list.length;
+        if (NEWSLETTER_API_URL && NEWSLETTER_API_URL !== "SU_URL_DE_GOOGLE_APPS_SCRIPT") {
+          // Mostrar cargando
+          tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; padding: 2rem; color: var(--color-text-muted);">Cargando desde Google Sheets...</td></tr>`;
+          
+          fetch(`${NEWSLETTER_API_URL}?password=abuela`)
+            .then(res => res.json())
+            .then(data => {
+              if (Array.isArray(data)) {
+                activeSubscribers = data;
+              } else if (data && data.status === "error") {
+                console.error("Error de API:", data.message);
+                // Fallback a localStorage si falla
+                const stored = localStorage.getItem("newsletter_subscribers");
+                activeSubscribers = stored ? JSON.parse(stored) : [];
+              }
+              renderSubscribersTable();
+            })
+            .catch(err => {
+              console.error("Error al conectar con Google Sheets:", err);
+              // Fallback a localStorage
+              const stored = localStorage.getItem("newsletter_subscribers");
+              activeSubscribers = stored ? JSON.parse(stored) : [];
+              renderSubscribersTable();
+            });
+        } else {
+          // Usar localStorage
+          const stored = localStorage.getItem("newsletter_subscribers");
+          activeSubscribers = stored ? JSON.parse(stored) : [];
+          renderSubscribersTable();
+        }
+      }
+
+      function renderSubscribersTable() {
+        countSpan.textContent = activeSubscribers.length;
         tableBody.innerHTML = "";
 
-        if (list.length === 0) {
+        if (activeSubscribers.length === 0) {
           table.style.display = "none";
           emptyState.style.display = "block";
           btnExport.disabled = true;
@@ -405,12 +441,10 @@
         btnExport.style.opacity = 1;
         btnExport.style.cursor = "pointer";
 
-        list.forEach((sub, index) => {
+        activeSubscribers.forEach((sub, index) => {
           const row = document.createElement("tr");
-          
-          // If sub is a string (legacy compatibility) or object
           const email = typeof sub === "string" ? sub : sub.email;
-          const date = (typeof sub === "object" && sub.date) ? sub.date : "2026-06-02"; // default
+          const date = (typeof sub === "object" && sub.date) ? sub.date : "2026-06-02";
 
           row.innerHTML = `
             <td>${index + 1}</td>
@@ -424,13 +458,11 @@
 
       // Export CSV
       btnExport.addEventListener("click", () => {
-        const stored = localStorage.getItem("newsletter_subscribers");
-        const list = stored ? JSON.parse(stored) : [];
-        if (list.length === 0) return;
+        if (activeSubscribers.length === 0) return;
 
         // Form CSV contents
         let csvContent = "data:text/csv;charset=utf-8,Nº,Correo Electrónico,Fecha de Registro\n";
-        list.forEach((sub, index) => {
+        activeSubscribers.forEach((sub, index) => {
           const email = typeof sub === "string" ? sub : sub.email;
           const date = (typeof sub === "object" && sub.date) ? sub.date : "2026-06-02";
           csvContent += `${index + 1},"${email}","${date}"\n`;
@@ -448,6 +480,10 @@
 
       // Clear list
       btnClear.addEventListener("click", () => {
+        if (NEWSLETTER_API_URL && NEWSLETTER_API_URL !== "SU_URL_DE_GOOGLE_APPS_SCRIPT") {
+          alert("Al estar usando la integración con Google Sheets, para borrar o editar los registros debes hacerlo directamente en tu archivo de Google Drive.");
+          return;
+        }
         if (confirm("¿Estás seguro de que deseas eliminar la lista completa de suscriptores locales? Esta acción no se puede deshacer.")) {
           localStorage.removeItem("newsletter_subscribers");
           loadSubscribers();
@@ -456,6 +492,10 @@
 
       // Add Mock Subscriber
       btnMock.addEventListener("click", () => {
+        if (NEWSLETTER_API_URL && NEWSLETTER_API_URL !== "SU_URL_DE_GOOGLE_APPS_SCRIPT") {
+          alert("Al estar usando la integración con Google Sheets, las simulaciones de prueba deben realizarse enviando el formulario de la web o añadiéndolas directamente en la hoja de cálculo de Google.");
+          return;
+        }
         const randomNum = Math.floor(Math.random() * 900) + 100;
         const mockEmail = `prueba_suscriptor${randomNum}@correo.com`;
         

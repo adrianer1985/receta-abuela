@@ -4359,6 +4359,10 @@ document.addEventListener("DOMContentLoaded", () => {
     renderArticleDetail();
   }
 
+  // Configuración del servidor de suscripciones (Google Sheets)
+  // Reemplaza esta cadena con la URL Web App que te dará Google Apps Script
+  const NEWSLETTER_API_URL = "SU_URL_DE_GOOGLE_APPS_SCRIPT";
+
   // Newsletter Forms handler (both Hero and Footer)
   function setupNewsletterForm(formId, emailId, successId) {
     const form = document.getElementById(formId);
@@ -4368,16 +4372,31 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const email = document.getElementById(emailId).value.trim();
         if (email) {
-          // Store in subscribers list
+          // 1. Guardar en LocalStorage (mantenido como respaldo local)
           const stored = localStorage.getItem("newsletter_subscribers");
           const list = stored ? JSON.parse(stored) : [];
-          // Avoid duplicate subscription
           if (!list.some(sub => (typeof sub === "string" ? sub : sub.email) === email)) {
             list.push({
               email: email,
               date: new Date().toLocaleDateString("es-ES")
             });
             localStorage.setItem("newsletter_subscribers", JSON.stringify(list));
+          }
+          
+          // 2. Enviar a Google Sheets si la URL está configurada
+          if (NEWSLETTER_API_URL && NEWSLETTER_API_URL !== "SU_URL_DE_GOOGLE_APPS_SCRIPT") {
+            const formData = new URLSearchParams();
+            formData.append("email", email);
+            formData.append("date", new Date().toLocaleDateString("es-ES"));
+            
+            fetch(NEWSLETTER_API_URL, {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: formData.toString()
+            }).catch(err => console.error("Error submitting newsletter to Google Sheets:", err));
           }
           
           form.style.display = "none";

@@ -4385,18 +4385,21 @@ document.addEventListener("DOMContentLoaded", () => {
           
           // 2. Enviar a Google Sheets si la URL está configurada
           if (NEWSLETTER_API_URL && NEWSLETTER_API_URL !== "SU_URL_DE_GOOGLE_APPS_SCRIPT") {
-            const formData = new URLSearchParams();
-            formData.append("email", email);
-            formData.append("date", new Date().toLocaleDateString("es-ES"));
-            
-            fetch(NEWSLETTER_API_URL, {
-              method: "POST",
-              mode: "no-cors",
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-              },
-              body: formData.toString()
-            }).catch(err => console.error("Error submitting newsletter to Google Sheets:", err));
+            try {
+              fetch(NEWSLETTER_API_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                  "Content-Type": "text/plain"
+                },
+                body: JSON.stringify({
+                  email: email,
+                  date: new Date().toLocaleDateString("es-ES")
+                })
+              }).catch(err => console.error("Error submitting newsletter to Google Sheets:", err));
+            } catch (fetchErr) {
+              console.error("Fetch failed synchronously:", fetchErr);
+            }
           }
           
           form.style.display = "none";

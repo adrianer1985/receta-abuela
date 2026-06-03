@@ -389,6 +389,17 @@
 
       let activeSubscribers = [];
 
+      function getLocalStorageSubscribers() {
+        try {
+          const stored = localStorage.getItem("newsletter_subscribers");
+          const list = stored ? JSON.parse(stored) : [];
+          return Array.isArray(list) ? list : [];
+        } catch (e) {
+          console.warn("Error parsing local subscribers:", e);
+          return [];
+        }
+      }
+
       function loadSubscribers() {
         if (NEWSLETTER_API_URL && NEWSLETTER_API_URL !== "SU_URL_DE_GOOGLE_APPS_SCRIPT") {
           // Mostrar cargando
@@ -402,22 +413,19 @@
               } else if (data && data.status === "error") {
                 console.error("Error de API:", data.message);
                 // Fallback a localStorage si falla
-                const stored = localStorage.getItem("newsletter_subscribers");
-                activeSubscribers = stored ? JSON.parse(stored) : [];
+                activeSubscribers = getLocalStorageSubscribers();
               }
               renderSubscribersTable();
             })
             .catch(err => {
               console.error("Error al conectar con Google Sheets:", err);
               // Fallback a localStorage
-              const stored = localStorage.getItem("newsletter_subscribers");
-              activeSubscribers = stored ? JSON.parse(stored) : [];
+              activeSubscribers = getLocalStorageSubscribers();
               renderSubscribersTable();
             });
         } else {
           // Usar localStorage
-          const stored = localStorage.getItem("newsletter_subscribers");
-          activeSubscribers = stored ? JSON.parse(stored) : [];
+          activeSubscribers = getLocalStorageSubscribers();
           renderSubscribersTable();
         }
       }

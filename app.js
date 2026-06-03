@@ -4373,8 +4373,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = document.getElementById(emailId).value.trim();
         if (email) {
           // 1. Guardar en LocalStorage (mantenido como respaldo local)
-          const stored = localStorage.getItem("newsletter_subscribers");
-          const list = stored ? JSON.parse(stored) : [];
+          let list = [];
+          try {
+            const stored = localStorage.getItem("newsletter_subscribers");
+            list = stored ? JSON.parse(stored) : [];
+            if (!Array.isArray(list)) {
+              list = [];
+            }
+          } catch (localStorageErr) {
+            console.warn("Invalid localStorage data, resetting:", localStorageErr);
+            list = [];
+          }
+
           if (!list.some(sub => (typeof sub === "string" ? sub : sub.email) === email)) {
             list.push({
               email: email,

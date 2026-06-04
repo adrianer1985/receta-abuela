@@ -2,3 +2,5 @@
 Thumbs.db
 *.log
 firma.html
+google-cloud-sdk/
+google-cloud-cli-*.tar.gz

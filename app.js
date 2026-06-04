@@ -4352,6 +4352,13 @@ document.addEventListener("DOMContentLoaded", () => {
       activeSubcategory = subcat;
     }
 
+    const searchParam = params.get("search");
+    if (searchParam) {
+      searchQuery = searchParam;
+      const searchInput = document.getElementById("search-input");
+      if (searchInput) searchInput.value = searchParam;
+    }
+
     renderGrid(recipes);
     renderSubcategories();
     setupListeners();

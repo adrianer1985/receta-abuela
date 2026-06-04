@@ -2770,5 +2770,67 @@ a {
   }
 }
 
+/* Votos en Comentarios */
+.comment-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(44, 78, 61, 0.05);
+}
+
+.comment-vote-panel {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.btn-comment-vote {
+  background: #f8faf8;
+  border: 1px solid rgba(44, 78, 61, 0.05);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.btn-comment-vote svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.btn-comment-vote.up:hover {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.btn-comment-vote.down:hover {
+  background: #fbeee6;
+  color: #c0392b;
+}
+
+.btn-comment-vote.voted-up {
+  background: #2e7d32;
+  color: #ffffff;
+  border-color: #2e7d32;
+}
+
+.btn-comment-vote.voted-down {
+  background: #c0392b;
+  color: #ffffff;
+  border-color: #c0392b;
+}
+
+.btn-comment-vote:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 
 

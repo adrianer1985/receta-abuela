@@ -5046,9 +5046,34 @@ function setupComments(articleId) {
     
     if (stored) {
       list = JSON.parse(stored);
+      // Data migration to ensure ID and vote counters exist
+      let modified = false;
+      list.forEach((c, idx) => {
+        if (!c.id) {
+          c.id = `c-${articleId}-${idx}-${c.date.replace(/\//g, "-")}`;
+          modified = true;
+        }
+        if (c.upvotes === undefined) {
+          c.upvotes = 0;
+          modified = true;
+        }
+        if (c.downvotes === undefined) {
+          c.downvotes = 0;
+          modified = true;
+        }
+      });
+      if (modified) {
+        localStorage.setItem(storageKey, JSON.stringify(list));
+      }
     } else {
       // Use defaults if available
       list = defaultComments[articleId] || [];
+      // Initialize defaults with ID and vote counters
+      list.forEach((c, idx) => {
+        c.id = `c-${articleId}-${idx}`;
+        c.upvotes = Math.floor(Math.random() * 4); // small seed upvotes
+        c.downvotes = 0;
+      });
       localStorage.setItem(storageKey, JSON.stringify(list));
     }
 
@@ -5063,12 +5088,15 @@ function setupComments(articleId) {
       return;
     }
 
+    const votedMap = JSON.parse(localStorage.getItem("comments_voted") || "{}");
+
     list.forEach(c => {
       const card = document.createElement("div");
       card.className = "comment-card";
       
       const starsHtml = "&#9733;".repeat(c.rating) + "&#9734;".repeat(5 - c.rating);
       const avatarChar = c.author.charAt(0).toUpperCase();
+      const userVote = votedMap[c.id]; // "up", "down", or undefined
 
       card.innerHTML = `
         <div class="comment-header">
@@ -5083,10 +5111,59 @@ function setupComments(articleId) {
         </div>
         <p class="comment-text-content">${c.text}</p>
         ${c.image ? `<img src="${c.image}" alt="Foto adjuntada por ${c.author}" class="comment-attached-image">` : ""}
+        
+        <div class="comment-footer">
+          <div class="comment-vote-panel">
+            <button class="btn-comment-vote up ${userVote === 'up' ? 'voted-up' : ''}" data-type="up" ${userVote ? 'disabled' : ''}>
+              <svg viewBox="0 0 24 24">
+                <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+              </svg>
+              <span>${c.upvotes || 0}</span>
+            </button>
+            <button class="btn-comment-vote down ${userVote === 'down' ? 'voted-down' : ''}" data-type="down" ${userVote ? 'disabled' : ''}>
+              <svg viewBox="0 0 24 24" style="transform: rotate(180deg);">
+                <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+              </svg>
+              <span>${c.downvotes || 0}</span>
+            </button>
+          </div>
+        </div>
       `;
       
+      // Attach voting listeners
+      const upBtn = card.querySelector(".btn-comment-vote.up");
+      const downBtn = card.querySelector(".btn-comment-vote.down");
+      if (upBtn && downBtn) {
+        upBtn.addEventListener("click", () => handleCommentVote(c.id, "up"));
+        downBtn.addEventListener("click", () => handleCommentVote(c.id, "down"));
+      }
+
       commentsList.appendChild(card);
     });
+  }
+
+  // Handle comment vote
+  function handleCommentVote(commentId, voteType) {
+    const votedMap = JSON.parse(localStorage.getItem("comments_voted") || "{}");
+    if (votedMap[commentId]) return;
+
+    const storageKey = `comments_${articleId}`;
+    const stored = localStorage.getItem(storageKey);
+    if (!stored) return;
+
+    let list = JSON.parse(stored);
+    const index = list.findIndex(c => c.id === commentId);
+    if (index !== -1) {
+      if (voteType === "up") {
+        list[index].upvotes = (list[index].upvotes || 0) + 1;
+      } else {
+        list[index].downvotes = (list[index].downvotes || 0) + 1;
+      }
+      localStorage.setItem(storageKey, JSON.stringify(list));
+      votedMap[commentId] = voteType;
+      localStorage.setItem("comments_voted", JSON.stringify(votedMap));
+      loadAndRender();
+    }
   }
 
   // Handle submit form
@@ -5100,16 +5177,33 @@ function setupComments(articleId) {
     if (!author || !text) return;
 
     const newComment = {
+      id: `c-${articleId}-${Date.now()}`,
       author: author,
       date: new Date().toLocaleDateString("es-ES"),
       rating: rating,
       text: text,
-      image: base64ImageStr
+      image: base64ImageStr,
+      upvotes: 0,
+      downvotes: 0
     };
 
     const storageKey = `comments_${articleId}`;
     const stored = localStorage.getItem(storageKey);
-    let list = stored ? JSON.parse(stored) : (defaultComments[articleId] || []);
+    
+    let list = [];
+    if (stored) {
+      list = JSON.parse(stored);
+    } else {
+      list = defaultComments[articleId] || [];
+      // Make sure existing defaults have IDs
+      list.forEach((c, idx) => {
+        if (!c.id) {
+          c.id = `c-${articleId}-${idx}`;
+          c.upvotes = c.upvotes || 0;
+          c.downvotes = c.downvotes || 0;
+        }
+      });
+    }
     
     list.push(newComment);
     localStorage.setItem(storageKey, JSON.stringify(list));

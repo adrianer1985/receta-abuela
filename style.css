@@ -1953,6 +1953,13 @@ a {
   background: #166fe5;
 }
 
+.btn-share.ig {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.btn-share.ig:hover {
+  filter: brightness(0.95);
+}
+
 .btn-share .share-icon {
   width: 18px;
   height: 18px;

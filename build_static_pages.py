@@ -328,7 +328,8 @@ print(f"SSG Complete. Generated {len(recipes)} static pages successfully.")
 # 5. Generate sitemap.xml
 sitemap_urls = [
     'https://www.recetadeabuela.com/',
-    'https://www.recetadeabuela.com/quienes-somos.html'
+    'https://www.recetadeabuela.com/quienes-somos.html',
+    'https://www.recetadeabuela.com/comunidad.html'
 ]
 for recipe in recipes:
     sitemap_urls.append(f'https://www.recetadeabuela.com/{recipe["id"]}.html')
@@ -337,7 +338,7 @@ sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
 sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for url in sitemap_urls:
     priority = "1.0" if url == 'https://www.recetadeabuela.com/' else ("0.5" if "quienes-somos" in url else "0.8")
-    changefreq = "daily" if url == 'https://www.recetadeabuela.com/' else ("monthly" if "quienes-somos" in url else "weekly")
+    changefreq = "daily" if url == 'https://www.recetadeabuela.com/' or "comunidad" in url else ("monthly" if "quienes-somos" in url else "weekly")
     sitemap_xml += '  <url>\n'
     sitemap_xml += f'    <loc>{url}</loc>\n'
     sitemap_xml += f'    <changefreq>{changefreq}</changefreq>\n'

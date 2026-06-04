@@ -11,6 +11,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.recetadeabuela.com/comunidad.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.recetadeabuela.com/estufa-velas.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

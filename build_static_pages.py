@@ -285,6 +285,7 @@ for recipe in recipes:
     # 3. Create Open Graph & JSON-LD head content
     og_meta = f"""  <title>{title} | Receta de Abuela</title>
   <meta name="description" content="{summary}">
+  <link rel="canonical" href="https://www.recetadeabuela.com/{rid}.html">
   <meta property="og:title" content="{title} | Receta de Abuela">
   <meta property="og:description" content="{summary}">
   <meta property="og:image" content="https://www.recetadeabuela.com/{image}">

@@ -2081,7 +2081,7 @@ const recipes = [
     "title": "Suavizante de Ropa de Vinagre y Bicarbonato",
     "category": "hogar",
     "tag": "Limpieza",
-    "image": "assets/images/suavizante_vinagre.jpg",
+    "image": "assets/images/suavizante_vinagre.png",
     "views": 520000,
     "summary": "Suavizante textil natural que elimina la cal del agua, ablanda las fibras de la ropa y previene olores sin dejar aceites sintéticos en los tejidos.",
     "intro": "Los suavizantes comerciales recubren las fibras textiles con una fina capa de grasa sintética para dar sensación de suavidad. Este suavizante ecológico a base de vinagre neutraliza la dureza del agua caliza, disuelve los residuos de jabón y suaviza las telas respetando la transpirabilidad de la ropa.",

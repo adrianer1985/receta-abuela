@@ -1777,7 +1777,7 @@ const recipes = [
     "title": "Infusión Relajante de Valeriana y Pasiflora",
     "category": "cuerpo",
     "tag": "Remedios",
-    "image": "assets/images/infusion_valeriana.jpg",
+    "image": "assets/images/infusion_valeriana.png",
     "views": 65000,
     "summary": "Preparado de hierbas medicinales a base de raíz de valeriana, pasiflora y melisa para favorecer el descanso nocturno y reducir el estrés de forma natural.",
     "intro": "Esta mezcla tradicional combina la valeriana (sedante natural del sistema nervioso), la pasiflora (que prolonga el sueño profundo) y la melisa (de agradable sabor que relaja el estómago). Ideal para mitigar el insomnio y la ansiedad sin recurrir a fármacos de síntesis.",

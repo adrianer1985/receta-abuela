@@ -2838,7 +2838,7 @@ const recipes = [
     "title": "Insecticida de Jabón Potásico Casero",
     "category": "hogar",
     "tag": "Alimentos",
-    "image": "assets/images/insecticida_jabon.jpg",
+    "image": "assets/images/insecticida_jabon.png",
     "views": 35000,
     "summary": "Protege tus plantas de pulgón, cochinilla y mosca blanca con un pulverizador insecticida seguro basado en jabón potásico biodegradable diluido.",
     "intro": "El jabón potásico reblandece la cutícula protectora externa de los insectos de cuerpo blando, provocando su deshidratación natural sin envenenar el huerto. Es apto para agricultura ecológica.",

@@ -1304,7 +1304,7 @@ const recipes = [
     "title": "Jarabe Natural de Tomillo y Miel para la Tos",
     "category": "cuerpo",
     "tag": "Remedios",
-    "image": "assets/images/jarabe_tomillo.jpg",
+    "image": "assets/images/jarabe_tomillo.png",
     "views": 270000,
     "summary": "Remedio de abuela para aliviar la tos, despejar los bronquios y calmar la garganta irritada con una infusión concentrada de tomillo silvestre y miel de abeja pura.",
     "intro": "El tomillo contiene timol y carvacrol, dos compuestos volátiles con propiedades antiespasmódicas, expectorantes y antisépticas. Combinado con la miel cruda de abejas, este jarabe tradicional calma la irritación bronquial y proporciona una barrera protectora calmante en la garganta.",

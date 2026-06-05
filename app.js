@@ -1383,7 +1383,7 @@ const recipes = [
     "title": "Mascarilla Purificante de Arcilla Verde y Árbol de Té",
     "category": "cuerpo",
     "tag": "Higiene",
-    "image": "assets/images/mascarilla_arcilla.jpg",
+    "image": "assets/images/mascarilla_arcilla.png",
     "views": 220000,
     "summary": "Tratamiento facial purificante de arcilla verde bentonita y aceite de árbol de té. Absorbe toxinas, regula la grasa capilar e hidrata sin aditivos.",
     "intro": "La arcilla verde es rica en minerales y tiene una extraordinaria capacidad de adsorción física, atrayendo impurezas y grasas de los poros como un imán. Con aceite de árbol de té antibacteriano, esta mascarilla es el tratamiento ideal para combatir puntos negros y revitalizar la piel cansada.",

@@ -2458,7 +2458,7 @@ const recipes = [
     "title": "Fungicida Orgánico de Leche y Bicarbonato",
     "category": "hogar",
     "tag": "Alimentos",
-    "image": "assets/images/fungicida_leche.jpg",
+    "image": "assets/images/fungicida_leche.png",
     "views": 175000,
     "summary": "Combate el oídio, mildiu y roya de tus plantas y huerto con un fungicida natural a base de suero de leche de vaca y bicarbonato sódico.",
     "intro": "Este fungicida casero utiliza los aminoácidos y sales minerales presentes en la leche desnatada o suero para combatir hongos en las plantas. El bicarbonato de sodio altera el pH de la superficie foliar, impidiendo que las esporas fúngicas germinen.",

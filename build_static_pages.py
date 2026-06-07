@@ -152,7 +152,7 @@ for recipe in recipes:
         <svg class="health-highlight-icon" viewBox="0 0 24 24">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
-        <h4 class="health-highlight-title">Beneficios para tu Cuerpo y Salud</h4>
+        <h2 class="health-highlight-title">Beneficios para tu Cuerpo y Salud</h2>
       </div>
       <p class="health-highlight-text">{health}</p>
     </div>
@@ -229,19 +229,19 @@ for recipe in recipes:
       
       <!-- Scientific / Extra Information -->
       <section class="extra-info-box">
-        <h4 class="modal-section-title">
+        <h3 class="modal-section-title">
           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
           Información de Interés Científico
-        </h4>
+        </h3>
         <p class="extra-text">{recipe["extraInfo"]}</p>
       </section>
       
       <!-- Detailed Impact Circles -->
       <section>
-        <h4 class="modal-section-title">
+        <h3 class="modal-section-title">
           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
           Evaluación Detallada de Impacto
-        </h4>
+        </h3>
         <div class="modal-impact-metrics">
           <div class="impact-metric-box">
             <div class="impact-metric-circle eco">{recipe["metrics"]["economy"]}%</div>
@@ -263,10 +263,10 @@ for recipe in recipes:
       
       <!-- Commercial Comparison Table -->
       <section>
-        <h4 class="modal-section-title">
+        <h3 class="modal-section-title">
           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           Tabla Comparativa Comercial (España)
-        </h4>
+        </h3>
         <div class="comparison-table-wrapper">
           <table class="comparison-table">
             <thead>
@@ -295,14 +295,19 @@ for recipe in recipes:
   <meta property="og:image" content="https://www.recetadeabuela.com/{image}">
   <meta property="og:url" content="https://www.recetadeabuela.com/{rid}.html">
   <meta property="og:type" content="article">
-  <meta name="twitter:card" content="summary_large_image">"""
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title} | Receta de Abuela">
+  <meta name="twitter:description" content="{summary}">
+  <meta name="twitter:image" content="https://www.recetadeabuela.com/{image}">"""
 
     # 4. Synthesize page
     page_html = template_html
     
+    # Remove original general description first to avoid removing the new one later
+    page_html = re.sub(r'<meta name="description" content="[^"]*">', "", page_html)
+    
     # Replace head elements (title and meta description)
     page_html = page_html.replace("<title>Cargando guía... | Receta de Abuela</title>", og_meta + "\n" + schema_json_ld)
-    page_html = re.sub(r'<meta name="description" content="[^"]*">', "", page_html) # remove original general description
     
     # Replace details container content
     placeholder_loading_block = """    <div id="article-detail-container" class="dialog-content-wrapper static-page-detail">

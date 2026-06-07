@@ -4475,7 +4475,9 @@ function renderGrid(recipesData) {
 
   // Insert cards
   filteredRecipes.forEach(recipe => {
-    const card = document.createElement("article");
+    const card = document.createElement("a");
+    card.href = `${recipe.id}.html`;
+    card.target = "_blank";
     card.className = "recipe-card";
     card.setAttribute("aria-label", `Receta: ${recipe.title}`);
     card.innerHTML = `
@@ -4513,7 +4515,7 @@ function renderGrid(recipesData) {
       
       <!-- Hover Preview Panel (Whole Card Overlay) -->
       <div class="card-hover-preview">
-        <h3 class="hover-preview-recipe-title">${recipe.title}</h3>
+        <p class="hover-preview-recipe-title" aria-hidden="true">${recipe.title}</p>
         <span class="hover-preview-title">Beneficio Corporal</span>
         <p class="hover-preview-text">${recipe.healthBenefit.split('.')[0] + '.'}</p>
         <span class="hover-preview-title">Ingredientes Clave</span>
@@ -4531,11 +4533,6 @@ function renderGrid(recipesData) {
         </span>
       </div>
     `;
-    
-    // Add click event to open in a new tab
-    card.addEventListener("click", () => {
-      window.open(`${recipe.id}.html`, '_blank');
-    });
     recipesGrid.appendChild(card);
   });
 }
@@ -4621,7 +4618,7 @@ function renderArticleDetail() {
         <svg class="health-highlight-icon" viewBox="0 0 24 24">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
-        <h4 class="health-highlight-title">Beneficios para tu Cuerpo y Salud</h4>
+        <h2 class="health-highlight-title">Beneficios para tu Cuerpo y Salud</h2>
       </div>
       <p class="health-highlight-text">${recipe.healthBenefit}</p>
     </div>
@@ -4710,19 +4707,19 @@ function renderArticleDetail() {
       
       <!-- Scientific / Extra Information -->
       <section class="extra-info-box">
-        <h4 class="modal-section-title">
+        <h3 class="modal-section-title">
           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
           Información de Interés Científico
-        </h4>
+        </h3>
         <p class="extra-text">${recipe.extraInfo}</p>
       </section>
       
       <!-- Detailed Impact Circles -->
       <section>
-        <h4 class="modal-section-title">
+        <h3 class="modal-section-title">
           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
           Evaluación Detallada de Impacto
-        </h4>
+        </h3>
         <div class="modal-impact-metrics">
           <div class="impact-metric-box">
             <div class="impact-metric-circle eco">${recipe.metrics.economy}%</div>
@@ -4744,10 +4741,10 @@ function renderArticleDetail() {
       
       <!-- Commercial Comparison Table -->
       <section>
-        <h4 class="modal-section-title">
+        <h3 class="modal-section-title">
           <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           Tabla Comparativa Comercial (España)
-        </h4>
+        </h3>
         <div class="comparison-table-wrapper">
           <table class="comparison-table">
             <thead>
@@ -4818,7 +4815,9 @@ function renderRecommendations(currentRecipe) {
   // Render them in the grid
   recommendedGrid.innerHTML = "";
   recommendations.forEach(recipe => {
-    const card = document.createElement("article");
+    const card = document.createElement("a");
+    card.href = `${recipe.id}.html`;
+    card.target = "_blank";
     card.className = "recipe-card";
     card.setAttribute("aria-label", `Receta: ${recipe.title}`);
     card.innerHTML = `
@@ -4856,7 +4855,7 @@ function renderRecommendations(currentRecipe) {
       
       <!-- Hover Preview Panel (Whole Card Overlay) -->
       <div class="card-hover-preview">
-        <h3 class="hover-preview-recipe-title">${recipe.title}</h3>
+        <p class="hover-preview-recipe-title" aria-hidden="true">${recipe.title}</p>
         <span class="hover-preview-title">Beneficio Corporal</span>
         <p class="hover-preview-text">${recipe.healthBenefit.split('.')[0] + '.'}</p>
         <span class="hover-preview-title">Ingredientes Clave</span>
@@ -4874,9 +4873,10 @@ function renderRecommendations(currentRecipe) {
         </span>
       </div>
     `;
-
-    card.addEventListener("click", () => {
-      window.open(`${recipe.id}.html`, '_blank');
+    card.addEventListener("click", (e) => {
+      // Prevent double tab trigger or default behavior conflicts if needed, but since it's an 'a' tag, standard navigation will occur.
+      // Note: we had card.addEventListener("click", ...) in the original, we can keep it or remove it since it's an <a> tag now.
+      // Let's remove it because standard <a> tag handles it natively!
     });
     recommendedGrid.appendChild(card);
   });

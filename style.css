@@ -668,7 +668,7 @@ a {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  color: var(--color-text-light);
+  color: #3c4a41;
   font-weight: 600;
 }
 
@@ -741,7 +741,7 @@ a {
 
 .item-price {
   font-weight: 700;
-  color: var(--color-accent);
+  color: #784932;
   background: var(--color-accent-pale);
   padding: 0.25rem 0.65rem;
   border-radius: 12px;
@@ -876,7 +876,7 @@ a {
 
 .impact-metric-circle.eco {
   border: 5px solid var(--color-metric-eco);
-  color: var(--color-metric-eco);
+  color: #784932;
   background: var(--color-accent-pale);
 }
 
@@ -1366,7 +1366,7 @@ a {
   gap: 0.5rem;
   font-weight: 600;
   font-size: 0.95rem;
-  color: var(--color-primary-light);
+  color: #425f4e;
   transition: var(--transition-fast);
 }
 
@@ -1934,6 +1934,7 @@ a {
 
 .btn-share.wa {
   background: #25D366;
+  color: #0d3215 !important;
 }
 .btn-share.wa:hover {
   background: #20ba56;
@@ -1947,10 +1948,10 @@ a {
 }
 
 .btn-share.fb {
-  background: #1877F2;
+  background: #0b57c1;
 }
 .btn-share.fb:hover {
-  background: #166fe5;
+  background: #0947a1;
 }
 
 .btn-share.ig {

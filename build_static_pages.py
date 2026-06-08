@@ -819,7 +819,7 @@ for lang, subdir, lang_recipes in languages:
                 
         # Replace relative paths in template if inside subdirectory
         if subdir:
-            page_html = page_html.replace('href="style.css"', 'href="../style.css"')
+            page_html = page_html.replace('href="style.css?v=3"', 'href="../style.css?v=3"')
             page_html = page_html.replace('href="assets/logo.png"', 'href="../assets/logo.png"')
             page_html = page_html.replace('src="assets/logo.png"', 'src="../assets/logo.png"')
             page_html = page_html.replace('src="assets/images/', 'src="../assets/images/')
@@ -829,8 +829,8 @@ for lang, subdir, lang_recipes in languages:
             page_html = page_html.replace('href="mailto:info@recetadeabuela.com"', 'href="mailto:info@recetadeabuela.com"')
             page_html = page_html.replace('href="https://www.instagram.com/recetadabuela"', 'href="https://www.instagram.com/recetadabuela"')
             page_html = page_html.replace('href="inscritos.html"', 'href="../inscritos.html"')
-            page_html = page_html.replace('src="theme.js"', 'src="../theme.js"')
-            page_html = page_html.replace('src="app.js"', 'src="../app.js"')
+            page_html = page_html.replace('src="theme.js?v=3"', 'src="../theme.js?v=3"')
+            page_html = page_html.replace('src="app.js?v=3"', 'src="../app.js?v=3"')
             
         # 4b. Pre-render recommended articles HTML for internal linking SEO
         candidates = [r for r in lang_recipes if r["id"] != rid]
@@ -954,26 +954,25 @@ for lang, subdir, _ in languages:
                 content = content.replace(orig, trans)
                 
         # Replace relative paths
-        content = content.replace('href="style.css"', 'href="../style.css"')
-        content = content.replace('href="assets/logo.png"', 'href="../assets/logo.png"')
-        content = content.replace('src="assets/logo.png"', 'src="../assets/logo.png"')
-        content = content.replace('src="assets/images/', 'src="../assets/images/')
-        content = content.replace('href="index.html"', 'href="index.html"')
-        content = content.replace('href="comunidad.html"', 'href="comunidad.html"')
-        content = content.replace('href="quienes-somos.html"', 'href="quienes-somos.html"')
-        content = content.replace('href="mailto:info@recetadeabuela.com"', 'href="mailto:info@recetadeabuela.com"')
-        content = content.replace('href="https://www.instagram.com/recetadabuela"', 'href="https://www.instagram.com/recetadabuela"')
-        content = content.replace('href="inscritos.html"', 'href="../inscritos.html"')
-        content = content.replace('src="theme.js"', 'src="../theme.js"')
-        
-        # For index.html, load recipes_lang.js before app.js
-        if fname == "index.html":
-            content = content.replace('src="app.js"', f'src="../recipes_{lang}.js"></script>\n  <script src="../app.js"')
-        else:
-            content = content.replace('src="app.js"', 'src="../app.js"')
+        if subdir:
+            content = content.replace('href="style.css?v=3"', 'href="../style.css?v=3"')
+            content = content.replace('href="assets/logo.png"', 'href="../assets/logo.png"')
+            content = content.replace('src="assets/logo.png"', 'src="../assets/logo.png"')
+            content = content.replace('src="assets/images/', 'src="../assets/images/')
+            content = content.replace('href="index.html"', 'href="index.html"')
+            content = content.replace('href="comunidad.html"', 'href="comunidad.html"')
+            content = content.replace('href="quienes-somos.html"', 'href="quienes-somos.html"')
+            content = content.replace('href="mailto:info@recetadeabuela.com"', 'href="mailto:info@recetadeabuela.com"')
+            content = content.replace('href="https://www.instagram.com/recetadabuela"', 'href="https://www.instagram.com/recetadabuela"')
+            content = content.replace('href="inscritos.html"', 'href="../inscritos.html"')
+            content = content.replace('src="theme.js?v=3"', 'src="../theme.js?v=3"')
+            if fname == "index.html":
+                content = content.replace('src="app.js?v=3"', f'src="../recipes_{lang}.js?v=3"></script>\n  <script src="../app.js?v=3"')
+            else:
+                content = content.replace('src="app.js?v=3"', 'src="../app.js?v=3"')
             
         if fname == "comunidad.html":
-            content = content.replace('src="comunidad.js"', 'src="../comunidad.js"')
+            content = content.replace('src="comunidad.js"', 'src="../comunidad.js"') if subdir else content.replace('src="comunidad.js"', 'src="comunidad.js?v=3"')
             
         out_path = f"{subdir}{fname}"
         with open(out_path, "w", encoding="utf-8") as f_out:

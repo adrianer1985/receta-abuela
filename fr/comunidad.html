@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Communauté | Receta de Abuela</title>
+  <meta name="description" content="Proposez et partagez vos propres recettes traditionnelles de grand-mère. Votez pour les meilleures idées écologiques, cosmétique naturelle, potager et économies ménagères.">
+  <link rel="canonical" href="https://www.recetadeabuela.com/comunidad.html">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <script src="../theme.js"></script>
+</head>
+<body>
+
+  <!-- Background decorative glows -->
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-wrapper">
+        <img src="../assets/logo.png" alt="Logotipo Receta de Abuela" id="logo-img" class="site-logo">
+        <div class="logo-text">
+          <a href="index.html" class="logo-link">
+            <span class="site-title">Receta de Abuela</span>
+            <span class="site-slogan">La sagesse du bien-être</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Nav Menu -->
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html" id="nav-all">Tous les Articles</a></li>
+          <li><a href="index.html?cat=hogar" id="nav-hogar">Maison Écologique</a></li>
+          <li><a href="index.html?cat=cuerpo" id="nav-cuerpo">Soin Personnel</a></li>
+          <li><a href="index.html?cat=tecnologia" id="nav-tecnologia">Technologie Ancestrale</a></li>
+          <li><a href="comunidad.html" class="active" id="nav-community">Communauté</a></li>
+          <li><a href="quienes-somos.html" id="nav-about">Qui Sommes-Nous</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Intro -->
+  <section class="community-section-hero">
+    <h1 class="community-main-title">El Rincón de la Communauté</h1>
+    <p class="community-subtitle">Avez-vous une recette traditionnelle que vous utilisez dans votre vie quotidienne ou dont vous vous souvenez de vos grands-parents ? Partagez-la avec nous. Vous pouvez également voter sur les propositions existantes pour nous aider à décider quels guides détaillés publier ensuite.</p>
+  </section>
+
+  <!-- Info Block / Welcome Card -->
+  <section class="community-welcome-section">
+    <div class="community-welcome-card">
+      <div class="welcome-icon-wrapper">
+        <svg class="welcome-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </div>
+      <div class="welcome-text-content">
+        <h2>Un espace pour collaborer et partager la sagesse</h2>
+        <p>C'est notre point de rencontre. Nous voulons sauver et maintenir vivante la sagesse du bien-être traditionnel, et pour cela <strong>nous avons besoin de votre aide</strong>. Cet espace est conçu pour que nous collaborions tous afin de rendre ce livre de recettes ancestrales de plus en plus grand et complet.</p>
+        
+        <div class="welcome-features-grid">
+          <div class="feature-item">
+            <span class="feature-bullet">✦</span>
+            <div>
+              <strong>Partagez vos propres recettes :</strong> Téléchargez ces remèdes, formules de nettoyage ou recettes de cuisine naturelle dont vous avez hérité de votre famille ou que vous appliquez chez vous.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-bullet">✦</span>
+            <div>
+              <strong>Proposez des variantes et des améliorations :</strong> Faites-vous l'une de nos recettes différemment ? Utilisez-vous un autre ingrédient ou astuce pour l'améliorer ? Partagez votre version ici.
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-bullet">✦</span>
+            <div>
+              <strong>Votez pour les meilleures idées :</strong> Si vous voyez une proposition intéressante d'un autre membre de la communauté, donnez-lui votre vote positif (👍). Cela nous aidera à savoir quelles sont les préférées pour les développer et les publier sous forme de guides détaillés sur le site principal.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Community Content -->
+  <main class="community-layout">
+    
+    <!-- Left Column: Submission Form -->
+    <section class="community-form-col">
+      <div class="community-form-card">
+        <h2 class="form-card-title">Proposez votre Recette</h2>
+        <p class="form-card-subtitle">Partagez cette astuce traditionnelle qui prend soin de la santé, du portefeuille ou de la planète.</p>
+        
+        <form id="proposal-form">
+          <div class="form-group-community">
+            <label for="prop-author">Votre Nom et Ville</label>
+            <input type="text" id="prop-author" placeholder="Ej. Ana Pérez (Barcelona)" required>
+          </div>
+          
+          <div class="form-group-community">
+            <label for="prop-title">Titre de la Proposition</label>
+            <input type="text" id="prop-title" placeholder="Ej. Jabón de Castilla con Aloe Vera" required>
+          </div>
+          
+          <div class="form-group-community">
+            <label for="prop-category">Catégorie principale</label>
+            <select id="prop-category" required>
+              <option value="" disabled selected>Sélectionnez une option</option>
+              <option value="hogar">Maison Écologique</option>
+              <option value="cuerpo">Soin Personnel</option>
+              <option value="plantas">Plantes et Potager</option>
+              <option value="alimentos">Aliments Naturels</option>
+            </select>
+          </div>
+          
+          <div class="form-group-community">
+            <label for="prop-ingredients">Ingrédients et Matériaux</label>
+            <textarea id="prop-ingredients" rows="3" placeholder="Ej. 1 hoja de aloe vera, 250g jabón de coco rallado..." required></textarea>
+          </div>
+          
+          <div class="form-group-community">
+            <label for="prop-steps">Étape par étape / Préparation</label>
+            <textarea id="prop-steps" rows="6" placeholder="Expliquez comment ce remède est préparé et utilisé..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn-submit-proposal">Envoyer la Proposition</button>
+          <p id="proposal-success" class="newsletter-success" style="display: none; margin-top: 1rem; color: #2e7d32; font-weight: 500; text-align: center;">Proposition envoyée avec succès ! Elle s'affiche désormais dans la liste de la communauté.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Right Column: Proposal list -->
+    <section class="community-list-col">
+      <div class="community-list-container">
+        <div class="list-header-info">
+          <h2 class="form-card-title" style="margin-bottom: 0;">Propuestas de la Communauté</h2>
+          <span id="proposal-counter" class="list-counter">0 propuestas</span>
+        </div>
+        
+        <!-- Cards Grid dynamically loaded by comunidad.js -->
+        <div id="proposals-list" style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <!-- Loading state placeholder -->
+          <div class="loading-state" style="padding: 3rem 0; text-align: center; color: var(--color-text-muted);">
+            <div class="spinner" style="margin: 0 auto 1rem;"></div>
+            <p>Chargement de la sagesse de la communauté...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-tags">
+        <span class="tags-title">Sujets Populaires :</span>
+        <a href="index.html?search=ahorro" class="footer-tag">#ÉconomiesMénagères</a>
+        <a href="index.html?search=cosmética" class="footer-tag">#CosmétiqueNaturelle</a>
+        <a href="index.html?search=limpiador" class="footer-tag">#NettoyageÉcologique</a>
+        <a href="index.html?search=remedio" class="footer-tag">#RemèdesMaison</a>
+        <a href="index.html?search=estufa" class="footer-tag">#ChauffageÉcologique</a>
+        <a href="index.html?search=solar" class="footer-tag">#ÉnergieSolaire</a>
+        <a href="index.html?search=abono" class="footer-tag">#PotagerUrbain</a>
+      </div>
+      <p class="footer-text">&copy; 2026 Recette de Grand-mère. Tous droits réservés.</p>
+      <p class="footer-meta">Auteur : Adrián Enfedaque | Contact : <a href="mailto:info@recetadeabuela.com" style="color: var(--color-primary-pale); text-decoration: underline;">info@recetadeabuela.com</a> | Instagram: <a href="https://www.instagram.com/recetadabuela" target="_blank" rel="noopener" style="color: var(--color-primary-pale); text-decoration: underline;">@recetadabuela</a> | Design Premium, Durable et Moderne pour un style de vie conscient. | <a href="../inscritos.html" style="color: var(--color-primary-pale); text-decoration: underline;">Gérer les abonnés</a></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Community logic -->
+  <script src="../comunidad.js"></script>
+</body>
+</html>

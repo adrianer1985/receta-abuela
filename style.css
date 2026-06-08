@@ -2960,5 +2960,137 @@ html.dark {
   }
 }
 
+/* Bottom controls bar */
+.bottom-controls-bar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 30px;
+  padding: 6px 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.bottom-controls-bar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.lang-link .lang-text {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.lang-link:hover {
+  background-color: rgba(44, 78, 61, 0.08);
+  color: var(--color-primary);
+}
+
+.lang-link.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.controls-divider {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Override style.css theme toggle button for bottom-bar context */
+.bottom-controls-bar .theme-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.2s ease;
+  width: 34px;
+  height: 34px;
+}
+
+.bottom-controls-bar .theme-toggle-btn:hover {
+  background-color: rgba(44, 78, 61, 0.08);
+  color: var(--color-primary);
+  box-shadow: none;
+}
+
+.bottom-controls-bar .theme-toggle-btn svg {
+  stroke-width: 2.2;
+}
+
+/* Dark mode adjustments */
+html.dark .bottom-controls-bar {
+  background: rgba(30, 35, 32, 0.8);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .controls-divider {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .lang-link:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-primary-pale);
+}
+
+html.dark .lang-link.active {
+  background-color: var(--color-primary-pale);
+  color: var(--bg-card);
+}
+
+html.dark .bottom-controls-bar .theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-primary-pale);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .bottom-controls-bar {
+    bottom: 15px;
+    right: 15px;
+    padding: 4px 10px;
+    gap: 8px;
+  }
+  .lang-link {
+    padding: 4px 6px;
+  }
+  .lang-link .lang-text {
+    display: none; /* Hide EN/ES/FR/PT text on mobile to save space */
+  }
+}
+
+
 
 

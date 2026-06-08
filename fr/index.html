@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receta de Abuela | La sagesse du bien-être</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Descubre recetas ancestrales y ecológicas para el cuidado personal y del hogar. La sagesse du bien-être en formato moderno, sostenible y económico.">
+  <link rel="canonical" href="https://www.recetadeabuela.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.recetadeabuela.com/">
+  <meta property="og:title" content="Receta de Abuela | La sagesse du bien-être">
+  <meta property="og:description" content="Descubre recetas ancestrales y ecológicas para el cuidado personal y del hogar. La sagesse du bien-être en formato moderno, sostenible y económico.">
+  <meta property="og:image" content="https://www.recetadeabuela.com/assets/logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.recetadeabuela.com/">
+  <meta name="twitter:title" content="Receta de Abuela | La sagesse du bien-être">
+  <meta name="twitter:description" content="Descubre recetas ancestrales y ecológicas para el cuidado personal y del hogar. La sagesse du bien-être en formato moderno, sostenible y económico.">
+  <meta name="twitter:image" content="https://www.recetadeabuela.com/assets/logo.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Receta de Abuela",
+    "url": "https://www.recetadeabuela.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.recetadeabuela.com/index.html?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Receta de Abuela",
+    "url": "https://www.recetadeabuela.com/",
+    "logo": "https://www.recetadeabuela.com/assets/logo.png",
+    "sameAs": [
+      "https://www.instagram.com/recetadabuela"
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <script src="../theme.js"></script>
+</head>
+
+<body>
+
+  <!-- Background decorative glows -->
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo-wrapper">
+        <img src="../assets/logo.png" alt="Logotipo Receta de Abuela" id="logo-img" class="site-logo">
+        <div class="logo-text">
+          <h1 class="site-title">Receta de Abuela</h1>
+          <span class="site-slogan">La sagesse du bien-être</span>
+        </div>
+      </div>
+
+      <!-- Nav Menu / Quick statistics -->
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active" id="nav-all">Tous les Articles</a></li>
+          <li><a href="index.html?cat=hogar" id="nav-hogar">Maison Écologique</a></li>
+          <li><a href="index.html?cat=cuerpo" id="nav-cuerpo">Soin Personnel</a></li>
+          <li><a href="index.html?cat=tecnologia" id="nav-tecnologia">Technologie Ancestrale</a></li>
+          <li><a href="comunidad.html" id="nav-community">Communauté</a></li>
+          <li><a href="quienes-somos.html" id="nav-about">Qui Sommes-Nous</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2 class="hero-title">Durabilité, santé et économie au quotidien</h2>
+      <p class="hero-subtitle">Nous sauvons la sagesse traditionnelle à travers des recettes maison scientifiquement évaluées et adaptées à la vie moderne. 100% naturel, mesuré et analysé.</p>
+      
+      <!-- Top Newsletter Sign-up Box -->
+      <div class="hero-newsletter-box">
+        <form id="hero-newsletter-form" class="hero-newsletter-form">
+          <input type="email" id="hero-newsletter-email" placeholder="Tu correo electrónico" required>
+          <button type="submit" class="btn-hero-newsletter">Rejoindre la newsletter</button>
+        </form>
+        <p id="hero-newsletter-success" class="newsletter-success" style="display: none; color: #ffffff;">Merci pour votre abonnement ! Vous recevrez bientôt du nouveau contenu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Control & Filter Section -->
+  <section class="controls-section">
+    <div class="controls-container">
+      <!-- Search input -->
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="search-input" placeholder="Rechercher des recettes (ex. lavande, shampooing, agrumes...)"
+          aria-label="Buscar recetas">
+      </div>
+
+      <!-- Sorting & Filter Toggles -->
+      <div class="filter-controls">
+        <span class="filter-label">Trier par :</span>
+        <button class="btn-filter active" data-sort="default">Plus Populaire</button>
+        <button class="btn-filter" data-sort="economia">Plus d'Économies (€)</button>
+        <button class="btn-filter" data-sort="salud">Meilleur pour la Santé</button>
+        <button class="btn-filter" data-sort="ecosistema">Moindre Impact Environnemental</button>
+      </div>
+    </div>
+    
+    <!-- Subcategory Filter Chips -->
+    <div class="subcategory-filters-wrapper">
+      <div id="subcategory-filters" class="subcategory-filters">
+        <!-- Dynamically injected by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <main class="grid-section">
+    <div id="recipes-grid" class="recipes-grid" aria-label="Listado de recetas">
+      <!-- Cards will be dynamically inserted here by app.js -->
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Chargement de la sagesse ancestrale...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <h2 class="newsletter-title">Le Carnet de la Grand-mère</h2>
+      <p class="newsletter-subtitle">Rejoignez notre communauté de vie consciente. Recevez chaque dimanche un conseil traditionnel d'économie, de santé et d'écologie directement dans votre boîte de réception.</p>
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Tu correo electrónico" required>
+        <button type="submit" class="btn-newsletter">S'abonner</button>
+      </form>
+      <p id="newsletter-success" class="newsletter-success" style="display: none;">Merci pour votre abonnement ! Vous recevrez bientôt du nouveau contenu.</p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-tags">
+        <span class="tags-title">Sujets Populaires :</span>
+        <a href="index.html?search=ahorro" class="footer-tag">#ÉconomiesMénagères</a>
+        <a href="index.html?search=cosmética" class="footer-tag">#CosmétiqueNaturelle</a>
+        <a href="index.html?search=limpiador" class="footer-tag">#NettoyageÉcologique</a>
+        <a href="index.html?search=remedio" class="footer-tag">#RemèdesMaison</a>
+        <a href="index.html?search=estufa" class="footer-tag">#ChauffageÉcologique</a>
+        <a href="index.html?search=solar" class="footer-tag">#ÉnergieSolaire</a>
+        <a href="index.html?search=abono" class="footer-tag">#PotagerUrbain</a>
+      </div>
+      <p class="footer-text">&copy; 2026 Recette de Grand-mère. Tous droits réservés.</p>
+      <p class="footer-meta">Auteur : Adrián Enfedaque | Contact : <a href="mailto:info@recetadeabuela.com" style="color: var(--color-primary-pale); text-decoration: underline;">info@recetadeabuela.com</a> | Instagram: <a href="https://www.instagram.com/recetadabuela" target="_blank" rel="noopener" style="color: var(--color-primary-pale); text-decoration: underline;">@recetadabuela</a> | Design Premium, Durable et Moderne pour un style de vie conscient. | <a href="../inscritos.html" style="color: var(--color-primary-pale); text-decoration: underline;">Gérer les abonnés</a></p>
+    </div>
+  </footer>
+
+
+  <!-- JavaScript App logic -->
+  <script src="recipes_es.js"></script>
+  <script src="../recipes_fr.js"></script>
+  <script src="../app.js"></script>
+</body>
+
+</html>

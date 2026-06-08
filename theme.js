@@ -54,21 +54,74 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    // 1. Detect language and setup links
+    const currentPath = window.location.pathname;
+    const currentSearch = window.location.search;
+    const currentHash = window.location.hash;
+
+    let currentLang = "es";
+    if (currentPath.includes("/en/")) currentLang = "en";
+    else if (currentPath.includes("/fr/")) currentLang = "fr";
+    else if (currentPath.includes("/pt/")) currentLang = "pt";
+
+    function getLangLink(targetLang) {
+      const segments = currentPath.split("/");
+      let filename = segments[segments.length - 1];
+      if (!filename || filename === "") {
+        filename = "index.html";
+      }
+
+      let prefix = "";
+      if (currentLang !== "es") {
+        prefix = "../";
+      }
+
+      let newPath = "";
+      if (targetLang === "es") {
+        newPath = prefix + filename;
+      } else {
+        newPath = prefix + targetLang + "/" + filename;
+      }
+
+      return newPath + currentSearch + currentHash;
+    }
+
+    // 2. Inject floating controls bar
+    const bar = document.createElement("div");
+    bar.id = "bottom-controls-bar";
+    bar.className = "bottom-controls-bar";
+    
+    bar.innerHTML = `
+      <div class="lang-selector">
+        <a href="${getLangLink('es')}" class="lang-link ${currentLang === 'es' ? 'active' : ''}" data-lang="es" title="Español">🇪🇸 <span class="lang-text">ES</span></a>
+        <a href="${getLangLink('en')}" class="lang-link ${currentLang === 'en' ? 'active' : ''}" data-lang="en" title="English">🇬🇧 <span class="lang-text">EN</span></a>
+        <a href="${getLangLink('fr')}" class="lang-link ${currentLang === 'fr' ? 'active' : ''}" data-lang="fr" title="Français">🇫🇷 <span class="lang-text">FR</span></a>
+        <a href="${getLangLink('pt')}" class="lang-link ${currentLang === 'pt' ? 'active' : ''}" data-lang="pt" title="Português">🇵🇹 <span class="lang-text">PT</span></a>
+      </div>
+      <div class="controls-divider"></div>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">
+        <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: block;"></svg>
+      </button>
+    `;
+
+    document.body.appendChild(bar);
+
+    // 3. Setup Theme Button logic
     const toggleBtn = document.getElementById("theme-toggle");
-    if (!toggleBtn) return;
-    
-    const activeTheme = localStorage.getItem("theme") || "auto";
-    updateToggleButton(toggleBtn, activeTheme);
-    
-    toggleBtn.addEventListener("click", () => {
-      const currentState = toggleBtn.getAttribute("data-theme-state") || "auto";
-      let nextState = "light";
-      if (currentState === "light") nextState = "dark";
-      else if (currentState === "dark") nextState = "auto";
+    if (toggleBtn) {
+      const activeTheme = localStorage.getItem("theme") || "auto";
+      updateToggleButton(toggleBtn, activeTheme);
       
-      localStorage.setItem("theme", nextState);
-      applyTheme(nextState);
-      updateToggleButton(toggleBtn, nextState);
-    });
+      toggleBtn.addEventListener("click", () => {
+        const currentState = toggleBtn.getAttribute("data-theme-state") || "auto";
+        let nextState = "light";
+        if (currentState === "light") nextState = "dark";
+        else if (currentState === "dark") nextState = "auto";
+        
+        localStorage.setItem("theme", nextState);
+        applyTheme(nextState);
+        updateToggleButton(toggleBtn, nextState);
+      });
+    }
   });
 })();

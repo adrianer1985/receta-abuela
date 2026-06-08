@@ -150,7 +150,9 @@ a {
 /* Navigation Drawer / Tab Links */
 .main-nav {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }
 
 .nav-links {
@@ -1460,26 +1462,35 @@ a {
 @media (max-width: 1024px) {
   .main-nav {
     width: 100%;
-    overflow-x: auto;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: visible;
     padding: 0.25rem 0;
-  }
-  .main-nav::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
   }
   .nav-links {
     display: flex;
     flex-wrap: nowrap;
     width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
     padding: 0.35rem 0.75rem;
     margin: 0 auto;
     gap: 0.4rem;
+  }
+  .nav-links::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
   }
   .nav-links a {
     white-space: nowrap;
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
+  }
+  .bottom-controls-bar {
+    align-self: center;
+    margin-top: 8px;
   }
 }
 
@@ -2960,31 +2971,27 @@ html.dark {
   }
 }
 
-/* Footer controls bar */
+/* Header controls bar (Language + Theme switcher) */
 .bottom-controls-bar {
   display: inline-flex;
-  align-self: center;
   align-items: center;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  gap: 10px;
+  background: var(--color-primary-pale);
+  border: 1px solid rgba(44, 78, 61, 0.05);
   border-radius: 30px;
-  padding: 6px 14px;
-  margin-top: 15px;
+  padding: 4px 10px;
+  margin-top: 4px;
   transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .bottom-controls-bar:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .lang-selector {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .lang-link {
@@ -2992,11 +2999,10 @@ html.dark {
   align-items: center;
   gap: 4px;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-primary-pale);
-  opacity: 0.8;
-  padding: 6px 10px;
+  color: var(--color-text-muted);
+  padding: 5px 9px;
   border-radius: 20px;
   transition: all 0.2s ease;
 }
@@ -3006,44 +3012,41 @@ html.dark {
 }
 
 .lang-link:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  opacity: 1;
+  background-color: rgba(44, 78, 61, 0.05);
+  color: var(--color-primary);
 }
 
 .lang-link.active {
-  background-color: #ffffff;
+  background-color: var(--bg-card);
   color: var(--color-primary);
-  opacity: 1;
+  box-shadow: 0 2px 8px rgba(44, 78, 61, 0.04);
 }
 
 .controls-divider {
   width: 1px;
-  height: 24px;
-  background-color: rgba(255, 255, 255, 0.2);
+  height: 18px;
+  background-color: rgba(44, 78, 61, 0.1);
 }
 
-/* Override style.css theme toggle button for bottom-bar context */
+/* Override style.css theme toggle button for header bar context */
 .bottom-controls-bar .theme-toggle-btn {
   background: none;
   border: none;
-  padding: 0.5rem;
+  padding: 4px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary-pale);
-  opacity: 0.8;
+  color: var(--color-text-muted);
   transition: all 0.2s ease;
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
 }
 
 .bottom-controls-bar .theme-toggle-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  opacity: 1;
+  background-color: rgba(44, 78, 61, 0.05);
+  color: var(--color-primary);
   box-shadow: none;
 }
 
@@ -3053,20 +3056,24 @@ html.dark {
 
 /* Dark mode adjustments */
 html.dark .bottom-controls-bar {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+html.dark .controls-divider {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 html.dark .lang-link.active {
-  background-color: var(--color-primary-pale);
-  color: var(--bg-card);
+  background-color: var(--bg-card);
+  color: var(--color-primary-pale);
 }
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .bottom-controls-bar {
-    padding: 4px 10px;
-    gap: 8px;
+    padding: 3px 8px;
+    gap: 6px;
   }
   .lang-link {
     padding: 4px 6px;

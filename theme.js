@@ -104,11 +104,11 @@
       </button>
     `;
 
-    const footerContainer = document.querySelector(".main-footer .footer-container") || document.querySelector("footer .footer-container") || document.querySelector("footer");
-    if (footerContainer) {
-      footerContainer.appendChild(bar);
+    const mainNav = document.querySelector(".main-header .main-nav") || document.querySelector(".main-nav") || document.querySelector("header");
+    if (mainNav) {
+      mainNav.appendChild(bar);
     } else {
-      // Fallback if no footer exists on the page
+      // Fallback if no main-nav exists on the page
       bar.style.position = "fixed";
       bar.style.bottom = "20px";
       bar.style.right = "20px";

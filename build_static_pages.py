@@ -916,11 +916,11 @@ for lang, subdir, lang_recipes in languages:
         
         # Inject current recipe id script before js script tag
         if subdir:
-            script_tag = '<script src="../app.js"></script>'
-            script_injection = f'<script>window.currentRecipeId = "{rid}";</script>\n  <script src="../recipes_{lang}.js"></script>\n  {script_tag}'
+            script_tag = '<script src="../app.js?v=6"></script>'
+            script_injection = f'<script>window.currentRecipeId = "{rid}";</script>\n  <script src="../recipes_{lang}.js?v=6"></script>\n  {script_tag}'
         else:
-            script_tag = '<script src="app.js"></script>'
-            script_injection = f'<script>window.currentRecipeId = "{rid}";</script>\n  <script src="recipes_es.js"></script>\n  {script_tag}'
+            script_tag = '<script src="app.js?v=6"></script>'
+            script_injection = f'<script>window.currentRecipeId = "{rid}";</script>\n  <script src="recipes_es.js?v=6"></script>\n  {script_tag}'
             
         page_html = page_html.replace(script_tag, script_injection)
         

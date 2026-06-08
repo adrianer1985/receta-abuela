@@ -104,11 +104,11 @@
       </button>
     `;
 
-    const mainNav = document.querySelector(".main-header .main-nav") || document.querySelector(".main-nav") || document.querySelector("header");
-    if (mainNav) {
-      mainNav.appendChild(bar);
+    const headerContainer = document.querySelector(".main-header .header-container") || document.querySelector(".header-container") || document.querySelector(".main-nav") || document.querySelector("header");
+    if (headerContainer) {
+      headerContainer.appendChild(bar);
     } else {
-      // Fallback if no main-nav exists on the page
+      // Fallback if no header-container exists on the page
       bar.style.position = "fixed";
       bar.style.bottom = "20px";
       bar.style.right = "20px";

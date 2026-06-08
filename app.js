@@ -5,6 +5,7 @@ const recipes = window.recipes || [];
 const currentLang = window.location.pathname.includes("/en/") ? "en" :
                     window.location.pathname.includes("/fr/") ? "fr" :
                     window.location.pathname.includes("/pt/") ? "pt" : "es";
+const assetPrefix = currentLang !== "es" ? "../" : "";
 
 const UI_STRINGS = {
   es: {
@@ -335,7 +336,7 @@ function renderGrid(recipesData) {
     card.setAttribute("aria-label", recipe.title);
     card.innerHTML = `
       <div class="card-img-wrapper">
-        <img src="${recipe.image}" alt="${recipe.title} - ${recipe.summary}" class="card-img" loading="lazy">
+        <img src="${assetPrefix}${recipe.image}" alt="${recipe.title} - ${recipe.summary}" class="card-img" loading="lazy">
         <span class="card-tag">${recipe.tag}</span>
         <span class="card-views-badge">
           <svg class="card-views-icon" viewBox="0 0 24 24">
@@ -426,7 +427,7 @@ function renderArticleDetail() {
     container.innerHTML = `
     <!-- Top banner image -->
     <div style="position: relative; width: 100%;">
-      <img src="${recipe.image}" alt="${recipe.title} - ${recipe.summary}" class="modal-hero-img" style="border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;">
+      <img src="${assetPrefix}${recipe.image}" alt="${recipe.title} - ${recipe.summary}" class="modal-hero-img" style="border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;">
       <span class="card-views-badge" style="top: 1.5rem; right: 1.5rem;">
         <svg class="card-views-icon" viewBox="0 0 24 24">
           <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
@@ -675,7 +676,7 @@ function renderRecommendations(currentRecipe) {
     card.setAttribute("aria-label", recipe.title);
     card.innerHTML = `
       <div class="card-img-wrapper">
-        <img src="${recipe.image}" alt="${recipe.title} - ${recipe.summary}" class="card-img" loading="lazy">
+        <img src="${assetPrefix}${recipe.image}" alt="${recipe.title} - ${recipe.summary}" class="card-img" loading="lazy">
         <span class="card-tag">${recipe.tag}</span>
         <span class="card-views-badge">
           <svg class="card-views-icon" viewBox="0 0 24 24">

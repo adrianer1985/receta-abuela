@@ -86,7 +86,7 @@
       return newPath + currentSearch + currentHash;
     }
 
-    // 2. Inject floating controls bar
+    // 2. Inject controls bar into footer container
     const bar = document.createElement("div");
     bar.id = "bottom-controls-bar";
     bar.className = "bottom-controls-bar";
@@ -104,7 +104,16 @@
       </button>
     `;
 
-    document.body.appendChild(bar);
+    const footerContainer = document.querySelector(".main-footer .footer-container") || document.querySelector("footer .footer-container") || document.querySelector("footer");
+    if (footerContainer) {
+      footerContainer.appendChild(bar);
+    } else {
+      // Fallback if no footer exists on the page
+      bar.style.position = "fixed";
+      bar.style.bottom = "20px";
+      bar.style.right = "20px";
+      document.body.appendChild(bar);
+    }
 
     // 3. Setup Theme Button logic
     const toggleBtn = document.getElementById("theme-toggle");

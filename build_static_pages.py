@@ -931,17 +931,44 @@ for lang, subdir, lang_recipes in languages:
 
     print(f"Generated {len(lang_recipes)} static pages for language: {lang}")
 
+def generate_noscript_html(lang, lang_recipes):
+    noscript_html = '\n    <noscript>\n      <div class="noscript-fallback" style="padding: 2rem; max-width: 1200px; margin: 0 auto; background: rgba(255,255,255,0.03); border-radius: var(--border-radius-md); border: 1px solid var(--color-border); margin-top: 2rem;">\n'
+    title_text = {
+        'es': 'Índice de Recetas',
+        'en': 'Recipe Index',
+        'fr': 'Index des Recettes',
+        'pt': 'Índice de Receitas'
+    }[lang]
+    noscript_html += f'        <h2 style="font-family: var(--font-secondary); margin-bottom: 1.5rem; text-align: center; color: var(--color-primary-pale); font-size: 1.8rem;">{title_text}</h2>\n'
+    noscript_html += '        <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; padding: 0;">\n'
+    for recipe in lang_recipes:
+        rid = recipe["id"]
+        title = recipe["title"]
+        noscript_html += f'          <li><a href="{rid}.html" style="color: var(--color-text-muted); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2px; transition: all 0.2s; font-size: 0.95rem;" onmouseover="this.style.color=\'var(--color-primary-pale)\'; this.style.borderBottomColor=\'var(--color-primary-pale)\'" onmouseout="this.style.color=\'var(--color-text-muted)\'; this.style.borderBottomColor=\'rgba(255,255,255,0.1)\'">{title}</a></li>\n'
+    noscript_html += '        </ul>\n      </div>\n    </noscript>\n  '
+    return noscript_html
+
+def replace_noscript_block(content, lang, lang_recipes):
+    noscript_html = generate_noscript_html(lang, lang_recipes)
+    pattern = r'<!-- START_RECIPES_NOSCRIPT -->.*?<!-- END_RECIPES_NOSCRIPT -->'
+    replacement = f'<!-- START_RECIPES_NOSCRIPT -->{noscript_html}<!-- END_RECIPES_NOSCRIPT -->'
+    return re.sub(pattern, replacement, content, flags=re.DOTALL)
+
 # Process static HTML files (index.html, quienes-somos.html, comunidad.html) for localizations
 static_files = ["index.html", "quienes-somos.html", "comunidad.html"]
-for lang, subdir, _ in languages:
+for lang, subdir, lang_recipes in languages:
     if not subdir:
         # For Spanish, we also inject the recipes_es.js script before app.js in index.html
         with open("index.html", "r", encoding="utf-8") as f:
             content = f.read()
         if 'src="recipes_es.js"' not in content:
             content = content.replace('<script src="app.js"></script>', '<script src="recipes_es.js"></script>\n  <script src="app.js"></script>')
-            with open("index.html", "w", encoding="utf-8") as f:
-                f.write(content)
+        
+        # Inject noscript list of recipes for Spanish index.html
+        content = replace_noscript_block(content, 'es', recipes_es)
+        
+        with open("index.html", "w", encoding="utf-8") as f:
+            f.write(content)
         continue
         
     for fname in static_files:
@@ -968,6 +995,7 @@ for lang, subdir, _ in languages:
             content = content.replace('src="theme.js?v=6"', 'src="../theme.js?v=6"')
             if fname == "index.html":
                 content = content.replace('src="app.js?v=6"', f'src="../recipes_{lang}.js?v=6"></script>\n  <script src="../app.js?v=6"')
+                content = replace_noscript_block(content, lang, lang_recipes)
             else:
                 content = content.replace('src="app.js?v=6"', 'src="../app.js?v=6"')
             

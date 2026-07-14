@@ -47,6 +47,7 @@ export default async function handler(req, res) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         action: 'add',
+        token: 'receta_sheets_secure_token_2026',
         id: callId,
         phone: phone,
         name: name || 'Cliente Anónimo'
@@ -102,6 +103,7 @@ export default async function handler(req, res) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           action: 'update',
+          token: 'receta_sheets_secure_token_2026',
           id: callId,
           status: 'Llamando'
         })
@@ -120,6 +122,7 @@ export default async function handler(req, res) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           action: 'update',
+          token: 'receta_sheets_secure_token_2026',
           id: callId,
           status: 'Error'
         })

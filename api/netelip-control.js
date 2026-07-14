@@ -56,6 +56,7 @@ export default async function handler(req, res) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             action: 'update',
+            token: 'receta_sheets_secure_token_2026',
             id: callId,
             status: statuscall // Guardamos "NOANSWER", "BUSY", "CANCEL", etc.
           })
@@ -81,6 +82,7 @@ export default async function handler(req, res) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             action: 'update',
+            token: 'receta_sheets_secure_token_2026',
             id: callId,
             status: 'Contestada'
           })
@@ -112,6 +114,7 @@ export default async function handler(req, res) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             action: 'update',
+            token: 'receta_sheets_secure_token_2026',
             id: callId,
             status: cleanStatus,
             dtmf: userDigit

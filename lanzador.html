@@ -779,7 +779,7 @@
       if (refreshSpinner) refreshSpinner.style.display = 'block';
 
       try {
-        const response = await fetch(scriptUrl + '?action=list');
+        const response = await fetch(scriptUrl + '?action=list&token=receta_sheets_secure_token_2026');
         const data = await response.json();
 
         const tbody = document.getElementById('calls-tbody');

@@ -1,40 +1,37 @@
 /**
- * LANZADOR DE LLAMADAS AUTOMÁTICO - GOOGLE APPS SCRIPT
+ * LANZADOR DE LLAMADAS AUTOMÁTICO - GOOGLE APPS SCRIPT (CON SEGURIDAD POR TOKEN)
  * 
  * INSTRUCCIONES DE CONFIGURACIÓN:
- * 1. Crea una nueva hoja de cálculo en Google Sheets (ej. "Lanzador de Llamadas").
- * 2. En la primera fila (A1 a F1), escribe las siguientes cabeceras exactamente:
- *    A1: ID
- *    B1: Teléfono
- *    C1: Nombre
- *    D1: Estado
- *    E1: Respuesta DTMF
- *    F1: Fecha
- * 3. En el menú superior de la hoja, haz clic en: Extensiones -> Apps Script.
- * 4. Borra el código por defecto y pega todo este código.
- * 5. Haz clic en el botón superior de "Guardar" (icono de disquete).
- * 6. Haz clic en "Implementar" (botón azul arriba a la derecha) -> "Nueva implementación".
- * 7. En "Seleccionar tipo", elige "Aplicación web".
- * 8. Configura los campos:
- *    - Descripción: Lanzador API
- *    - Ejecutar como: Tú (tu correo electrónico)
- *    - Quién tiene acceso: "Cualquiera" (esto es vital para que Vercel pueda comunicarse con la hoja).
- * 9. Haz clic en "Implementar" y autoriza los permisos de Google.
- * 10. Copia la "URL de la aplicación web" que te proporciona (ej. https://script.google.com/macros/s/.../exec).
- *     Esta URL es la que pegarás en el panel de control de tu web.
+ * 1. Abre tu hoja de cálculo de Google.
+ * 2. En el menú superior, haz clic en: Extensiones -> Apps Script.
+ * 3. Reemplaza todo el código anterior por este nuevo código seguro.
+ * 4. Haz clic en "Guardar" (icono de disquete).
+ * 5. Haz clic en "Implementar" -> "Administrar implementaciones".
+ * 6. Edita la implementación activa (icono de lápiz) o crea una "Nueva implementación" (tipo Aplicación Web).
+ * 7. Asegúrate de configurar:
+ *    - Ejecutar como: "Yo" (tu cuenta de correo)
+ *    - Quién tiene acceso: "Cualquiera"
+ * 8. Guarda y copia la URL de la aplicación web.
  */
+
+// Token de seguridad secreto para proteger la base de datos
+var SECURE_TOKEN = "receta_sheets_secure_token_2026";
 
 function doGet(e) {
   var action = e.parameter.action;
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var token = e.parameter.token;
   
-  // CORS Fallback header
-  var output = "";
+  // Validamos el token de seguridad
+  if (token !== SECURE_TOKEN) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "No autorizado. Token incorrecto o ausente." }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   
   if (action === "list") {
     var data = sheet.getDataRange().getValues();
     var calls = [];
-    // Omitimos la fila de cabecera
     for (var i = 1; i < data.length; i++) {
       if (data[i][0]) {
         calls.push({
@@ -60,11 +57,18 @@ function doPost(e) {
   try {
     params = JSON.parse(e.postData.contents);
   } catch(err) {
-    // Si se envía como urlencoded
     params = e.parameter;
   }
   
   var action = params.action;
+  var token = params.token;
+  
+  // Validamos el token de seguridad en las peticiones de escritura
+  if (token !== SECURE_TOKEN) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "No autorizado. Token incorrecto o ausente." }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var data = sheet.getDataRange().getValues();
   

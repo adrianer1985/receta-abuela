@@ -14,6 +14,17 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Método no permitido. Utiliza POST.' });
   }
 
+  // Validar autorización para lanzar llamadas
+  const authHeader = req.headers.authorization;
+  const adminUser = process.env.ADMIN_USER || 'admin';
+  const adminPass = process.env.ADMIN_PASS || 'receta2026';
+  const expectedToken = 'Bearer ' + Buffer.from(`${adminUser}:${adminPass}`).toString('base64');
+
+  if (!authHeader || authHeader !== expectedToken) {
+    return res.status(401).json({ error: 'No autorizado. Por favor, inicia sesión.' });
+  }
+
+
   const { phone, name, message, appsScriptUrl, apiUser, apiToken } = req.body;
 
   if (!phone) {

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanzador de Llamadas Automático | Receta de Abuela Admin</title>
+  <meta name="description" content="Panel de control para la automatización de encuestas telefónicas y lanzador de llamadas VoIP a través de la API Voice de Netelip.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0f1311;
+      --bg-card: rgba(27, 35, 31, 0.75);
+      --border-color: rgba(53, 168, 115, 0.2);
+      --color-primary: #35a873;
+      --color-primary-hover: #46c78c;
+      --color-primary-pale: #e0f2eb;
+      --color-text: #e2e8f0;
+      --color-text-muted: #94a3b8;
+      --color-error: #ef4444;
+      --color-warning: #f59e0b;
+      --color-success: #10b981;
+      --color-info: #3b82f6;
+      --border-radius-lg: 16px;
+      --border-radius-md: 8px;
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.2);
+      --font-primary: 'Inter', sans-serif;
+      --font-secondary: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 10% 20%, rgba(53, 168, 115, 0.08) 0%, transparent 45%),
+                        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 45%);
+      background-attachment: fixed;
+      color: var(--color-text);
+      font-family: var(--font-primary);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Container */
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .site-logo {
+      width: 60px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--font-secondary);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      background: linear-gradient(135deg, #ffffff 0%, var(--color-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Main Grid Layout */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Card design */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(53, 168, 115, 0.4);
+    }
+
+    .card-title {
+      font-family: var(--font-secondary);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+    }
+
+    .card-title svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: var(--color-primary);
+      stroke-width: 2;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background: rgba(15, 19, 17, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--border-radius-md);
+      padding: 0.75rem 1rem;
+      color: #ffffff;
+      font-family: var(--font-primary);
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 10px rgba(53, 168, 115, 0.25);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    /* Buttons */
+    .btn {
+      background: var(--color-primary);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--border-radius-md);
+      padding: 0.85rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: var(--font-secondary);
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn:disabled {
+      background: var(--color-text-muted);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Call log table section */
+    .table-section {
+      margin-top: 2rem;
+    }
+
+    .table-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: var(--border-radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-family: var(--font-secondary);
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--color-text);
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .badge-pending { background: rgba(245, 158, 11, 0.15); color: var(--color-warning); }
+    .badge-calling { background: rgba(59, 130, 246, 0.15); color: var(--color-info); }
+    .badge-answered { background: rgba(6, 182, 212, 0.15); color: #06b6d4; }
+    .badge-success { background: rgba(16, 185, 129, 0.15); color: var(--color-success); }
+    .badge-error { background: rgba(239, 68, 68, 0.15); color: var(--color-error); }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1b231f;
+      border: 1px solid var(--color-primary);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      z-index: 2000;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Loader */
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #ffffff;
+      animation: spin 0.8s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Instructions list */
+    .instruction-steps {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    .instruction-steps li {
+      margin-bottom: 0.75rem;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+
+    .instruction-steps li strong {
+      color: #ffffff;
+    }
+
+    .code-snippet {
+      background: #080a09;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--color-primary);
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+
+    .grid-full {
+      grid-column: 1 / -1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <header>
+      <img src="assets/logo.png" alt="Logo de Receta de Abuela" class="site-logo">
+      <h1>Lanzador de Llamadas Automático</h1>
+      <p class="subtitle">Panel de control de pruebas VoIP con Netelip API Voice</p>
+    </header>
+
+    <div class="dashboard-grid">
+      
+      <!-- Lanzador de Llamada -->
+      <section class="card">
+        <h2 class="card-title">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Nueva Llamada
+        </h2>
+        
+        <form id="call-form">
+          <div class="form-group">
+            <label for="call-phone">Número de Teléfono (con prefijo del país, ej. 34600123456)</label>
+            <input type="tel" id="call-phone" placeholder="34600123456" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="call-name">Nombre del Destinatario (Opcional)</label>
+            <input type="text" id="call-name" placeholder="Juan Pérez">
+          </div>
+          
+          <div class="form-group">
+            <label for="call-message">Mensaje de Voz (Texto a reproducir - TTS)</label>
+            <textarea id="call-message" rows="3" placeholder="Hola, por favor valora la calidad de la llamada pulsando un botón del 0 al 9 siendo 9 el máximo." required>Hola. Valora la calidad de nuestra llamada pulsando una tecla del 0 al 9, siendo 9 la mejor puntuación.</textarea>
+          </div>
+          
+          <button type="submit" id="btn-launch" class="btn">
+            <div class="spinner" id="spinner-launch"></div>
+            <span id="text-launch">Lanzar Llamada</span>
+          </button>
+        </form>
+      </section>
+
+      <!-- Configuración -->
+      <section class="card">
+        <h2 class="card-title">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Configuración e Integración
+        </h2>
+        
+        <form id="config-form">
+          <div class="form-group">
+            <label for="config-script">URL de Google Apps Script (Base de Datos)</label>
+            <input type="text" id="config-script" placeholder="https://script.google.com/macros/s/.../exec" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="config-api-user">Usuario API de Netelip (Opcional si se configuró en Vercel)</label>
+            <input type="text" id="config-api-user" placeholder="Tu usuario de la API Voice">
+          </div>
+          
+          <div class="form-group">
+            <label for="config-api-token">Token API de Netelip (Opcional si se configuró en Vercel)</label>
+            <input type="text" id="config-api-token" placeholder="Tu token de seguridad">
+          </div>
+          
+          <button type="submit" class="btn btn-secondary">Guardar Configuración Local</button>
+        </form>
+      </section>
+
+      <!-- Instrucciones de configuración en Netelip -->
+      <section class="card grid-full">
+        <h2 class="card-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm1-5.16V14a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.5-1.5 1 1 0 0 1-2 0A3.5 3.5 0 1 1 13 12.84z"/></svg>
+          Pasos Finales para Conectar con Netelip
+        </h2>
+        <ul class="instruction-steps">
+          <li>
+            <strong>1. Configurar la URL de control en Netelip:</strong> Inicia sesión en el panel de control de tu cuenta de Netelip, ve a la sección de tu **API Voice** y añade tu dirección de control de llamadas salientes (Webhook):
+            <br>
+            <div class="code-snippet" style="margin-top: 0.4rem;">https://www.recetadeabuela.com/api/netelip-control</div>
+          </li>
+          <li>
+            <strong>2. Google Sheets:</strong> Asegúrate de copiar el código del archivo <code class="code-snippet">lanzador-apps-script.js</code> del proyecto, guardarlo en el Apps Script de tu Google Sheets e implementarlo como Aplicación Web (acceso público para "Cualquiera"). Copia el enlace que te da y pégalo arriba en el campo **"URL de Google Apps Script"**.
+          </li>
+          <li>
+            <strong>3. Variables de Entorno (Opcional y Recomendado):</strong> Si no quieres pegar tus credenciales de Netelip en esta interfaz, puedes configurarlas de forma segura en el panel de administración de tu proyecto de **Vercel** como variables de entorno:
+            <code class="code-snippet">NETELIP_API_USER</code> y <code class="code-snippet">NETELIP_API_TOKEN</code>.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Tabla de Logs de Llamadas -->
+      <section class="card grid-full table-section">
+        <div class="table-header-row">
+          <h2 class="card-title" style="margin-bottom: 0;">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9M3 20h4M3 12h18M3 4h18M11 20h4M7 20h4"/></svg>
+            Historial de Llamadas
+          </h2>
+          <div style="display: flex; gap: 10px;">
+            <button id="btn-refresh" class="btn btn-secondary" style="width: auto; padding: 0.5rem 1rem;">
+              <div class="spinner" id="spinner-refresh" style="width:14px; height:14px;"></div>
+              <span>Actualizar Tabla</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Teléfono</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Respuesta (Teclado)</th>
+                <th>Fecha y Hora</th>
+              </tr>
+            </thead>
+            <tbody id="calls-tbody">
+              <tr>
+                <td colspan="5" style="text-align: center; color: var(--color-text-muted); padding: 2rem;">
+                  Cargando llamadas desde Google Sheets... Configura la URL del Script arriba.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast">
+    <span id="toast-message">Mensaje de notificación</span>
+  </div>
+
+  <script>
+    // Recuperar configuración guardada localmente
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedScriptUrl = localStorage.getItem('apps_script_url');
+      const savedApiUser = localStorage.getItem('netelip_api_user');
+      const savedApiToken = localStorage.getItem('netelip_api_token');
+
+      if (savedScriptUrl) document.getElementById('config-script').value = savedScriptUrl;
+      if (savedApiUser) document.getElementById('config-api-user').value = savedApiUser;
+      if (savedApiToken) document.getElementById('config-api-token').value = savedApiToken;
+
+      if (savedScriptUrl) {
+        loadCallHistory();
+      }
+    });
+
+    // Guardar Configuración
+    document.getElementById('config-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const scriptUrl = document.getElementById('config-script').value.trim();
+      const apiUser = document.getElementById('config-api-user').value.trim();
+      const apiToken = document.getElementById('config-api-token').value.trim();
+
+      localStorage.setItem('apps_script_url', scriptUrl);
+      localStorage.setItem('netelip_api_user', apiUser);
+      localStorage.setItem('netelip_api_token', apiToken);
+
+      showToast('Configuración guardada correctamente.');
+      loadCallHistory();
+    });
+
+    // Lanzar Llamada
+    document.getElementById('call-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const phone = document.getElementById('call-phone').value.trim();
+      const name = document.getElementById('call-name').value.trim();
+      const message = document.getElementById('call-message').value.trim();
+
+      const appsScriptUrl = localStorage.getItem('apps_script_url');
+      const apiUser = localStorage.getItem('netelip_api_user');
+      const apiToken = localStorage.getItem('netelip_api_token');
+
+      if (!appsScriptUrl) {
+        showToast('Error: Debes configurar primero la URL de Google Sheets.', true);
+        return;
+      }
+
+      // Animación del botón
+      const btn = document.getElementById('btn-launch');
+      const spinner = document.getElementById('spinner-launch');
+      const label = document.getElementById('text-launch');
+      btn.disabled = true;
+      spinner.style.display = 'block';
+      label.textContent = 'Lanzando...';
+
+      try {
+        const response = await fetch('/api/launch', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            phone,
+            name,
+            message,
+            appsScriptUrl,
+            apiUser: apiUser || undefined,
+            apiToken: apiToken || undefined
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          showToast('¡Llamada lanzada con éxito a ' + phone + '!');
+          document.getElementById('call-phone').value = '';
+          document.getElementById('call-name').value = '';
+          // Cargar historial
+          setTimeout(loadCallHistory, 1500);
+        } else {
+          showToast('Error: ' + (result.error || 'No se pudo iniciar la llamada.'), true);
+        }
+      } catch (err) {
+        console.error(err);
+        showToast('Error al conectar con el servidor backend.', true);
+      } finally {
+        btn.disabled = false;
+        spinner.style.display = 'none';
+        label.textContent = 'Lanzar Llamada';
+      }
+    });
+
+    // Cargar historial desde Google Sheets
+    async function loadCallHistory() {
+      const scriptUrl = localStorage.getItem('apps_script_url');
+      if (!scriptUrl) return;
+
+      const refreshBtn = document.getElementById('btn-refresh');
+      const refreshSpinner = document.getElementById('spinner-refresh');
+      if (refreshBtn) refreshBtn.disabled = true;
+      if (refreshSpinner) refreshSpinner.style.display = 'block';
+
+      try {
+        const response = await fetch(scriptUrl + '?action=list');
+        const data = await response.json();
+
+        const tbody = document.getElementById('calls-tbody');
+        tbody.innerHTML = '';
+
+        if (!data || data.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--color-text-muted); padding: 2rem;">No hay llamadas registradas en Google Sheets.</td></tr>`;
+          return;
+        }
+
+        // Ordenamos las llamadas: las más recientes primero
+        data.reverse();
+
+        data.forEach(call => {
+          let statusBadgeClass = 'badge-pending';
+          let statusLabel = call.status;
+
+          if (call.status === 'Llamando') statusBadgeClass = 'badge-calling';
+          else if (call.status === 'Contestada') statusBadgeClass = 'badge-answered';
+          else if (call.status === 'Completada') statusBadgeClass = 'badge-success';
+          else if (call.status === 'ANSWER') {
+            statusBadgeClass = 'badge-success';
+            statusLabel = 'Completada';
+          } else if (call.status === 'NOANSWER' || call.status === 'BUSY' || call.status === 'CANCEL' || call.status === 'CHANUNAVAIL' || call.status === 'Error') {
+            statusBadgeClass = 'badge-error';
+            if (call.status === 'NOANSWER') statusLabel = 'No contesta';
+            else if (call.status === 'BUSY') statusLabel = 'Ocupado';
+            else if (call.status === 'CANCEL') statusLabel = 'Cancelada';
+            else if (call.status === 'CHANUNAVAIL') statusLabel = 'Inexistente';
+          }
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td><strong>${escapeHtml(call.phone)}</strong></td>
+            <td>${escapeHtml(call.name || '-')}</td>
+            <td><span class="badge ${statusBadgeClass}">${escapeHtml(statusLabel)}</span></td>
+            <td style="text-align: center; font-size: 1.1rem; font-weight: bold; color: var(--color-primary);">
+              ${call.dtmf !== undefined && call.dtmf !== null && call.dtmf !== '' ? (call.dtmf === 'timeout' ? '⏱️ Sin respuesta' : escapeHtml(call.dtmf)) : '-'}
+            </td>
+            <td>${escapeHtml(call.date || '-')}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+      } catch (err) {
+        console.error(err);
+        showToast('Error al leer los datos de Google Sheets.', true);
+      } finally {
+        if (refreshBtn) refreshBtn.disabled = false;
+        if (refreshSpinner) refreshSpinner.style.display = 'none';
+      }
+    }
+
+    // Evento de refrescar
+    document.getElementById('btn-refresh').addEventListener('click', loadCallHistory);
+
+    // Auto-polling del historial cada 15 segundos si hay configurada la URL
+    setInterval(() => {
+      const scriptUrl = localStorage.getItem('apps_script_url');
+      if (scriptUrl) {
+        loadCallHistory();
+      }
+    }, 15000);
+
+    // Helper Toast
+    function showToast(msg, isError = false) {
+      const toast = document.getElementById('toast');
+      const message = document.getElementById('toast-message');
+      message.textContent = msg;
+
+      if (isError) {
+        toast.style.borderColor = 'var(--color-error)';
+      } else {
+        toast.style.borderColor = 'var(--color-primary)';
+      }
+
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    // Helper Sanitize HTML
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+</html>

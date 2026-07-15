@@ -82,11 +82,11 @@ export default async function handler(req, res) {
     // El webhook de control necesita el ID del script de Google Sheets y el ID de la llamada.
     // Extraemos el scriptId para comprimir el tamaño del campo userdata y no superar el límite de caracteres de SIP.
     let scriptId = '';
-    const scriptIdMatch = appsScriptUrl.match(/\/s\/([^\/]+)\/exec/);
+    const scriptIdMatch = appsScriptUrl.match(/\/s\/([a-zA-Z0-9_-]+)/);
     if (scriptIdMatch) {
       scriptId = scriptIdMatch[1];
     } else {
-      throw new Error('La URL de Google Apps Script no tiene un formato válido (debe contener /s/ y terminar en /exec).');
+      throw new Error('La URL de Google Apps Script no tiene un formato válido (debe contener "/s/" seguido del identificador).');
     }
 
     const userdataStr = `${callId}|${scriptId}`;

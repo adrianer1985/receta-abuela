@@ -789,7 +789,8 @@
         });
         
         if (!response.ok) {
-          throw new Error('No se pudo obtener el historial del servidor.');
+          const errData = await response.json().catch(() => ({}));
+          throw new Error(errData.error || `Error ${response.status}`);
         }
         
         const data = await response.json();
@@ -838,7 +839,7 @@
 
       } catch (err) {
         console.error(err);
-        showToast('Error al leer los datos de Google Sheets.', true);
+        showToast('Error: ' + err.message, true);
       } finally {
         if (refreshBtn) refreshBtn.disabled = false;
         if (refreshSpinner) refreshSpinner.style.display = 'none';

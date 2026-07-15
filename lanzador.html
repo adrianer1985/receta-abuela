@@ -530,6 +530,11 @@
             <label for="config-api-token">Token API de Netelip (Opcional si se configuró en Vercel)</label>
             <input type="text" id="config-api-token" placeholder="Tu token de seguridad">
           </div>
+
+          <div class="form-group">
+            <label for="config-api-src">Número de Origen / Caller ID (Opcional si se configuró en Vercel)</label>
+            <input type="text" id="config-api-src" placeholder="ej. 34951223344 o tu número verificado">
+          </div>
           
           <button type="submit" class="btn btn-secondary">Guardar Configuración Local</button>
         </form>
@@ -608,10 +613,12 @@
       const savedScriptUrl = localStorage.getItem('apps_script_url');
       const savedApiUser = localStorage.getItem('netelip_api_user');
       const savedApiToken = localStorage.getItem('netelip_api_token');
+      const savedApiSrc = localStorage.getItem('netelip_api_src');
 
       if (savedScriptUrl) document.getElementById('config-script').value = savedScriptUrl;
       if (savedApiUser) document.getElementById('config-api-user').value = savedApiUser;
       if (savedApiToken) document.getElementById('config-api-token').value = savedApiToken;
+      if (savedApiSrc) document.getElementById('config-api-src').value = savedApiSrc;
 
       const token = sessionStorage.getItem('admin_token');
       if (token) {
@@ -695,10 +702,12 @@
       const scriptUrl = document.getElementById('config-script').value.trim();
       const apiUser = document.getElementById('config-api-user').value.trim();
       const apiToken = document.getElementById('config-api-token').value.trim();
+      const apiSrc = document.getElementById('config-api-src').value.trim();
 
       localStorage.setItem('apps_script_url', scriptUrl);
       localStorage.setItem('netelip_api_user', apiUser);
       localStorage.setItem('netelip_api_token', apiToken);
+      localStorage.setItem('netelip_api_src', apiSrc);
 
       showToast('Configuración guardada correctamente.');
       loadCallHistory();
@@ -715,6 +724,7 @@
       const appsScriptUrl = localStorage.getItem('apps_script_url');
       const apiUser = localStorage.getItem('netelip_api_user');
       const apiToken = localStorage.getItem('netelip_api_token');
+      const apiSrc = localStorage.getItem('netelip_api_src');
       const token = sessionStorage.getItem('admin_token');
 
       if (!appsScriptUrl) {
@@ -743,7 +753,8 @@
             message,
             appsScriptUrl,
             apiUser: apiUser || undefined,
-            apiToken: apiToken || undefined
+            apiToken: apiToken || undefined,
+            apiSrc: apiSrc || undefined
           })
         });
 

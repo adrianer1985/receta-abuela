@@ -25,7 +25,7 @@ export default async function handler(req, res) {
   }
 
 
-  const { phone, name, message, appsScriptUrl, apiUser, apiToken } = req.body;
+  const { phone, name, message, appsScriptUrl, apiUser, apiToken, apiSrc } = req.body;
 
   if (!phone) {
     return res.status(400).json({ error: 'El número de teléfono es obligatorio.' });
@@ -62,11 +62,17 @@ export default async function handler(req, res) {
     // 2. Obtenemos credenciales de Netelip (desde variables de entorno o desde la petición)
     const netelipUser = apiUser || process.env.NETELIP_API_USER;
     const netelipToken = apiToken || process.env.NETELIP_API_TOKEN;
+    const netelipSrc = apiSrc || process.env.NETELIP_API_SRC;
 
     if (!netelipUser || !netelipToken) {
-      // Si no están configuradas en Vercel, permitimos que se pasen desde el cliente para facilitar pruebas inmediatas
       return res.status(400).json({ 
         error: 'Faltan credenciales de Netelip. Configura NETELIP_API_USER y NETELIP_API_TOKEN en Vercel o pásalas en la petición.' 
+      });
+    }
+
+    if (!netelipSrc) {
+      return res.status(400).json({ 
+        error: 'Falta el Identificador de Origen (Caller ID / DID). Configura NETELIP_API_SRC en Vercel o indícalo en el panel.' 
       });
     }
 
@@ -82,7 +88,7 @@ export default async function handler(req, res) {
     const netelipParams = new URLSearchParams();
     netelipParams.append('api', netelipUser);
     netelipParams.append('token', netelipToken);
-    netelipParams.append('src', 'RecetaAbuela'); // Identificador que verá el cliente
+    netelipParams.append('src', netelipSrc); // Identificador numérico real autorizado (DID o número verificado)
     netelipParams.append('dst', phone);
     netelipParams.append('duration', '45'); // Tiempo de timbrado máximo
     netelipParams.append('typedst', 'pstn');

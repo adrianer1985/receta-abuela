@@ -95,7 +95,7 @@ export default async function handler(req, res) {
     // Le reproducimos el mensaje de audio y esperamos 1 dígito de respuesta (timeout de 10 segundos).
     responseCommand = {
       command: 'speak_getdtmf',
-      options: `google_TTS;es-ES-Standard-A;${msg};10000;1;1.2`,
+      options: `netelip;Silvia;${msg};10000;1;1.2`,
       userfield: 'save_dtmf' // Pasamos este estado para la siguiente interacción
     };
 
@@ -128,7 +128,7 @@ export default async function handler(req, res) {
     // Agradecemos la llamada y establecemos el estado para colgar en la siguiente fase
     responseCommand = {
       command: 'speak',
-      options: 'google_TTS;es-ES-Standard-A;Muchas gracias por tu respuesta. Adiós.;1.2',
+      options: 'netelip;Silvia;Muchas gracias por tu respuesta. Adiós.;1.2',
       userfield: 'hangup'
     };
 

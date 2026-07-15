@@ -15,14 +15,20 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Método no permitido. Utiliza POST.' });
   }
 
-  // Vercel puede parsear el body o recibirlo como cadena cruda
+  // Vercel puede parsear el body o recibirlo como cadena cruda o Buffer
   let body = req.body;
+  if (Buffer.isBuffer(body)) {
+    body = body.toString('utf-8');
+  }
   if (typeof body === 'string') {
     try {
       body = Object.fromEntries(new URLSearchParams(body));
     } catch (e) {
       console.error('Error parsing body string:', e);
     }
+  }
+  if (!body) {
+    body = {};
   }
 
   const { ID, src, dst, dtmf, userfield, userdata, statuscall } = body;
@@ -95,7 +101,7 @@ export default async function handler(req, res) {
     // Le reproducimos el mensaje de audio y esperamos 1 dígito de respuesta (timeout de 10 segundos).
     responseCommand = {
       command: 'speak_getdtmf',
-      options: `netelip;Silvia;${msg};10000;1;1.2`,
+      options: `google;es;${msg};10000;1;1.2`,
       userfield: 'save_dtmf' // Pasamos este estado para la siguiente interacción
     };
 
@@ -128,7 +134,7 @@ export default async function handler(req, res) {
     // Agradecemos la llamada y establecemos el estado para colgar en la siguiente fase
     responseCommand = {
       command: 'speak',
-      options: 'netelip;Silvia;Muchas gracias por tu respuesta. Adiós.;1.2',
+      options: 'google;es;Muchas gracias por tu respuesta. Adiós.;1.2',
       userfield: 'hangup'
     };
 

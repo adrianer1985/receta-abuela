@@ -78,7 +78,7 @@ function doPost(e) {
     var name = params.name || "";
     var date = new Date().toLocaleString("es-ES", { timeZone: "Europe/Madrid" });
     
-    sheet.appendRow([id, phone, name, "Pendiente", "", date]);
+    sheet.appendRow([id, "'" + phone, name, "Pendiente", "", date]);
     
     return ContentService.createTextOutput(JSON.stringify({ status: "success", id: id }))
       .setMimeType(ContentService.MimeType.JSON);

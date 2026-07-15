@@ -1,7 +1,6 @@
 // Vercel Serverless Function: api/netelip-control.js
 
 export default async function handler(req, res) {
-  // Configurar cabeceras CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -35,20 +34,38 @@ export default async function handler(req, res) {
 
   console.log('Netelip Webhook Event Received:', { ID, src, dst, dtmf, userfield, userdata, statuscall });
 
-  // Desempaquetamos userdata para obtener el callId, appsScriptUrl y el mensaje a emitir
+  // Desempaquetamos userdata para obtener el callId y appsScriptUrl
   let callId = '';
   let appsScriptUrl = '';
-  let msg = 'Hola. Por favor, selecciona una opción en tu teléfono.';
 
   if (userdata) {
-    try {
-      const parsedUserdata = JSON.parse(userdata);
-      callId = parsedUserdata.call_id;
-      appsScriptUrl = parsedUserdata.appsScriptUrl;
-      msg = parsedUserdata.msg || msg;
-    } catch (e) {
-      // Fallback si userdata se envió como texto plano
+    if (userdata.includes('|')) {
+      const [cid, scriptId] = userdata.split('|');
+      callId = cid;
+      appsScriptUrl = `https://script.google.com/macros/s/${scriptId}/exec`;
+    } else {
       callId = userdata;
+    }
+  }
+
+  // Obtenemos los detalles de la llamada desde Google Sheets si tenemos la URL
+  let msg = 'Hola. Por favor, selecciona una opción en tu teléfono.';
+  let messageType = 'tts';
+  let maxDuration = 60; // 60 segundos por defecto
+
+  if (appsScriptUrl && callId) {
+    try {
+      const dbRes = await fetch(`${appsScriptUrl}?action=get&id=${callId}&token=receta_sheets_secure_token_2026`);
+      if (dbRes.ok) {
+        const callDetails = await dbRes.json();
+        if (callDetails.status === 'success') {
+          msg = callDetails.message || msg;
+          messageType = callDetails.messageType || 'tts';
+          maxDuration = parseInt(callDetails.maxDuration, 10) || 60;
+        }
+      }
+    } catch (err) {
+      console.error('Error fetching call details from Google Sheets:', err);
     }
   }
 
@@ -98,12 +115,31 @@ export default async function handler(req, res) {
       }
     }
 
-    // Le reproducimos el mensaje de audio y esperamos 1 dígito de respuesta (timeout de 10 segundos).
-    responseCommand = {
-      command: 'speak_getdtmf',
-      options: `google;es;${msg};10000;1;1.2`,
-      userfield: 'save_dtmf' // Pasamos este estado para la siguiente interacción
-    };
+    // Determinamos si es reproducción de audio o texto a voz (TTS)
+    if (messageType === 'audio') {
+      let audioUrl = msg;
+      // Si es una ruta relativa en el servidor de la web (ej. /assets/audio/mensaje.mp3)
+      if (msg.startsWith('/')) {
+        const host = req.headers.host || 'www.recetadeabuela.com';
+        const protocol = req.headers['x-forwarded-proto'] || 'https';
+        audioUrl = `${protocol}://${host}${msg}`;
+      }
+      // Comando para reproducir un fichero de audio remoto y capturar DTMF
+      //options: "remote;{files};{wait_ms};{digits}"
+      responseCommand = {
+        command: 'play_getdtmf',
+        options: `remote;${audioUrl};${maxDuration * 1000};1`,
+        userfield: 'save_dtmf'
+      };
+    } else {
+      // Comando para reproducir Texto a Voz (Google TTS) y capturar DTMF
+      //options: "google;es;{mensaje};{wait_ms};{digits};{speed}"
+      responseCommand = {
+        command: 'speak_getdtmf',
+        options: `google;es;${msg};${maxDuration * 1000};1;1.2`,
+        userfield: 'save_dtmf'
+      };
+    }
 
   } else if (userfield === 'save_dtmf') {
     // FASE B: El cliente ha pulsado una tecla o el tiempo ha expirado.
@@ -132,11 +168,18 @@ export default async function handler(req, res) {
     }
 
     // Agradecemos la llamada y establecemos el estado para colgar en la siguiente fase
-    responseCommand = {
-      command: 'speak',
-      options: 'google;es;Muchas gracias por tu respuesta. Adiós.;1.2',
-      userfield: 'hangup'
-    };
+    // Si la llamada fue por archivo de audio, colgamos directamente para ahorrar tiempo de llamada
+    if (messageType === 'audio') {
+      responseCommand = {
+        command: 'hangup'
+      };
+    } else {
+      responseCommand = {
+        command: 'speak',
+        options: 'google;es;Muchas gracias por tu respuesta. Adiós.;1.2',
+        userfield: 'hangup'
+      };
+    }
 
   } else {
     // FASE C (hangup) o cualquier otra fase: Colgamos la llamada definitivamente

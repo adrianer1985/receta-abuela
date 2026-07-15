@@ -497,8 +497,32 @@
           </div>
           
           <div class="form-group">
+            <label for="call-msg-type">Tipo de Locución (Mensaje)</label>
+            <select id="call-msg-type" style="width: 100%; padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid var(--color-border); background-color: var(--color-card); color: var(--color-text); font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+              <option value="tts">Texto a voz (TTS Google)</option>
+              <option value="audio">Archivo de audio (.mp3 o .wav)</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="group-message-tts">
             <label for="call-message">Mensaje de Voz (Texto a reproducir - TTS)</label>
-            <textarea id="call-message" rows="3" placeholder="Hola, por favor valora la calidad de la llamada pulsando un botón del 0 al 9 siendo 9 el máximo." required>Hola. Valora la calidad de nuestra llamada pulsando una tecla del 0 al 9, siendo 9 la mejor puntuación.</textarea>
+            <textarea id="call-message" rows="3" placeholder="Hola, por favor valora la calidad de la llamada pulsando un botón del 0 al 9 siendo 9 el máximo.">Hola. Valora la calidad de nuestra llamada pulsando una tecla del 0 al 9, siendo 9 la mejor puntuación.</textarea>
+          </div>
+
+          <div class="form-group" id="group-message-audio" style="display: none;">
+            <label for="call-audio-url">Archivo de Audio (Ruta o URL remota)</label>
+            <input type="text" id="call-audio-url" placeholder="ej. /assets/audio/pregunta.wav o URL completa">
+            <small style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 0.25rem; display: block;">
+              Puedes subir tus audios a la carpeta <code>assets/audio/</code> de tu proyecto y llamarlos por su ruta (ej. <code>/assets/audio/pregunta.wav</code>).
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="call-max-duration">Duración Máxima de Espera (Segundos)</label>
+            <input type="number" id="call-max-duration" min="5" max="300" placeholder="60" value="60">
+            <small style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 0.25rem; display: block;">
+              Tiempo máximo que se esperará la respuesta en el teléfono antes de colgar (por defecto 60 segundos).
+            </small>
           </div>
           
           <button type="submit" id="btn-launch" class="btn">
@@ -620,6 +644,21 @@
       if (savedApiToken) document.getElementById('config-api-token').value = savedApiToken;
       if (savedApiSrc) document.getElementById('config-api-src').value = savedApiSrc;
 
+      // Alternar campos de mensaje (TTS / Audio)
+      const msgTypeSelect = document.getElementById('call-msg-type');
+      const groupTts = document.getElementById('group-message-tts');
+      const groupAudio = document.getElementById('group-message-audio');
+
+      msgTypeSelect.addEventListener('change', () => {
+        if (msgTypeSelect.value === 'audio') {
+          groupTts.style.display = 'none';
+          groupAudio.style.display = 'block';
+        } else {
+          groupTts.style.display = 'block';
+          groupAudio.style.display = 'none';
+        }
+      });
+
       const token = sessionStorage.getItem('admin_token');
       if (token) {
         // Verificar si la sesión guardada sigue siendo válida en el servidor
@@ -719,7 +758,11 @@
 
       const phone = document.getElementById('call-phone').value.trim();
       const name = document.getElementById('call-name').value.trim();
-      const message = document.getElementById('call-message').value.trim();
+      const messageType = document.getElementById('call-msg-type').value;
+      const message = messageType === 'audio' 
+        ? document.getElementById('call-audio-url').value.trim() 
+        : document.getElementById('call-message').value.trim();
+      const maxDuration = document.getElementById('call-max-duration').value.trim() || '60';
 
       const appsScriptUrl = localStorage.getItem('apps_script_url');
       const apiUser = localStorage.getItem('netelip_api_user');
@@ -752,6 +795,8 @@
             name,
             message,
             appsScriptUrl,
+            messageType,
+            maxDuration,
             apiUser: apiUser || undefined,
             apiToken: apiToken || undefined,
             apiSrc: apiSrc || undefined

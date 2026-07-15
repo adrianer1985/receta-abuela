@@ -28,9 +28,9 @@ function doGet(e) {
   }
   
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = sheet.getDataRange().getValues();
   
   if (action === "list") {
-    var data = sheet.getDataRange().getValues();
     var calls = [];
     for (var i = 1; i < data.length; i++) {
       if (data[i][0]) {
@@ -45,6 +45,27 @@ function doGet(e) {
       }
     }
     return ContentService.createTextOutput(JSON.stringify(calls))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  if (action === "get") {
+    var id = e.parameter.id;
+    for (var i = 1; i < data.length; i++) {
+      if (data[i][0] == id) {
+        return ContentService.createTextOutput(JSON.stringify({
+          status: "success",
+          phone: data[i][1],
+          name: data[i][2],
+          callStatus: data[i][3],
+          dtmf: data[i][4],
+          date: data[i][5],
+          message: data[i][6] || "",
+          messageType: data[i][7] || "tts",
+          maxDuration: data[i][8] || 60
+        })).setMimeType(ContentService.MimeType.JSON);
+      }
+    }
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: "ID no encontrado" }))
       .setMimeType(ContentService.MimeType.JSON);
   }
   
@@ -76,9 +97,13 @@ function doPost(e) {
     var id = params.id || ("call_" + Math.random().toString(36).substr(2, 9));
     var phone = params.phone;
     var name = params.name || "";
+    var message = params.message || "";
+    var messageType = params.messageType || "tts";
+    var maxDuration = params.maxDuration || 60;
     var date = new Date().toLocaleString("es-ES", { timeZone: "Europe/Madrid" });
     
-    sheet.appendRow([id, "'" + phone, name, "Pendiente", "", date]);
+    // Columnas: ID, Teléfono, Nombre, Estado, Respuesta DTMF, Fecha, Mensaje, Tipo, Duracion
+    sheet.appendRow([id, "'" + phone, name, "Pendiente", "", date, message, messageType, maxDuration]);
     
     return ContentService.createTextOutput(JSON.stringify({ status: "success", id: id }))
       .setMimeType(ContentService.MimeType.JSON);

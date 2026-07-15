@@ -25,13 +25,13 @@ export default async function handler(req, res) {
   }
 
 
-  const { phone, name, message, appsScriptUrl, apiUser, apiToken, apiSrc } = req.body;
+  const { phone, name, message, appsScriptUrl, apiUser, apiToken, apiSrc, messageType, maxDuration } = req.body;
 
   if (!phone) {
     return res.status(400).json({ error: 'El número de teléfono es obligatorio.' });
   }
   if (!message) {
-    return res.status(400).json({ error: 'El mensaje de audio es obligatorio.' });
+    return res.status(400).json({ error: 'El mensaje o archivo de audio es obligatorio.' });
   }
   if (!appsScriptUrl) {
     return res.status(400).json({ error: 'La URL de la aplicación web de Google Sheets es obligatoria.' });
@@ -50,7 +50,10 @@ export default async function handler(req, res) {
         token: 'receta_sheets_secure_token_2026',
         id: callId,
         phone: phone,
-        name: name || 'Cliente Anónimo'
+        name: name || 'Cliente Anónimo',
+        message: message,
+        messageType: messageType || 'tts',
+        maxDuration: parseInt(maxDuration, 10) || 60
       })
     });
 
@@ -76,13 +79,17 @@ export default async function handler(req, res) {
       });
     }
 
-    // El webhook de control necesita la URL de Google Sheets y el ID de la llamada.
-    // Metemos este contexto en la variable userdata para que sea 100% dinámico y sin estado en el servidor.
-    const userdataObj = {
-      call_id: callId,
-      appsScriptUrl: appsScriptUrl,
-      msg: message
-    };
+    // El webhook de control necesita el ID del script de Google Sheets y el ID de la llamada.
+    // Extraemos el scriptId para comprimir el tamaño del campo userdata y no superar el límite de caracteres de SIP.
+    let scriptId = '';
+    const scriptIdMatch = appsScriptUrl.match(/\/s\/([^\/]+)\/exec/);
+    if (scriptIdMatch) {
+      scriptId = scriptIdMatch[1];
+    } else {
+      throw new Error('La URL de Google Apps Script no tiene un formato válido (debe contener /s/ y terminar en /exec).');
+    }
+
+    const userdataStr = `${callId}|${scriptId}`;
 
     // 3. Lanzamos la llamada a través de Netelip
     const netelipParams = new URLSearchParams();
@@ -92,7 +99,7 @@ export default async function handler(req, res) {
     netelipParams.append('dst', phone);
     netelipParams.append('duration', '45'); // Tiempo de timbrado máximo
     netelipParams.append('typedst', 'pstn');
-    netelipParams.append('userdata', JSON.stringify(userdataObj));
+    netelipParams.append('userdata', userdataStr);
 
     const netelipResponse = await fetch('https://api.netelip.com/v1/voice', {
       method: 'POST',
